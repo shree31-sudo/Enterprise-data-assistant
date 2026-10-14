@@ -1,0 +1,17 @@
+﻿FROM python:3.11-windowsservercore-ltsc2022
+
+WORKDIR C:/app
+
+COPY vc_redist.x64.exe C:/vc_redist.x64.exe
+RUN C:/vc_redist.x64.exe /install /quiet /norestart
+
+COPY cri/requirements.txt C:/app/requirements.txt
+
+RUN python -m pip install --upgrade pip
+RUN pip install --no-cache-dir -r C:/app/requirements.txt
+
+COPY cri/core/gpu_service.py C:/app/gpu_service.py
+
+EXPOSE 8103
+
+CMD ["python", "-m", "uvicorn", "gpu_service:app", "--host", "0.0.0.0", "--port", "8103"]

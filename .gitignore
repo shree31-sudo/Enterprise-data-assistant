@@ -1,0 +1,97 @@
+# Environment variables and secrets
+
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Python environments and caches
+
+venv/
+.venv/
+**pycache**/
+*.py[cod]
+
+# Model weights
+
+models/
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# Runtime databases and persistent data
+
+neo4j_data/
+qdrant_data/
+redis_data/
+
+# Logs and temporary files
+
+*.log
+logs/
+tmp/
+temp/
+
+# Generated files and caches
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.sqlite
+*.sqlite3
+*.db
+
+# Backup files
+
+migration-backup-*/
+*.bak
+*.old
+
+# Operating-system and IDE files
+
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Local environment files
+cri/.env
+docmind/.env
+
+# Local inference binaries
+llama-server/*.exe
+llama-server/*.dll
+
+# Installer binaries
+*.msi
+*.exe
+
+
+
+# Uploaded documents - keep locally
+docmind/doc_storage/*.pdf
+
+# Generated vector indexes and embeddings
+cri/embeddings/**/*.faiss
+cri/embeddings/**/*.pkl
+cri/embeddings/**/metadata.json
+
+# Generated machine-learning artifacts
+cri/data/data/scope_classifier.pkl
+
+
+# Generated classifier files
+cri/data/scope_classifier.pkl
+cri/data/data/scope_classifier.pkl
+
+
+
+# Exclude file containing credentials
+cri/core/build_schema_cache.pyc
+
+# Exclude production join graphs
+cri/data/join_graphs/prod_join_graph.json
+cri/data/data/join_graphs/prod_join_graph.json

@@ -1,0 +1,26 @@
+﻿FROM python:3.11-windowsservercore-ltsc2022
+
+WORKDIR C:/app
+
+# Install Microsoft Visual C++ Runtime
+COPY vc_redist.x64.exe C:/vc_redist.x64.exe
+RUN C:/vc_redist.x64.exe /install /quiet /norestart
+
+# Install Microsoft ODBC Driver 17 for SQL Server
+COPY msodbcsql17.msi C:/msodbcsql17.msi
+RUN cmd /c "msiexec.exe /i C:\msodbcsql17.msi /qn /norestart IACCEPTMSODBCSQLLICENSETERMS=YES"
+
+# Verify ODBC Driver 17 installation
+RUN Get-OdbcDriver | Where-Object { $_.Name -eq 'ODBC Driver 17 for SQL Server' } | Format-Table -AutoSize
+
+# Install Python dependencies
+COPY docmind/requirements.txt C:/app/requirements.txt
+RUN python -m pip install --upgrade pip
+RUN pip install --no-cache-dir -r C:/app/requirements.txt
+
+# Copy RAG backend
+COPY docmind/ C:/app/
+
+EXPOSE 8001
+
+CMD ["python", "-m", "uvicorn", "docbot_backend:app", "--host", "0.0.0.0", "--port", "8001"]

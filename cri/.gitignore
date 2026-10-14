@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+venv/
+.venv/
+
+# Environment Variables
+.env
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Ollama / LLM Models
+models/
+*.gguf
+
+# Python Cache
+.pytest_cache/
+
+# Build Files
+dist/
+build/
+*.egg-info/

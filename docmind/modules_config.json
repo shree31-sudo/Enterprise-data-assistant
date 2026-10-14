@@ -1,0 +1,62 @@
+[
+  {
+    "id": "MNL",
+    "label": "Machine Manuals",
+    "icon": "📘",
+    "description": "Operator manuals, user manuals, machine specifications and operating procedures"
+  },
+  {
+    "id": "PRG",
+    "label": "Programming & G-Code",
+    "icon": "💻",
+    "description": "G-code, M-code, CNC programming guides and controller programming references"
+  },
+  {
+    "id": "MNT",
+    "label": "Maintenance",
+    "icon": "🔧",
+    "description": "Maintenance manuals, service schedules, lubrication and preventive maintenance guides"
+  },
+  {
+    "id": "TRB",
+    "label": "Troubleshooting",
+    "icon": "🛠️",
+    "description": "Alarm codes, error messages, fault diagnosis and troubleshooting procedures"
+  },
+  {
+    "id": "PAR",
+    "label": "Machine Parameters",
+    "icon": "⚙️",
+    "description": "CNC parameters, machine settings, configuration data and parameter references"
+  },
+  {
+    "id": "TLS",
+    "label": "Tooling & Cutting",
+    "icon": "🔩",
+    "description": "Tool catalogs, cutting conditions, tool setup, feeds, speeds and tooling guidelines"
+  },
+  {
+    "id": "SAF",
+    "label": "Safety & SOP",
+    "icon": "⚠️",
+    "description": "Safety procedures, SOPs, emergency procedures and machine safety guidelines"
+  },
+  {
+    "id": "EME",
+    "label": "Electrical & Mechanical",
+    "icon": "🔌",
+    "description": "Electrical diagrams, wiring diagrams, mechanical drawings, hydraulic and pneumatic documentation"
+  },
+  {
+    "id": "QIN",
+    "label": "Quality & Inspection",
+    "icon": "✅",
+    "description": "Inspection procedures, dimensional tolerances, quality standards and measurement guides"
+  },
+  {
+    "id": "TRN",
+    "label": "Training & Work Instructions",
+    "icon": "🎓",
+    "description": "Operator training materials, work instructions, setup guides and machine operation training"
+  }
+]

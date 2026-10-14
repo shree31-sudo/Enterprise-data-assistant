@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Admin Console</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f7f9; --surface:#ffffff; --surface2:#eaf1f4;
+  --accent:#0d9488; --accent2:#0f766e;
+  --accent-soft:rgba(13,148,136,0.09); --accent-border:rgba(13,148,136,0.22);
+  --grad:linear-gradient(135deg,#0f766e,#2dd4bf);
+  --border:rgba(0,0,0,0.06); --border2:rgba(0,0,0,0.1);
+  --text:#182828; --text2:#4a6a6a; --muted:#8aabab;
+  --font:'Plus Jakarta Sans',sans-serif;
+  --danger:#dc2626; --danger-soft:#fee2e2;
+  --warn:#b45309; --warn-soft:#fef3c7;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;}
+
+/* ── LOGIN SCREEN ─────────────────────────────────────────────── */
+#login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+.login-card{background:var(--surface);width:100%;max-width:380px;padding:36px 32px 28px;border-radius:20px;box-shadow:0 20px 60px rgba(15,60,60,0.12);border:1px solid var(--border);}
+.login-icon{width:52px;height:52px;border-radius:16px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 6px 20px rgba(13,148,136,0.35);}
+.login-icon svg{width:26px;height:26px;stroke:#fff;}
+.login-card h1{font-size:19px;margin:0 0 4px;text-align:center;color:var(--text);}
+.login-card .sub{text-align:center;color:var(--muted);font-size:12.5px;margin-bottom:26px;}
+.login-card input{width:100%;padding:12px 14px;border:1.5px solid var(--border2);border-radius:10px;font-size:14px;margin-bottom:12px;font-family:inherit;background:var(--surface2);color:var(--text);}
+.login-card input:focus{outline:none;border-color:var(--accent);background:var(--surface);}
+.login-card button{width:100%;padding:12px;border:none;border-radius:10px;background:var(--grad);color:#fff;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;margin-top:4px;}
+.login-card button:disabled{opacity:0.6;cursor:default;}
+.login-card .error{color:var(--danger);font-size:12.5px;margin-top:10px;text-align:center;display:none;}
+
+/* ── DASHBOARD ────────────────────────────────────────────────── */
+#dashboard{display:none;min-height:100vh;flex-direction:column;}
+.topbar{padding:14px 28px;background:var(--surface);display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--border2);flex-shrink:0;}
+.tb-icon{width:36px;height:36px;border-radius:11px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 12px rgba(13,148,136,0.3);}
+.tb-icon svg{width:19px;height:19px;stroke:#fff;}
+.tb-title{font-weight:800;font-size:15px;color:var(--text);}
+.tb-sub{font-size:11px;color:var(--muted);}
+.tb-right{margin-left:auto;display:flex;align-items:center;gap:10px;}
+.tb-user{font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:20px;background:var(--accent-soft);border:1px solid var(--accent-border);color:var(--accent);}
+.logout-btn{font-family:inherit;font-size:11.5px;font-weight:700;padding:8px 14px;border-radius:9px;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);cursor:pointer;}
+.logout-btn:hover{background:var(--danger-soft);color:var(--danger);border-color:transparent;}
+.cache-btn{font-family:inherit;font-size:11.5px;font-weight:700;padding:8px 14px;border-radius:9px;border:1px solid var(--warn-soft);background:#fffbeb;color:var(--warn);cursor:pointer;display:inline-flex;align-items:center;gap:6px;}
+.cache-btn:hover{background:var(--warn-soft);border-color:transparent;}
+.cache-btn:disabled{opacity:0.6;cursor:default;}
+.cache-btn svg{width:13px;height:13px;stroke:currentColor;flex-shrink:0;}
+.clear-mod-cache{font-family:inherit;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:7px;border:1px solid var(--border2);background:var(--surface);color:var(--text2);cursor:pointer;margin-left:8px;}
+.clear-mod-cache:hover{background:var(--warn-soft);color:var(--warn);border-color:transparent;}
+.clear-mod-cache:disabled{opacity:0.6;cursor:default;}
+
+.main{flex:1;padding:26px 28px 40px;max-width:1120px;width:100%;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:22px;align-items:start;}
+@media(max-width:860px){.main{grid-template-columns:1fr;}}
+
+.card{background:var(--surface);border:1px solid var(--border2);border-radius:16px;padding:20px;}
+.card h2{font-size:13px;margin:0 0 4px;color:var(--text);}
+.card .card-sub{font-size:11px;color:var(--muted);margin-bottom:16px;}
+
+/* module grid */
+.mod-grid{display:flex;flex-direction:column;gap:6px;max-height:520px;overflow-y:auto;}
+.mod-btn{display:flex;align-items:center;gap:10px;width:100%;padding:10px 12px;border-radius:10px;border:1.5px solid var(--border2);background:var(--surface2);color:var(--text);font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;text-align:left;}
+.mod-btn:hover{border-color:var(--accent);background:var(--accent-soft);}
+.mod-btn.active{border-color:var(--accent);background:var(--accent-soft);color:var(--accent2);}
+.mod-btn .mi{font-size:15px;flex-shrink:0;}
+.mod-btn .ml{flex:1;}
+.mod-btn .ml .mdesc{font-weight:400;color:var(--muted);font-size:10.5px;display:block;margin-top:1px;}
+.mod-grid::-webkit-scrollbar{width:4px;}
+.mod-grid::-webkit-scrollbar-thumb{background:rgba(13,148,136,0.2);border-radius:4px;}
+
+/* right column stacks upload + library */
+.right-col{display:flex;flex-direction:column;gap:22px;}
+
+.dropzone{border:2px dashed var(--accent-border);border-radius:14px;padding:30px 20px;text-align:center;background:var(--accent-soft);cursor:pointer;transition:all .15s;}
+.dropzone:hover,.dropzone.drag{border-color:var(--accent);background:rgba(13,148,136,0.14);}
+.dropzone svg{width:30px;height:30px;stroke:var(--accent);margin-bottom:8px;}
+.dropzone .dz-main{font-size:13px;font-weight:700;color:var(--text);}
+.dropzone .dz-sub{font-size:11px;color:var(--muted);margin-top:3px;}
+.dropzone input{display:none;}
+.active-mod-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--accent2);background:var(--surface);border:1px solid var(--accent-border);padding:4px 10px;border-radius:20px;margin-bottom:14px;}
+.no-mod-warn{font-size:11.5px;color:var(--warn);background:var(--warn-soft);border:1px solid rgba(180,83,9,0.2);padding:8px 12px;border-radius:9px;margin-bottom:14px;display:none;}
+.no-mod-warn.show{display:block;}
+
+/* queue */
+.queue{display:flex;flex-direction:column;gap:10px;margin-top:16px;}
+.queue:empty::before{content:'No uploads yet. Files you add will appear here with live status.';font-size:11.5px;color:var(--muted);font-style:italic;}
+.q-item{border:1px solid var(--border2);border-radius:12px;padding:12px 14px;background:var(--surface2);}
+.q-top{display:flex;align-items:center;gap:10px;}
+.q-icon{width:30px;height:30px;border-radius:9px;background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;border:1px solid var(--border2);}
+.q-info{flex:1;min-width:0;}
+.q-name{font-size:12.5px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.q-meta{font-size:10.5px;color:var(--muted);margin-top:1px;}
+.q-pill{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:3px 9px;border-radius:20px;flex-shrink:0;white-space:nowrap;}
+.q-pill.pending{background:#e5e7eb;color:#4b5563;}
+.q-pill.uploading{background:#dbeafe;color:#1d4ed8;}
+.q-pill.processing{background:var(--warn-soft);color:var(--warn);}
+.q-pill.done{background:#dcfce7;color:#15803d;}
+.q-pill.failed{background:var(--danger-soft);color:var(--danger);}
+.q-bar-track{height:4px;border-radius:3px;background:var(--border2);margin-top:9px;overflow:hidden;}
+.q-bar-fill{height:100%;background:var(--grad);width:0%;transition:width .15s;}
+.q-result{font-size:11px;color:var(--text2);margin-top:8px;line-height:1.5;}
+.q-result em{color:var(--muted);}
+.q-error{font-size:11px;color:var(--danger);margin-top:8px;}
+.q-retry{margin-top:8px;font-family:inherit;font-size:10.5px;font-weight:700;padding:5px 11px;border-radius:7px;border:1px solid var(--danger);background:none;color:var(--danger);cursor:pointer;}
+.q-retry:hover{background:var(--danger-soft);}
+
+/* pending meta form (machine name + tag, required before vectorizing) */
+.q-meta-form{margin-top:10px;display:flex;flex-direction:column;gap:7px;}
+.q-meta-row{display:flex;gap:7px;}
+.q-meta-row input{flex:1;min-width:0;padding:8px 10px;border:1.5px solid var(--border2);border-radius:8px;font-size:12px;font-family:inherit;background:var(--surface);color:var(--text);}
+.q-meta-row input:focus{outline:none;border-color:var(--accent);}
+.q-meta-row input.q-invalid{border-color:var(--danger);}
+.q-meta-hint{font-size:10px;color:var(--muted);}
+.q-vectorize-btn{font-family:inherit;font-size:11.5px;font-weight:700;padding:8px 12px;border-radius:8px;border:none;background:var(--grad);color:#fff;cursor:pointer;}
+.q-vectorize-btn:disabled{opacity:.45;cursor:not-allowed;}
+.q-remove-btn{font-family:inherit;font-size:10.5px;font-weight:600;padding:8px 10px;border-radius:8px;border:1px solid var(--border2);background:none;color:var(--text2);cursor:pointer;}
+.lib-tags{display:flex;gap:6px;margin-top:4px;flex-wrap:wrap;}
+.lib-badge{font-size:9.5px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--accent-soft);border:1px solid var(--accent-border);color:var(--accent2);}
+
+/* library */
+.lib-list{display:flex;flex-direction:column;gap:8px;max-height:360px;overflow-y:auto;}
+.lib-list::-webkit-scrollbar{width:4px;}
+.lib-list::-webkit-scrollbar-thumb{background:rgba(13,148,136,0.2);border-radius:4px;}
+.lib-empty{font-size:11.5px;color:var(--muted);font-style:italic;}
+.lib-item{border:1px solid var(--border2);border-radius:10px;padding:9px 12px;background:var(--surface2);}
+.lib-name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+.lib-name{font-size:12px;font-weight:700;color:var(--text);}
+.lib-del{flex-shrink:0;font-family:inherit;font-size:9.5px;font-weight:700;padding:3px 8px;border-radius:6px;border:1px solid var(--danger);background:none;color:var(--danger);cursor:pointer;}
+.lib-del:hover{background:var(--danger-soft);}
+.lib-del:disabled{opacity:.5;cursor:not-allowed;}
+.lib-ctx{font-size:10.5px;color:var(--text2);margin-top:2px;line-height:1.45;}
+.lib-meta{font-size:9.5px;color:var(--muted);margin-top:4px;}
+
+.spinner{display:inline-block;width:10px;height:10px;border:2px solid rgba(0,0,0,0.15);border-top-color:currentColor;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-1px;margin-right:4px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+</style>
+</head>
+<body>
+
+<!-- ── LOGIN SCREEN ─────────────────────────────────────────────── -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="9.5" r="3.2"></circle><path d="M6.2 18.2a6.2 6.2 0 0 1 11.6 0"></path></svg></div>
+    <h1>Admin Sign In</h1>
+    <div class="sub">Sign in to upload and manage module documents</div>
+    <form onsubmit="handleLogin(event)">
+      <input type="text" id="username" placeholder="Username" autocomplete="username" required>
+      <input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+      <button type="submit" id="login-btn">Sign In</button>
+      <div class="error" id="login-error">Invalid credentials</div>
+    </form>
+  </div>
+</div>
+
+<!-- ── DASHBOARD ────────────────────────────────────────────────── -->
+<div id="dashboard">
+  <div class="topbar">
+    <div class="tb-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="9.5" r="3.2"></circle><path d="M6.2 18.2a6.2 6.2 0 0 1 11.6 0"></path></svg></div>
+    <div>
+      <div class="tb-title">Document Admin Console</div>
+      <div class="tb-sub">Upload &amp; manage documents across modules</div>
+    </div>
+    <div class="tb-right">
+      <a class="logout-btn" id="back-link" href="#" style="display:none;text-decoration:none;">← Back to Knowledge Hub</a>
+      <button class="cache-btn" id="clear-cache-btn" onclick="clearAllCache()" title="Clear all cached answers (all modules)">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path></svg>
+        Clear Cache
+      </button>
+      <span class="tb-user" id="tb-user"></span>
+    </div>
+  </div>
+
+  <div class="main">
+    <!-- Module picker -->
+    <div class="card">
+      <h2>Modules</h2>
+      <div class="card-sub">Pick the module new uploads belong to</div>
+      <div class="mod-grid" id="mod-grid"></div>
+    </div>
+
+    <div class="right-col">
+      <!-- Upload -->
+      <div class="card">
+        <h2>Upload Documents</h2>
+        <div class="card-sub">Add PDF, DOCX, or TXT files. For each one, enter a machine name and tag before it can be vectorized — add as many as you like, each processes independently.</div>
+
+        <div class="active-mod-tag" id="active-mod-tag" style="display:none;"></div>
+        <button class="clear-mod-cache" id="clear-mod-cache-btn" style="display:none;" onclick="clearModuleCache()">Clear cache for this module</button>
+        <div class="no-mod-warn" id="no-mod-warn">Select a module on the left before adding files.</div>
+
+        <div class="dropzone" id="dropzone" onclick="document.getElementById('file-input').click()">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M12 4l-4 4M12 4l4 4"></path><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"></path></svg>
+          <div class="dz-main">Click to browse, or drag files here</div>
+          <div class="dz-sub">You can select multiple files at once</div>
+          <input type="file" id="file-input" multiple accept=".pdf,.docx,.txt">
+        </div>
+
+        <div class="queue" id="queue"></div>
+      </div>
+
+      <!-- Library -->
+      <div class="card">
+        <h2>Library <span id="lib-mod-name" style="color:var(--muted);font-weight:500;"></span></h2>
+        <div class="card-sub">Documents already stored for the selected module</div>
+        <div class="lib-list" id="lib-list"><div class="lib-empty">Select a module to view its documents.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API_BASE = '';
+let sessionToken = sessionStorage.getItem('docbot_admin_token') || null;
+let sessionUser  = sessionStorage.getItem('docbot_admin_user') || null;
+let activeModule = null;
+let modules = [];
+let queueSeq = 0;
+
+function authHeaders(json=true){
+  const h = {};
+  if(json) h['Content-Type']='application/json';
+  if(sessionToken) h['Authorization'] = `Bearer ${sessionToken}`;
+  return h;
+}
+
+// Wrapper around fetch for authenticated calls: if the session has expired
+// or been revoked mid-use, bounce straight back to a clean login screen
+// instead of leaving the dashboard stuck on a failed request.
+async function authFetch(url, options={}){
+  const res = await fetch(url, options);
+  if(res.status === 401){
+    await handleLogout('Your session has expired. Please sign in again.');
+  }
+  return res;
+}
+
+// ── BOOT ─────────────────────────────────────────────────────────
+(async function boot(){
+  // 1) One-time handoff from the chat widget (different origin), passed via
+  //    URL hash since sessionStorage can't cross origins. Consume it, store
+  //    it locally on THIS origin, then scrub it from the URL immediately —
+  //    before any await — so it never lingers in history or gets shared.
+  const hashParams = new URLSearchParams(location.hash.replace(/^#/, ''));
+  const handoffToken = hashParams.get('handoff');
+  const returnUrl = hashParams.get('return');
+  if(handoffToken){
+    history.replaceState(null, '', location.pathname + location.search);
+    sessionToken = decodeURIComponent(handoffToken);
+    sessionStorage.setItem('docbot_admin_token', sessionToken);
+    if(returnUrl) sessionStorage.setItem('docbot_return_url', decodeURIComponent(returnUrl));
+  }
+  setupBackLink();
+
+  if(sessionToken){
+    // 2) Never trust a token blindly (whether handed off or restored from
+    //    this tab's own sessionStorage) — verify it against the backend and
+    //    confirm the ADMIN role before showing anything.
+    const me = await fetchCurrentUser();
+    if(me && (me.role || '').toUpperCase() === 'ADMIN'){
+      sessionUser = me.username;
+      sessionStorage.setItem('docbot_admin_user', sessionUser);
+      const ok = await loadModules();
+      if(ok){ showDashboard(); return; }
+    }
+    clearSession();
+    if(handoffToken){
+      showLogin('Your admin session couldn\'t be verified. Please sign in again.');
+      return;
+    }
+  }
+  showLogin();
+})();
+
+async function fetchCurrentUser(){
+  try{
+    const res = await fetch(`${API_BASE}/auth/me`, {headers: authHeaders(false)});
+    if(!res.ok) return null;
+    return await res.json();
+  }catch(e){ return null; }
+}
+
+function clearSession(){
+  sessionToken = null; sessionUser = null;
+  sessionStorage.removeItem('docbot_admin_token');
+  sessionStorage.removeItem('docbot_admin_user');
+}
+
+function setupBackLink(){
+  const url = sessionStorage.getItem('docbot_return_url');
+  const link = document.getElementById('back-link');
+  if(url){
+    link.href = url;
+    link.style.display = 'inline-flex';
+  }
+}
+
+function showLogin(message){
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('dashboard').style.display = 'none';
+  const errorEl = document.getElementById('login-error');
+  if(message){
+    errorEl.textContent = message;
+    errorEl.style.display = 'block';
+  } else {
+    errorEl.style.display = 'none';
+  }
+}
+function showDashboard(){
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('dashboard').style.display = 'flex';
+  document.getElementById('tb-user').textContent = sessionUser || 'Admin';
+  renderModules();
+}
+
+// ── LOGIN / LOGOUT ───────────────────────────────────────────────
+async function handleLogin(e){
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const errorEl = document.getElementById('login-error');
+  const btn = document.getElementById('login-btn');
+  errorEl.style.display = 'none';
+  btn.disabled = true;
+  try{
+    const res = await fetch(`${API_BASE}/auth/login`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({username, password})
+    });
+    const data = await res.json();
+    if(!res.ok){ throw new Error(data.detail || 'Invalid credentials'); }
+    if((data.role || '').toUpperCase() !== 'ADMIN'){ throw new Error('Access denied. Admin privileges required.'); }
+    sessionToken = data.token;
+    sessionUser = data.username;
+    sessionStorage.setItem('docbot_admin_token', sessionToken);
+    sessionStorage.setItem('docbot_admin_user', sessionUser);
+    const ok = await loadModules();
+    if(!ok){ throw new Error('Signed in, but could not load modules. Please try again.'); }
+    showDashboard();
+  }catch(err){
+    errorEl.textContent = err.message || 'Connection error';
+    errorEl.style.display = 'block';
+  }finally{
+    btn.disabled = false;
+  }
+}
+
+async function handleLogout(silentMessage){
+  if(sessionToken){
+    try{ await fetch(`${API_BASE}/auth/logout`, {method:'POST', headers:{'Authorization':`Bearer ${sessionToken}`}}); }catch(e){}
+  }
+  clearSession();
+  activeModule = null;
+  document.getElementById('queue').innerHTML = '';
+  document.getElementById('username').value = '';
+  document.getElementById('password').value = '';
+  showLogin(silentMessage);
+}
+
+// ── MODULES ──────────────────────────────────────────────────────
+async function loadModules(){
+  try{
+    const res = await fetch(`${API_BASE}/supervisor/modules`, {headers: authHeaders()});
+    if(res.status === 401) return false; // boot() handles the redirect to login
+    if(!res.ok) return false;
+    modules = await res.json();
+    return true;
+  }catch(e){ return false; }
+}
+
+function renderModules(){
+  const grid = document.getElementById('mod-grid');
+  grid.innerHTML = modules.map(m => `
+    <button class="mod-btn" id="mod-${m.id}" onclick="selectModule('${m.id}')">
+      <span class="mi">${m.icon || '📁'}</span>
+      <span class="ml">${m.label}<span class="mdesc">${m.description || ''}</span></span>
+    </button>`).join('');
+}
+
+function selectModule(id){
+  activeModule = id;
+  document.querySelectorAll('.mod-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById(`mod-${id}`);
+  if(btn) btn.classList.add('active');
+
+  const mod = modules.find(m => m.id === id);
+  const tag = document.getElementById('active-mod-tag');
+  tag.style.display = 'inline-flex';
+  tag.textContent = `${mod?.icon || '📁'} Uploading to: ${mod?.label || id}`;
+  document.getElementById('no-mod-warn').classList.remove('show');
+  document.getElementById('clear-mod-cache-btn').style.display = 'inline-block';
+
+  document.getElementById('lib-mod-name').textContent = `— ${mod?.label || id}`;
+  loadLibrary(id);
+}
+
+// ── LIBRARY (existing documents in the selected module) ─────────
+async function loadLibrary(moduleId){
+  const list = document.getElementById('lib-list');
+  list.innerHTML = '<div class="lib-empty"><span class="spinner"></span>Loading...</div>';
+  try{
+    const res = await authFetch(`${API_BASE}/enduser/modules/${encodeURIComponent(moduleId)}/documents`, {headers: authHeaders()});
+    if(res.status === 401) return; // authFetch already redirected to login
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const docs = await res.json();
+    if(!docs.length){ list.innerHTML = '<div class="lib-empty">No documents uploaded to this module yet.</div>'; return; }
+    list.innerHTML = docs.map(d => `
+      <div class="lib-item">
+        <div class="lib-name-row">
+          <div class="lib-name">📄 ${escapeHtml(d.document_name)}</div>
+          <button class="lib-del" onclick='deleteDocument(${JSON.stringify(moduleId)}, ${JSON.stringify(d.document_id)}, ${JSON.stringify(d.document_name)}, this)'>Delete</button>
+        </div>
+        <div class="lib-tags">
+          ${d.machine_name ? `<span class="lib-badge">🏭 ${escapeHtml(d.machine_name)}</span>` : ''}
+          ${d.tag ? `<span class="lib-badge">🏷️ ${escapeHtml(d.tag)}</span>` : ''}
+        </div>
+        <div class="lib-ctx">${escapeHtml(d.short_context || '')}</div>
+        <div class="lib-meta">${d.chunk_count} chunk${d.chunk_count===1?'':'s'} · uploaded ${formatDate(d.uploaded_at)}</div>
+      </div>`).join('');
+  }catch(err){
+    list.innerHTML = `<div class="lib-empty">Couldn't load documents: ${escapeHtml(err.message)}</div>`;
+  }
+}
+
+async function deleteDocument(moduleId, documentId, documentName, btn){
+  if(!confirm(`Delete "${documentName}"? This removes it from the knowledge base and can't be undone.`)) return;
+  btn.disabled = true;
+  btn.textContent = 'Deleting...';
+  try{
+    const res = await authFetch(`${API_BASE}/supervisor/modules/${encodeURIComponent(moduleId)}/documents/${encodeURIComponent(documentId)}`, {
+      method: 'DELETE', headers: authHeaders()
+    });
+    if(res.status === 401) return;
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    loadLibrary(moduleId);
+  }catch(err){
+    alert(`Couldn't delete document: ${err.message}`);
+    btn.disabled = false;
+    btn.textContent = 'Delete';
+  }
+}
+
+// ── CACHE CLEARING (answer cache -- Redis exact/semantic caches only; ────
+// document embeddings in Qdrant are untouched. Useful right after editing
+// or re-uploading a document, so end users stop getting an old cached
+// answer instead of one grounded in the new content) ────────────────────
+async function postCacheClear(query, btn, busyLabel){
+  const originalLabel = btn.innerHTML;
+  btn.disabled = true;
+  if(busyLabel) btn.textContent = busyLabel;
+  try{
+    const res = await authFetch(`${API_BASE}/cache/clear${query}`, {
+      method: 'POST', headers: authHeaders()
+    });
+    if(res.status === 401) return;
+    const data = await res.json().catch(() => ({}));
+    if(!res.ok) throw new Error(data.detail || `HTTP ${res.status}`);
+    alert(data.message || data.error || 'Cache cleared.');
+  }catch(err){
+    alert(`Couldn't clear cache: ${err.message}`);
+  }finally{
+    btn.disabled = false;
+    btn.innerHTML = originalLabel;
+  }
+}
+
+function clearAllCache(){
+  if(!confirm('Clear the cached answers for every module? End users will get fresh (slower) answers until the cache warms back up.')) return;
+  postCacheClear('', document.getElementById('clear-cache-btn'));
+}
+
+function clearModuleCache(){
+  if(!activeModule) return;
+  const mod = modules.find(m => m.id === activeModule);
+  const label = mod?.label || activeModule;
+  if(!confirm(`Clear cached answers for "${label}" only?`)) return;
+  postCacheClear(`?module=${encodeURIComponent(activeModule)}`, document.getElementById('clear-mod-cache-btn'), 'Clearing...');
+}
+
+function formatDate(iso){
+  if(!iso) return '—';
+  try{ return new Date(iso).toLocaleString(); }catch(e){ return iso; }
+}
+function escapeHtml(s){
+  const d = document.createElement('div');
+  d.textContent = s == null ? '' : String(s);
+  return d.innerHTML;
+}
+
+// ── FILE SELECTION (click / drag-drop) ───────────────────────────
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('file-input');
+
+fileInput.addEventListener('change', () => {
+  handleFiles(fileInput.files);
+  fileInput.value = '';
+});
+['dragenter','dragover'].forEach(evt => dropzone.addEventListener(evt, e => {
+  e.preventDefault(); dropzone.classList.add('drag');
+}));
+['dragleave','drop'].forEach(evt => dropzone.addEventListener(evt, e => {
+  e.preventDefault(); dropzone.classList.remove('drag');
+}));
+dropzone.addEventListener('drop', e => {
+  if(e.dataTransfer?.files?.length) handleFiles(e.dataTransfer.files);
+});
+
+function handleFiles(fileList){
+  if(!activeModule){
+    document.getElementById('no-mod-warn').classList.add('show');
+    return;
+  }
+  Array.from(fileList).forEach(file => queueUpload(file, activeModule));
+}
+
+// ── UPLOAD QUEUE (each file uploads independently, concurrently) ─
+// New files land in 'pending' status: they sit with a machine-name + tag
+// form until both are filled in, and only then can "Vectorize" be pressed.
+// Nothing is sent to the server until that happens — the file never
+// auto-uploads on drop/select anymore.
+function queueUpload(file, moduleId){
+  const id = 'q' + (++queueSeq);
+  const mod = modules.find(m => m.id === moduleId);
+  const item = {
+    id, file, moduleId,
+    modLabel: mod ? `${mod.icon || ''} ${mod.label}` : moduleId,
+    status: 'pending',
+    machineName: '',
+    tag: ''
+  };
+  queueItems[item.id] = item;
+  renderQueueItem(item);
+}
+
+function renderQueueItem(item){
+  const q = document.getElementById('queue');
+  let el = document.getElementById(item.id);
+  if(!el){
+    el = document.createElement('div');
+    el.className = 'q-item';
+    el.id = item.id;
+    q.prepend(el);
+  }
+
+  const pillMap = {
+    pending:    'Needs details',
+    uploading:  'Uploading',
+    processing: 'Processing',
+    done:       'Done',
+    failed:     'Failed'
+  };
+  const showSpinner = item.status === 'uploading' || item.status === 'processing';
+  const sizeKb = (item.file.size / 1024).toFixed(0);
+
+  let bodyExtra = '';
+  if(item.status === 'pending'){
+    const canVectorize = item.machineName.trim() && item.tag.trim();
+    bodyExtra = `
+      <div class="q-meta-form">
+        <div class="q-meta-row">
+          <input type="text" placeholder="Machine name (required)" value="${escapeHtml(item.machineName)}"
+                 oninput="updateQueueField('${item.id}','machineName',this.value)">
+          <input type="text" placeholder="Tag (required)" value="${escapeHtml(item.tag)}"
+                 oninput="updateQueueField('${item.id}','tag',this.value)">
+        </div>
+        <div class="q-meta-hint">Both fields are required — vectorizing is disabled until they're filled in.</div>
+        <div class="q-meta-row">
+          <button class="q-vectorize-btn" ${canVectorize ? '' : 'disabled'} onclick="startVectorize('${item.id}')">Vectorize</button>
+          <button class="q-remove-btn" onclick="removeQueueItem('${item.id}')">Remove</button>
+        </div>
+      </div>`;
+  } else if(item.status === 'uploading'){
+    bodyExtra = `<div class="q-bar-track"><div class="q-bar-fill" style="width:${item.progress||0}%"></div></div>`;
+  } else if(item.status === 'processing'){
+    bodyExtra = `<div class="q-result"><em>Extracting text (tables preserved as Markdown), chunking, and embedding into Qdrant...</em></div>`;
+  } else if(item.status === 'done'){
+    bodyExtra = `<div class="q-result">✅ Stored under <strong>${escapeHtml(item.result.module)}</strong> — machine <strong>${escapeHtml(item.result.machine_name)}</strong>, tag <strong>${escapeHtml(item.result.tag)}</strong> — ${item.result.chunks} chunk${item.result.chunks===1?'':'s'}.<br><em>${escapeHtml(item.result.short_context || '')}</em></div>`;
+  } else if(item.status === 'failed'){
+    bodyExtra = `<div class="q-error">❌ ${escapeHtml(item.error || 'Upload failed')}</div><button class="q-retry" onclick="retryUpload('${item.id}')">Retry</button>`;
+  }
+
+  el.innerHTML = `
+    <div class="q-top">
+      <div class="q-icon">📄</div>
+      <div class="q-info">
+        <div class="q-name" title="${escapeHtml(item.file.name)}">${escapeHtml(item.file.name)}</div>
+        <div class="q-meta">${item.modLabel} · ${sizeKb} KB</div>
+      </div>
+      <div class="q-pill ${item.status}">${showSpinner ? '<span class="spinner"></span>' : ''}${pillMap[item.status]}</div>
+    </div>
+    ${bodyExtra}`;
+}
+
+const queueItems = {};
+
+function updateQueueField(id, field, value){
+  const item = queueItems[id];
+  if(!item) return;
+  item[field] = value;
+  // Only re-render the Vectorize button's disabled state, not the whole
+  // form — a full re-render would blow away focus/cursor position while typing.
+  const el = document.getElementById(id);
+  if(!el) return;
+  const btn = el.querySelector('.q-vectorize-btn');
+  if(btn) btn.disabled = !(item.machineName.trim() && item.tag.trim());
+}
+
+function removeQueueItem(id){
+  delete queueItems[id];
+  const el = document.getElementById(id);
+  if(el) el.remove();
+}
+
+function startVectorize(id){
+  const item = queueItems[id];
+  if(!item) return;
+  if(!item.machineName.trim() || !item.tag.trim()) return; // guarded, but double-check
+  runUpload(item);
+}
+
+function runUpload(item){
+  item.status = 'uploading';
+  item.progress = 0;
+  renderQueueItem(item);
+
+  const form = new FormData();
+  form.append('module', item.moduleId);
+  form.append('machine_name', item.machineName.trim());
+  form.append('tag', item.tag.trim());
+  form.append('file', item.file);
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', `${API_BASE}/supervisor/upload`);
+  if(sessionToken) xhr.setRequestHeader('Authorization', `Bearer ${sessionToken}`);
+
+  xhr.upload.onprogress = (e) => {
+    if(e.lengthComputable){
+      item.progress = Math.round((e.loaded / e.total) * 100);
+      if(item.status === 'uploading') renderQueueItem(item);
+    }
+  };
+  xhr.upload.onload = () => {
+    item.status = 'processing';
+    renderQueueItem(item);
+  };
+  xhr.onload = () => {
+    let data = {};
+    try{ data = JSON.parse(xhr.responseText); }catch(e){}
+    if(xhr.status >= 200 && xhr.status < 300){
+      item.status = 'done';
+      item.result = data;
+      renderQueueItem(item);
+      if(item.moduleId === activeModule) loadLibrary(activeModule);
+    } else if(xhr.status === 401){
+      item.status = 'failed';
+      item.error = 'Session expired — please sign in again.';
+      renderQueueItem(item);
+      handleLogout('Your session has expired. Please sign in again.');
+    } else {
+      item.status = 'failed';
+      item.error = data.detail || `Upload failed (HTTP ${xhr.status})`;
+      renderQueueItem(item);
+    }
+  };
+  xhr.onerror = () => {
+    item.status = 'failed';
+    item.error = 'Connection error during upload.';
+    renderQueueItem(item);
+  };
+  xhr.send(form);
+}
+
+function retryUpload(id){
+  const item = queueItems[id];
+  if(item) runUpload(item);
+}
+</script>
+</body>
+</html>

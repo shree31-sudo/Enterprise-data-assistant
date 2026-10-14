@@ -1,0 +1,35 @@
+MFC MODULE — TABLE SELECTION RULES
+
+Format: ROOT → children. Anchor on ROOT for identity questions; use children for detail questions. Include ROOT alongside a child only when identity/name context is needed.
+
+1. ITEM → MFC_M_ITEM
+   Children: MFC_L_ITEM_PLANT, MFC_L_ITEM_PROPERTY, MFC_L_ITEM_ROUTING, MFC_L_ITEM_ATTRIBUTE, MFC_L_ITEM_BARCODE, MFC_L_ITEM_CONTAINER_QUANTITY, MFC_L_ITEM_PHYSICAL_ATTRIBUTES
+   Rule: item plant/property/routing/barcode/attribute questions → matching L_ table (+ MFC_M_ITEM if item name/identity needed).
+
+2. BOM → MFC_M_BOM_HEADER
+   Children: MFC_L_BOM_LINE_ITEM (components/materials), MFC_L_BOM_PLANT (plant applicability)
+   Rule: header-only questions → MFC_M_BOM_HEADER. Component/material questions require MFC_L_BOM_LINE_ITEM.
+
+3. ROUTING → MFC_M_ROUTING_HEADER
+   Children: MFC_L_ROUTING_LINE_ITEM (steps/sequence)
+   Rule: step/sequence questions require the line-item table, not just the header.
+
+4. ERP OPERATION → MFC_M_ERP_OPERATION, MFC_M_LA_OPERATION
+   Rule: do not substitute for MBOM operation tables unless the join path explicitly connects them.
+
+5. UOM → MFC_M_UOM
+   Rule: only pull in when UOM meaning is directly asked, or a selected table FKs to UOM and description is needed.
+
+6. MBOM/OPERATIONS → MFC_M_MBOM_HEADER
+   Children: MFC_L_MBOM (structure), MFC_L_MBOM_LA_OPERATION (operation link), MFC_L_MBOM_OPERATION_INSPECTION_RULE, MFC_L_MBOM_OPERATION_PART, MFC_L_OPERATION_DATA_TEMPLATES, MFC_L_OPERATION_EXECUTION_REASON, MFC_L_OPERATION_TOOL
+   Rule: operation-level questions must resolve to the specific child table — never stop at the header alone.
+
+7. IME → MFC_T_IME (current), MFC_T_IME_HISTORY (history)
+   Children: MFC_L_IME_REFERENCE (current), MFC_L_IME_REFERENCE_HISTORY (history)
+   Rule: current-state questions → non-history tables. History/trace/change questions → _HISTORY tables. Never mix current and history tables in one answer unless the question explicitly compares them.
+
+8. ITEM RECEIPT → MFC_TT_ITEM_RECEIPT
+   Children: MFC_TT_CONTAINER_ITEM_RECEIPT (container header), MFC_TT_CONTAINER_ITEM_RECEIPT_LINE_ITEM (received line items)
+   Rule: container-level questions → container receipt table. Specific received-item questions → line-item table.
+
+GLOBAL: Never select a child table without checking if its ROOT is also required for the question's identity context. Never guess a domain from keywords alone — match to the exact table listed under that domain.

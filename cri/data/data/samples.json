@@ -1,0 +1,29 @@
+{
+  "ENGINEERING_BOM": [
+    {
+      "module": "BOM Masters",
+      "question": "show all active BOM's present",
+      "sql": "SELECT MFC_M_BOM.BOM_Code, MFC_M_BOM.BOM_Name, CASE WHEN MFC_M_BOM.Status = 2 THEN 'Active' WHEN MFC_M_BOM.Status = 1 THEN 'Inactive' ELSE 'Unknown' END AS Status FROM MFC_M_BOM WHERE MFC_M_BOM.Status = 2;"
+    },
+    {
+      "module": "BOM Masters",
+      "question": "list out the bom along with its type",
+      "sql": "SELECT MFC_M_BOM.BOM_Code, MFC_M_BOM.BOM_Name, MFC_M_BOM_TYPE.BOM_Type_Name, CASE WHEN MFC_M_BOM.Status = 2 THEN 'Active' WHEN MFC_M_BOM.Status = 1 THEN 'Inactive' ELSE 'Unknown' END AS Status FROM MFC_M_BOM INNER JOIN MFC_M_BOM_TYPE ON MFC_M_BOM.BOM_Type_ID = MFC_M_BOM_TYPE.BOM_Type_ID;"
+    },
+    {
+      "module": "BOM Structure",
+      "question": "Show all BOM versions along with their version numbers",
+      "sql": "SELECT MFC_M_BOM.BOM_Code, MFC_M_BOM.BOM_Name, MFC_L_BOM_VERSION.Version_Number, CASE WHEN MFC_L_BOM_VERSION.Status = 2 THEN 'Active' WHEN MFC_L_BOM_VERSION.Status = 1 THEN 'Inactive' ELSE 'Unknown' END AS Status FROM MFC_L_BOM_VERSION INNER JOIN MFC_M_BOM ON MFC_L_BOM_VERSION.BOM_ID = MFC_M_BOM.BOM_ID WHERE MFC_M_BOM.BOM_Code IS NOT NULL;"
+    },
+    {
+      "module": "BOM Structure",
+      "question": "Show BOM component quantities and UOM details",
+      "sql": "SELECT MFC_M_BOM.BOM_Code, MFC_M_BOM.BOM_Name, MFC_L_BOM_COMPONENT.Item_ID AS Component_Item, MFC_L_BOM_COMPONENT.Quantity, CAST(MFC_L_BOM_COMPONENT.UOM_ID AS VARCHAR) AS UOM, CASE WHEN MFC_L_BOM_COMPONENT.Status = 2 THEN 'Active' WHEN MFC_L_BOM_COMPONENT.Status = 1 THEN 'Inactive' ELSE 'Unknown' END AS Status FROM MFC_L_BOM_COMPONENT INNER JOIN MFC_M_BOM ON MFC_L_BOM_COMPONENT.BOM_ID = MFC_M_BOM.BOM_ID WHERE MFC_M_BOM.BOM_Code IS NOT NULL AND MFC_L_BOM_COMPONENT.Status = 2 ORDER BY MFC_M_BOM.BOM_Code;"
+    },
+    {
+      "module": "BOM Structure",
+      "question": "Find active alternative BOMs available in the system",
+      "sql": "SELECT MFC_M_BOM.BOM_Code, MFC_M_BOM.BOM_Name, MFC_L_BOM_ALTERNATIVE.Alternative_BOM_ID, CASE WHEN MFC_L_BOM_ALTERNATIVE.Status = 2 THEN 'Active' WHEN MFC_L_BOM_ALTERNATIVE.Status = 1 THEN 'Inactive' ELSE 'Unknown' END AS Status FROM MFC_L_BOM_ALTERNATIVE INNER JOIN MFC_M_BOM ON MFC_L_BOM_ALTERNATIVE.BOM_ID = MFC_M_BOM.BOM_ID WHERE MFC_L_BOM_ALTERNATIVE.Status = 2 AND MFC_M_BOM.BOM_Code IS NOT NULL;"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-multipart      # required by FastAPI for the Form()/File() upload endpoint, even though nothing imports it directly
+jinja2                # required by Jinja2Templates
+httpx
+redis
+numpy
+pyodbc
+bcrypt
+python-dotenv
+sentence-transformers
+rank-bm25
+qdrant-client
+pdfplumber            # imported lazily inside the PDF-extraction function
+python-docx            # imported lazily as `from docx import Document`

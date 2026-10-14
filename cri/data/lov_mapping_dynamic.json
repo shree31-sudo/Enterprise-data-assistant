@@ -1,0 +1,6860 @@
+{
+    "ACM_L_APPROVAL_ROLE_LOG": {
+        "Approval_Status": {
+            "7567": {
+                "description": "Pending"
+            },
+            "7568": {
+                "description": "Completed"
+            }
+        }
+    },
+    "ACM_L_DATA_PRINT_COUNTRY_GROUP_MAPPING": {
+        "Country_Group_Name_VSP_ID": {
+            "7600": {
+                "description": "Made In India"
+            },
+            "7665": {
+                "description": "Brazil"
+            },
+            "7666": {
+                "description": "Mexico"
+            },
+            "7667": {
+                "description": "Philippines"
+            },
+            "7668": {
+                "description": "Spain"
+            },
+            "7669": {
+                "description": "South Africa"
+            },
+            "7670": {
+                "description": "Turkey"
+            },
+            "7671": {
+                "description": "USA"
+            },
+            "7672": {
+                "description": "Italy"
+            },
+            "7673": {
+                "description": "Bangladesh"
+            },
+            "7674": {
+                "description": "Indonesia"
+            }
+        }
+    },
+    "ACM_L_DATA_PRINT_IMAGE_UPLOAD": {
+        "Label_Type_VSP_ID": {
+            "6247": {
+                "description": "Name Plate"
+            },
+            "6248": {
+                "description": "Packing Slip"
+            },
+            "7771": {
+                "description": "Name Plate MF"
+            }
+        }
+    },
+    "ACM_L_DATA_PRINT_TEMPLATE_BORDER": {
+        "Label_Type_VSP_ID": {
+            "6247": {
+                "description": "Name Plate"
+            },
+            "6248": {
+                "description": "Packing Slip"
+            },
+            "7771": {
+                "description": "Name Plate MF"
+            }
+        },
+        "Template_Position_VSP_ID": {
+            "6157": {
+                "description": "Top Left"
+            }
+        }
+    },
+    "ACM_L_DATA_PRINT_TEMPLATE_COORDINATE": {
+        "Coordinate_Type_VSP_ID": {
+            "6155": {
+                "description": "With Coordinate"
+            }
+        }
+    },
+    "ACM_L_DATA_PRINT_TEMPLATE_FIELD": {
+        "Export_Dynamic_VSP_ID": {
+            "7553": {
+                "description": "SALES ORDER"
+            },
+            "7554": {
+                "description": "CUSTOMER PO"
+            },
+            "7555": {
+                "description": "Item Code"
+            },
+            "7558": {
+                "description": "DETAILS OF CONTENTS"
+            },
+            "7559": {
+                "description": "PACK DIMENSIONS"
+            },
+            "7560": {
+                "description": "GROSS WEGHT"
+            },
+            "7561": {
+                "description": "PACK NO"
+            },
+            "7562": {
+                "description": "FINAL DESTINATION"
+            },
+            "7563": {
+                "description": "PORT OF DISCHARGE"
+            },
+            "7564": {
+                "description": "CONSIGNEE SHIPPING MARK"
+            },
+            "7565": {
+                "description": "COUNTRY OF ORIGIN"
+            },
+            "7566": {
+                "description": "EXPORTER"
+            }
+        },
+        "Field_Data_Type_VSP_ID": {
+            "401": {
+                "description": "Text"
+            },
+            "6180": {
+                "description": "QR Code"
+            },
+            "6182": {
+                "description": "Shape"
+            },
+            "6184": {
+                "description": "Image"
+            },
+            "6181": {
+                "description": "Barcode"
+            }
+        },
+        "Field_Type_VSP_ID": {
+            "7677": {
+                "description": "Conditionally Static"
+            },
+            "7358": {
+                "description": "Conditionally Dynamic"
+            },
+            "6176": {
+                "description": "Dynamic"
+            },
+            "7552": {
+                "description": "Export Dynamic"
+            },
+            "6175": {
+                "description": "Static"
+            }
+        },
+        "Property_Name_VSP_ID": {
+            "5385": {
+                "description": "ZMM_AMPS"
+            },
+            "5387": {
+                "description": "ZMM_BEENUMBER"
+            },
+            "5389": {
+                "description": "ZMM_BRAND"
+            },
+            "5392": {
+                "description": "ZMM_CATEGORY"
+            },
+            "5393": {
+                "description": "ZMM_LOGO_CE"
+            },
+            "5396": {
+                "description": "ZMM_CONNECTION"
+            },
+            "5399": {
+                "description": "ZMM_DELIVERY"
+            },
+            "5400": {
+                "description": "ZMM_DISCHARGE"
+            },
+            "5404": {
+                "description": "ZMM_DUTY"
+            },
+            "5407": {
+                "description": "ZMM_FREQUENCY"
+            },
+            "5409": {
+                "description": "ZMM_GRWT_PSET"
+            },
+            "5411": {
+                "description": "ZMM_GRWT_MOTOR"
+            },
+            "5413": {
+                "description": "ZMM_GRWT_PUMP"
+            },
+            "5414": {
+                "description": "ZMM_HEAD"
+            },
+            "5417": {
+                "description": "ZMM_HEADRANGE"
+            },
+            "5418": {
+                "description": "ZMM_HEADING"
+            },
+            "5420": {
+                "description": "ZMM_INCH"
+            },
+            "5422": {
+                "description": "ZMM_ISI"
+            },
+            "5423": {
+                "description": "ZMM_ISIMOTOR"
+            },
+            "5424": {
+                "description": "ZMM_ISIPUMP"
+            },
+            "5425": {
+                "description": "ZMM_ISIPUMPSET"
+            },
+            "5426": {
+                "description": "ZMM_ISIREFERENCE"
+            },
+            "5430": {
+                "description": "ZMM_LABELPERIOD"
+            },
+            "5432": {
+                "description": "ZMM_LICENSE_CML_NO"
+            },
+            "5437": {
+                "description": "ZMM_MIN_BORE_SIZE"
+            },
+            "5441": {
+                "description": "ZMM_EFF_MOTOR"
+            },
+            "5444": {
+                "description": "ZMM_MOTORSERIES"
+            },
+            "5445": {
+                "description": "ZMM_MOTOR_TYPE"
+            },
+            "5446": {
+                "description": "ZMM_NEWT_PSET"
+            },
+            "5448": {
+                "description": "ZMM_NEWT_MOTOR"
+            },
+            "5450": {
+                "description": "ZMM_NEWT_PUMP"
+            },
+            "5452": {
+                "description": "ZMM_OUTLET"
+            },
+            "5453": {
+                "description": "ZMM_EFF_OVRALL"
+            },
+            "5458": {
+                "description": "ZMM_PHASE"
+            },
+            "5460": {
+                "description": "ZMM_PRESSURE"
+            },
+            "5462": {
+                "description": "ZMM_PUMPFLOWTYPE"
+            },
+            "5464": {
+                "description": "ZMM_PUMP_MODEL"
+            },
+            "5466": {
+                "description": "ZMM_PUMPSET_MODEL"
+            },
+            "5468": {
+                "description": "ZMM_RATEDPOWER"
+            },
+            "5473": {
+                "description": "ZMM_SPEED"
+            },
+            "5474": {
+                "description": "ZMM_STAGES"
+            },
+            "5475": {
+                "description": "ZMM_SUBMERGENCE"
+            },
+            "5476": {
+                "description": "ZMM_SUCTION"
+            },
+            "5478": {
+                "description": "ZMM_SUPPLYSOURCE"
+            },
+            "5485": {
+                "description": "ZMM_VOLTS"
+            },
+            "5894": {
+                "description": "Motor Model"
+            },
+            "5897": {
+                "description": "ZMM_BEESTAR"
+            },
+            "6215": {
+                "description": "ZMM_MODELYEAR"
+            },
+            "6216": {
+                "description": "ZMM_PERFORMANCE_FACTOR"
+            }
+        },
+        "Shape_Type_VSP_ID": {
+            "6189": {
+                "description": "Square"
+            },
+            "6190": {
+                "description": "Rectangle"
+            },
+            "6193": {
+                "description": "Line"
+            }
+        },
+        "Static_Name_VSP_ID": {
+            "39": {
+                "description": "Weak"
+            },
+            "41": {
+                "description": "OTP Message"
+            },
+            "86": {
+                "description": "Plant_Division"
+            },
+            "119": {
+                "description": "work ethic"
+            },
+            "127": {
+                "description": "Male"
+            },
+            "211": {
+                "description": "Device_Movement_History"
+            },
+            "213": {
+                "description": "Rule"
+            },
+            "225": {
+                "description": "Innovation"
+            },
+            "227": {
+                "description": "Machine Learning"
+            },
+            "258": {
+                "description": "March"
+            },
+            "278": {
+                "description": "Server to Gateway interaction"
+            },
+            "280": {
+                "description": "CRI"
+            },
+            "282": {
+                "description": "Supplier"
+            },
+            "290": {
+                "description": "Material Gate In"
+            },
+            "292": {
+                "description": "Maximum Value"
+            },
+            "294": {
+                "description": "Email_Alert"
+            },
+            "296": {
+                "description": "Item Model Type"
+            },
+            "317": {
+                "description": "Vehicle Inward"
+            },
+            "350": {
+                "description": "Sub Inventory"
+            },
+            "352": {
+                "description": "Storage Location Row Rack"
+            },
+            "354": {
+                "description": "Locator Items"
+            },
+            "356": {
+                "description": "Time Dependen"
+            },
+            "358": {
+                "description": "July, August and September (Q2)"
+            },
+            "360": {
+                "description": "January, February and March (Q4)"
+            },
+            "362": {
+                "description": "Broadcast"
+            },
+            "364": {
+                "description": "Item Receipt"
+            },
+            "366": {
+                "description": "Ransar I warehouse"
+            },
+            "368": {
+                "description": "Calibration Template Details"
+            },
+            "370": {
+                "description": "Calibration"
+            },
+            "372": {
+                "description": "America"
+            },
+            "374": {
+                "description": "Storage"
+            },
+            "376": {
+                "description": "Low Frequency"
+            },
+            "406": {
+                "description": "Output"
+            },
+            "409": {
+                "description": "Pending"
+            },
+            "411": {
+                "description": "Started"
+            },
+            "413": {
+                "description": "Creating an agenda"
+            },
+            "417": {
+                "description": "WareHouse"
+            },
+            "419": {
+                "description": "Text"
+            },
+            "421": {
+                "description": "Visualforce"
+            },
+            "423": {
+                "description": "mm"
+            },
+            "425": {
+                "description": "cm"
+            },
+            "427": {
+                "description": "Pin Diameter"
+            },
+            "429": {
+                "description": "Estimated Time of Delivery"
+            },
+            "433": {
+                "description": "Sequence Rule Page"
+            },
+            "441": {
+                "description": "Created"
+            },
+            "462": {
+                "description": "June Month"
+            },
+            "466": {
+                "description": "October Month"
+            },
+            "468": {
+                "description": "December Month"
+            },
+            "470": {
+                "description": "Calibration Transaction"
+            },
+            "472": {
+                "description": "Calibration transaction Details"
+            },
+            "474": {
+                "description": "Completed"
+            },
+            "478": {
+                "description": "Declined"
+            },
+            "480": {
+                "description": "Disputed"
+            },
+            "482": {
+                "description": "Partially Shipped"
+            },
+            "484": {
+                "description": "In Progress"
+            },
+            "486": {
+                "description": "Customer Order Line Not Started"
+            },
+            "584": {
+                "description": "pre release"
+            },
+            "588": {
+                "description": "Material Ou"
+            },
+            "592": {
+                "description": "Material_Kit_To_Line_Store_Transaction"
+            },
+            "594": {
+                "description": "Ware"
+            },
+            "604": {
+                "description": "Work_Instruction_Header"
+            },
+            "606": {
+                "description": "Customer Order"
+            },
+            "608": {
+                "description": "API Settings"
+            },
+            "610": {
+                "description": "Department"
+            },
+            "612": {
+                "description": "In Progress"
+            },
+            "627": {
+                "description": "Packing Materials"
+            },
+            "631": {
+                "description": "Assembly ISO BIN"
+            },
+            "633": {
+                "description": "Accepted Status"
+            },
+            "635": {
+                "description": "Received"
+            },
+            "637": {
+                "description": "Warehouse"
+            },
+            "639": {
+                "description": "Hindi"
+            },
+            "643": {
+                "description": "By Air"
+            },
+            "645": {
+                "description": "Location Details"
+            },
+            "808": {
+                "description": "Body"
+            },
+            "814": {
+                "description": "Medium Container"
+            },
+            "816": {
+                "description": "Large Container"
+            },
+            "818": {
+                "description": "99999"
+            },
+            "820": {
+                "description": "Available"
+            },
+            "822": {
+                "description": "Item Received"
+            },
+            "824": {
+                "description": "Outer Dia details"
+            },
+            "826": {
+                "description": "Enabled"
+            },
+            "828": {
+                "description": "Received At Lab"
+            },
+            "830": {
+                "description": "WorkFlow Approval Group"
+            },
+            "832": {
+                "description": "Sequence Mapping"
+            },
+            "834": {
+                "description": "Level 1"
+            },
+            "836": {
+                "description": "Level 3"
+            },
+            "838": {
+                "description": "Level 5"
+            },
+            "967": {
+                "description": "Automation Rule"
+            },
+            "968": {
+                "description": "Individual Line Item"
+            },
+            "969": {
+                "description": "Combined Item"
+            },
+            "972": {
+                "description": "Sample Plan"
+            },
+            "973": {
+                "description": "Time"
+            },
+            "974": {
+                "description": "Quantity"
+            },
+            "975": {
+                "description": "Absolute"
+            },
+            "976": {
+                "description": "Percentage"
+            },
+            "977": {
+                "description": "Kit BOM"
+            },
+            "978": {
+                "description": "KBOM"
+            },
+            "1028": {
+                "description": "Ransar-1 Tool For Quality"
+            },
+            "1031": {
+                "description": "Not Started"
+            },
+            "1033": {
+                "description": "In Progress"
+            },
+            "1035": {
+                "description": "Cycle Count"
+            },
+            "1043": {
+                "description": "Issue To Production Line"
+            },
+            "1045": {
+                "description": "B"
+            },
+            "1049": {
+                "description": "Class 1"
+            },
+            "1051": {
+                "description": "Class 3"
+            },
+            "1053": {
+                "description": "Level III"
+            },
+            "1055": {
+                "description": "Consolidated"
+            },
+            "1057": {
+                "description": "Completed"
+            },
+            "1063": {
+                "description": "Issue To FG Warehouse"
+            }
+        }
+    },
+    "ACM_L_EMAIL_TEMPLATE_DETAILS": {
+        "Email_Template_Type_VSP_ID": {
+            "419": {
+                "description": "Text"
+            }
+        }
+    },
+    "ACM_L_LABEL_PRINTING_TEMPLATE_DETAILS": {
+        "Font_Family_VSP_ID": {
+            "727": {
+                "description": "Monospace"
+            },
+            "728": {
+                "description": "Sans-serif"
+            },
+            "729": {
+                "description": "Serif"
+            }
+        },
+        "Font_Name_VSP_ID": {
+            "730": {
+                "description": "Century Gothic"
+            },
+            "731": {
+                "description": "Times New Roman"
+            },
+            "732": {
+                "description": "Arial"
+            }
+        },
+        "Font_Style_VSP_ID": {
+            "735": {
+                "description": "normal"
+            }
+        },
+        "Label_Background_Color_VSP_ID": {
+            "739": {
+                "description": "Black"
+            }
+        },
+        "Label_Object_VSP_ID": {
+            "722": {
+                "description": "Horizontal Separator for Label"
+            },
+            "5902": {
+                "description": "Vertical Separator"
+            },
+            "3537": {
+                "description": "Rectangle"
+            },
+            "721": {
+                "description": "QR Code Input"
+            },
+            "719": {
+                "description": "Label Input"
+            },
+            "720": {
+                "description": "Image Input"
+            }
+        },
+        "Label_Type_VSP_ID": {
+            "723": {
+                "description": "Static Lable"
+            },
+            "724": {
+                "description": "Dynamic label"
+            },
+            "5911": {
+                "description": "Serial Number Only"
+            },
+            "5912": {
+                "description": "Local Date"
+            },
+            "5913": {
+                "description": "Item & Serial No"
+            },
+            "5964": {
+                "description": "Local_Country"
+            }
+        },
+        "Property_VSP_ID": {
+            "5384": {
+                "description": "ZMM_AMBTEMP"
+            },
+            "5385": {
+                "description": "ZMM_AMPS"
+            },
+            "5386": {
+                "description": "ZMM_BEENOTE"
+            },
+            "5387": {
+                "description": "ZMM_BEENUMBER"
+            },
+            "5389": {
+                "description": "ZMM_BRAND"
+            },
+            "5390": {
+                "description": "ZMM_CAPACITORRUN"
+            },
+            "5391": {
+                "description": "ZMM_CAPACITORSTART"
+            },
+            "5392": {
+                "description": "ZMM_CATEGORY"
+            },
+            "5393": {
+                "description": "ZMM_LOGO_CE"
+            },
+            "5394": {
+                "description": "ZMM_CODECLASS"
+            },
+            "5395": {
+                "description": "ZMM_COLOUR"
+            },
+            "5396": {
+                "description": "ZMM_CONNECTION"
+            },
+            "5397": {
+                "description": "ZMM_LOGO_CP"
+            },
+            "5398": {
+                "description": "ZMM_DEGREEOFPROTECTION"
+            },
+            "5399": {
+                "description": "ZMM_DELIVERY"
+            },
+            "5400": {
+                "description": "ZMM_DISCHARGE"
+            },
+            "5401": {
+                "description": "ZMM_DISCHARGE_MAX"
+            },
+            "5402": {
+                "description": "ZMM_DISCHARGE_MIN"
+            },
+            "5403": {
+                "description": "ZMM_DISCHARGERANGE"
+            },
+            "5404": {
+                "description": "ZMM_DUTY"
+            },
+            "5405": {
+                "description": "ZMM_EFFICIENCY_CLASS"
+            },
+            "5406": {
+                "description": "ZMM_FRAMESIZE"
+            },
+            "5407": {
+                "description": "ZMM_FREQUENCY"
+            },
+            "5408": {
+                "description": "ZMM_GRADE"
+            },
+            "5409": {
+                "description": "ZMM_GRWT_PSET"
+            },
+            "5410": {
+                "description": "ZMM_GRWT_CABLE"
+            },
+            "5411": {
+                "description": "ZMM_GRWT_MOTOR"
+            },
+            "5412": {
+                "description": "ZMM_GRWT_PF"
+            },
+            "5413": {
+                "description": "ZMM_GRWT_PUMP"
+            },
+            "5414": {
+                "description": "ZMM_HEAD"
+            },
+            "5415": {
+                "description": "ZMM_HEAD_MAX"
+            },
+            "5416": {
+                "description": "ZMM_HEAD_MINIMUM"
+            },
+            "5417": {
+                "description": "ZMM_HEADRANGE"
+            },
+            "5418": {
+                "description": "ZMM_HEADING"
+            },
+            "5419": {
+                "description": "ZMM_IMPELLERDIAMETER"
+            },
+            "5420": {
+                "description": "ZMM_INCH"
+            },
+            "5421": {
+                "description": "ZMM_INSULATIONCLASS"
+            },
+            "5422": {
+                "description": "ZMM_ISI"
+            },
+            "5423": {
+                "description": "ZMM_ISIMOTOR"
+            },
+            "5424": {
+                "description": "ZMM_ISIPUMP"
+            },
+            "5425": {
+                "description": "ZMM_ISIPUMPSET"
+            },
+            "5426": {
+                "description": "ZMM_ISIREFERENCE"
+            },
+            "5427": {
+                "description": "ZMM_ISIVALVE"
+            },
+            "5428": {
+                "description": "ZMM_ISI_WC"
+            },
+            "5429": {
+                "description": "ZMM_KVACODE"
+            },
+            "5430": {
+                "description": "ZMM_LABELPERIOD"
+            },
+            "5431": {
+                "description": "ZMM_LENGTH"
+            },
+            "5432": {
+                "description": "ZMM_LICENSE_CML_NO"
+            },
+            "5433": {
+                "description": "ZMM_MTRLOFCONST"
+            },
+            "5434": {
+                "description": "ZMM_MAXAMBTEMP"
+            },
+            "5435": {
+                "description": "ZMM_MAXFLOW"
+            },
+            "5436": {
+                "description": "ZMM_MFGMONYR"
+            },
+            "5437": {
+                "description": "ZMM_MIN_BORE_SIZE"
+            },
+            "5438": {
+                "description": "ZMM_MINCOOLINGFLOW"
+            },
+            "5439": {
+                "description": "ZMM_MINHEAD"
+            },
+            "5441": {
+                "description": "ZMM_EFF_MOTOR"
+            },
+            "5442": {
+                "description": "ZMM_MOTORIDENTIFICATION"
+            },
+            "5444": {
+                "description": "ZMM_MOTORSERIES"
+            },
+            "5445": {
+                "description": "ZMM_MOTOR_TYPE"
+            },
+            "5446": {
+                "description": "ZMM_NEWT_PSET"
+            },
+            "5447": {
+                "description": "ZMM_NEWT_CABLE"
+            },
+            "5448": {
+                "description": "ZMM_NEWT_MOTOR"
+            },
+            "5449": {
+                "description": "ZMM_NEWT_PF"
+            },
+            "5450": {
+                "description": "ZMM_NEWT_PUMP"
+            },
+            "5451": {
+                "description": "ZMM_LOGO_NSF"
+            },
+            "5452": {
+                "description": "ZMM_OUTLET"
+            },
+            "5453": {
+                "description": "ZMM_EFF_OVRALL"
+            },
+            "5454": {
+                "description": "ZMM_PACKAGE"
+            },
+            "5455": {
+                "description": "ZMM_PACKTYPE"
+            },
+            "5456": {
+                "description": "ZMM_PANEL"
+            },
+            "5458": {
+                "description": "ZMM_PHASE"
+            },
+            "5459": {
+                "description": "ZMM_POWERFACTOR"
+            },
+            "5460": {
+                "description": "ZMM_PRESSURE"
+            },
+            "5461": {
+                "description": "ZMM_EFF_PUMP"
+            },
+            "5462": {
+                "description": "ZMM_PUMPFLOWTYPE"
+            },
+            "5463": {
+                "description": "ZMM_PUMPIDENTIFICATION"
+            },
+            "5464": {
+                "description": "ZMM_PUMP_MODEL"
+            },
+            "5465": {
+                "description": "ZMM_PUMPSERIES"
+            },
+            "5466": {
+                "description": "ZMM_PUMPSET_MODEL"
+            },
+            "5467": {
+                "description": "ZMM_PSETTYPE"
+            },
+            "5468": {
+                "description": "ZMM_RATEDPOWER"
+            },
+            "5469": {
+                "description": "ZMM_REGION"
+            },
+            "5470": {
+                "description": "ZMM_SERVICEFACTOR"
+            },
+            "5471": {
+                "description": "ZMM_SERVICEFACTORMAXIMUMAMPS"
+            },
+            "5472": {
+                "description": "ZMM_SIZE"
+            },
+            "5473": {
+                "description": "ZMM_SPEED"
+            },
+            "5474": {
+                "description": "ZMM_STAGES"
+            },
+            "5475": {
+                "description": "ZMM_SUBMERGENCE"
+            },
+            "5476": {
+                "description": "ZMM_SUCTION"
+            },
+            "5477": {
+                "description": "ZMM_SUCTIONXDELIVERY"
+            },
+            "5478": {
+                "description": "ZMM_SUPPLYSOURCE"
+            },
+            "5479": {
+                "description": "ZMM_TAGNO"
+            },
+            "5480": {
+                "description": "ZMM_TEMPERATURE"
+            },
+            "5481": {
+                "description": "ZMM_THRUSTLOAD"
+            },
+            "5482": {
+                "description": "ZMM_EFF_TTL"
+            },
+            "5483": {
+                "description": "ZMM_TYPE"
+            },
+            "5484": {
+                "description": "ZMM_USP"
+            },
+            "5485": {
+                "description": "ZMM_VOLTS"
+            },
+            "5486": {
+                "description": "ZMM_WIRE"
+            },
+            "5487": {
+                "description": "ZMM_YEAR"
+            },
+            "5718": {
+                "description": "ZMM_BOX_CWT"
+            },
+            "5719": {
+                "description": "ZMM_BOX_PWT"
+            },
+            "5720": {
+                "description": "ZMM_CAST_WT"
+            },
+            "5721": {
+                "description": "ZMM_CAVITY"
+            },
+            "5722": {
+                "description": "ZMM_CORES"
+            },
+            "5723": {
+                "description": "ZMM_CORE_TYPE"
+            },
+            "5724": {
+                "description": "ZMM_MATCH_PLATE"
+            },
+            "5725": {
+                "description": "ZMM_MOULD_WT"
+            },
+            "5727": {
+                "description": "ZMM_RUNNER_WT"
+            },
+            "5728": {
+                "description": "ZMM_SAND_METAL_RATIO"
+            },
+            "5729": {
+                "description": "ZMM_TOOL_CODE"
+            },
+            "5730": {
+                "description": "ZMM_YIELD"
+            },
+            "5837": {
+                "description": "Pump_Only_Serial_Number"
+            },
+            "5863": {
+                "description": "Pump Set RF Serial Number"
+            },
+            "5864": {
+                "description": "Domestic Packing Slip Serial Number"
+            },
+            "5865": {
+                "description": "Manufacturing Month Year Value"
+            },
+            "5866": {
+                "description": "Domestic Packing Slip Item Code"
+            },
+            "5867": {
+                "description": "Domestic Packing Slip Serial Number Only"
+            },
+            "5868": {
+                "description": "Price"
+            },
+            "5869": {
+                "description": "Warranty Motor Only Serial Number"
+            },
+            "5871": {
+                "description": "Capacitor Item Net Weight"
+            },
+            "5872": {
+                "description": "Capacitor Item Gross Weight"
+            },
+            "5874": {
+                "description": "Capacitor Item MRP"
+            },
+            "5875": {
+                "description": "Capacitor Box Item Code"
+            },
+            "5876": {
+                "description": "Capacitor Box Serial Number"
+            },
+            "5877": {
+                "description": "Capacitor Item QR Value"
+            },
+            "5894": {
+                "description": "Motor Model"
+            },
+            "5897": {
+                "description": "ZMM_BEESTAR"
+            }
+        }
+    },
+    "ACM_L_RECIPIENT_GROUP_LIST": {
+        "Recipient_Type_VSP_ID": {
+            "403": {
+                "description": "Team Leader"
+            }
+        }
+    },
+    "ACM_L_SERIAL_NUMBER_ENGINE_LINE": {
+        "Serial_Number_Component_VSP_ID": {
+            "809": {
+                "description": "Month Digit"
+            },
+            "1023": {
+                "description": "Static Alpha"
+            },
+            "1024": {
+                "description": "Year Digit"
+            },
+            "1025": {
+                "description": "Serial No"
+            }
+        }
+    },
+    "ACM_L_WORKFLOW_TRANSACTION": {
+        "Transaction_Status_VSP_ID": {
+            "1031": {
+                "description": "Not Started"
+            },
+            "1033": {
+                "description": "In Progress"
+            },
+            "1032": {
+                "description": "Completed"
+            }
+        }
+    },
+    "ACM_M_API_SETTINGS": {
+        "API_Data_For_VSP_ID": {
+            "607": {
+                "description": "Employee"
+            },
+            "609": {
+                "description": "User"
+            },
+            "610": {
+                "description": "Department"
+            },
+            "767": {
+                "description": "Address"
+            },
+            "769": {
+                "description": "Currency"
+            }
+        },
+        "API_Interface_Type_VSP_ID": {
+            "764": {
+                "description": "ERP To LA"
+            },
+            "765": {
+                "description": "LA To ERP"
+            }
+        }
+    },
+    "ACM_M_APP_LABLE": {
+        "App_Function_VSP_ID": {
+            "6218": {
+                "description": "Container Type"
+            },
+            "7612": {
+                "description": "Units_Of_Measure_Report"
+            },
+            "842": {
+                "description": "WorkFlow"
+            },
+            "6161": {
+                "description": "Data Print Template Coordinate"
+            },
+            "6253": {
+                "description": "Data_Print_Template_Image"
+            },
+            "93": {
+                "description": "Currency"
+            },
+            "94": {
+                "description": "Holidays"
+            },
+            "88": {
+                "description": "Address"
+            },
+            "439": {
+                "description": "Shift Sequence Page"
+            },
+            "697": {
+                "description": "Work Order Report"
+            },
+            "700": {
+                "description": "Setup Sheet Report"
+            },
+            "1115": {
+                "description": "MFC Structure Report"
+            },
+            "1159": {
+                "description": "Characteristic_Log_SerialNumber_Report"
+            },
+            "677": {
+                "description": "Error Message"
+            },
+            "1152": {
+                "description": "Traceability_View_Work_Order_Report"
+            },
+            "7614": {
+                "description": "Item_Location_Report"
+            },
+            "675": {
+                "description": "User_Crew_Report"
+            },
+            "7632": {
+                "description": "Production_Order_Operation_History_Report"
+            },
+            "592": {
+                "description": "Material_Kit_To_Line_Store_Transaction"
+            },
+            "1114": {
+                "description": "Scrap Production Issue"
+            },
+            "268": {
+                "description": "Shift_Timings"
+            },
+            "2068": {
+                "description": "BRAKE SET"
+            },
+            "7649": {
+                "description": "Cycle_Count_Report"
+            },
+            "87": {
+                "description": "Plant_Line"
+            },
+            "7641": {
+                "description": "Sales_Order_Interface_Report"
+            },
+            "367": {
+                "description": "Calibration Template"
+            },
+            "1072": {
+                "description": "Material Inward API"
+            },
+            "69": {
+                "description": "Cell"
+            },
+            "459": {
+                "description": "Characteristic"
+            },
+            "988": {
+                "description": "Kitting Work Order"
+            },
+            "1140": {
+                "description": "Issue_To_Production_Line_Report"
+            },
+            "7606": {
+                "description": "BOM_Details_Against_FG_Item_Report"
+            },
+            "55": {
+                "description": "OTP"
+            },
+            "550": {
+                "description": "Item_Operation_History"
+            },
+            "364": {
+                "description": "Item Receipt"
+            },
+            "698": {
+                "description": "MBOM Report"
+            },
+            "1388": {
+                "description": "Sales_Pickslip_Report"
+            },
+            "7613": {
+                "description": "Expired_Batch_Report"
+            },
+            "370": {
+                "description": "Calibration"
+            },
+            "1119": {
+                "description": "Sales_WorkOrder_Report"
+            },
+            "1148": {
+                "description": "Dock_Report"
+            },
+            "1196": {
+                "description": "Travel_Card_Report"
+            },
+            "778": {
+                "description": "Signal_Configuration"
+            },
+            "6242": {
+                "description": "Engine_Transaction_Rule_Action"
+            },
+            "7640": {
+                "description": "Consolidate_Sales_Order_Pickslip_Report"
+            },
+            "7681": {
+                "description": "ISI Location Change External Inspection"
+            },
+            "352": {
+                "description": "Storage Location Row Rack"
+            },
+            "86": {
+                "description": "Plant_Division"
+            },
+            "242": {
+                "description": "MBOM"
+            },
+            "1138": {
+                "description": "Palletization_Line_Item_Report"
+            },
+            "529": {
+                "description": "Device View Page"
+            },
+            "1147": {
+                "description": "Set_Mapping_Report"
+            },
+            "6256": {
+                "description": "Zone_Location"
+            },
+            "307": {
+                "description": "Field_Update"
+            },
+            "365": {
+                "description": "Serialize Receipt Item"
+            },
+            "531": {
+                "description": "Serialize Receipt Item"
+            },
+            "991": {
+                "description": "SBOM"
+            },
+            "204": {
+                "description": "Functionality"
+            },
+            "209": {
+                "description": "Device"
+            },
+            "351": {
+                "description": "Storage Location Row"
+            },
+            "832": {
+                "description": "Sequence Mapping"
+            },
+            "1109": {
+                "description": "BOM Details Report"
+            },
+            "753": {
+                "description": "Gateway_Activation"
+            },
+            "782": {
+                "description": "Define_Enterprise_Structure"
+            },
+            "1126": {
+                "description": "Palletization"
+            },
+            "978": {
+                "description": "KBOM"
+            },
+            "1166": {
+                "description": "Quality_Characteristic_Log_Report"
+            },
+            "579": {
+                "description": "Material_Inward_Transaction"
+            },
+            "1394": {
+                "description": "Inspection_Plan_Hold"
+            },
+            "6251": {
+                "description": "Address Packing Slip"
+            },
+            "989": {
+                "description": "IBOM"
+            },
+            "125": {
+                "description": "Employee"
+            },
+            "274": {
+                "description": "User Crew Members"
+            },
+            "344": {
+                "description": "Purchase Order Line"
+            },
+            "489": {
+                "description": "Item_Tool_Attribute"
+            },
+            "418": {
+                "description": "Warehouse"
+            },
+            "641": {
+                "description": "Daily Sequence Approval"
+            },
+            "6172": {
+                "description": "Data Print Template Border"
+            },
+            "6239": {
+                "description": "Engine_Action"
+            },
+            "7652": {
+                "description": "Receiving_Transaction_Register_Report"
+            },
+            "318": {
+                "description": "Agencies"
+            },
+            "195": {
+                "description": "Activity"
+            },
+            "604": {
+                "description": "Work_Instruction_Header"
+            },
+            "1076": {
+                "description": "Kit"
+            },
+            "1153": {
+                "description": "Traceability_View_Operator_Report"
+            },
+            "6165": {
+                "description": "Testing_Panel_Characteristic_Report"
+            },
+            "819": {
+                "description": "Serial Number Engine"
+            },
+            "1052": {
+                "description": "Production Pickslip"
+            },
+            "213": {
+                "description": "Rule"
+            },
+            "301": {
+                "description": "Recipient_Group_List"
+            },
+            "549": {
+                "description": "Item_Routing_History"
+            },
+            "1108": {
+                "description": "Material Receipt Gate In"
+            },
+            "1136": {
+                "description": "WorkOrder_Routing_History_Report"
+            },
+            "1177": {
+                "description": "Discrete_Routing_Report"
+            },
+            "804": {
+                "description": "Default Screen"
+            },
+            "98": {
+                "description": "Shift"
+            },
+            "253": {
+                "description": "Activity Event Interaction"
+            },
+            "339": {
+                "description": "Manufacturer"
+            },
+            "208": {
+                "description": "Device_Type"
+            },
+            "1163": {
+                "description": "Inspection Plan Hold"
+            },
+            "6328": {
+                "description": "Data_Print_BEE_Note"
+            },
+            "1386": {
+                "description": "Production_Pickslip_Report"
+            },
+            "6234": {
+                "description": "Engine_Transaction"
+            },
+            "306": {
+                "description": "Email_Template"
+            },
+            "207": {
+                "description": "Device_Model_Type"
+            },
+            "1104": {
+                "description": "Routing Report"
+            },
+            "6311": {
+                "description": "CML Mapping"
+            },
+            "6257": {
+                "description": "Shelf_Zone"
+            },
+            "6049": {
+                "description": "Skip Device"
+            },
+            "309": {
+                "description": "Task_Recipient"
+            },
+            "7615": {
+                "description": "Item_Quantities_Summary_Report"
+            },
+            "7620": {
+                "description": "Serial_Number_Detail_Report"
+            },
+            "7625": {
+                "description": "Operation_Item_Log_Report"
+            },
+            "608": {
+                "description": "API Settings"
+            },
+            "1120": {
+                "description": "Rework_Order_Report"
+            },
+            "5917": {
+                "description": "Work_Order_Dashboard"
+            },
+            "6240": {
+                "description": "ENGINE_Rule_Logic"
+            },
+            "7603": {
+                "description": "Interface_Material_Report"
+            },
+            "266": {
+                "description": "Week"
+            },
+            "314": {
+                "description": "Vehicle Outward"
+            },
+            "7624": {
+                "description": "Production_Order_Number_Report"
+            },
+            "7617": {
+                "description": "Bin_Quantities_Report"
+            },
+            "269": {
+                "description": "Shift_Hourly_Timings"
+            },
+            "1116": {
+                "description": "Device Report"
+            },
+            "5826": {
+                "description": "Cycle Count Approval"
+            },
+            "5825": {
+                "description": "Cycle Count Counting"
+            },
+            "1139": {
+                "description": "Issue_To_FG_Warehouse_Report"
+            },
+            "7605": {
+                "description": "Locator_Quantities_Report"
+            },
+            "595": {
+                "description": "Material Line To Warehouse transactions"
+            },
+            "959": {
+                "description": "Item Transaction"
+            },
+            "3733": {
+                "description": "Machine Command Set"
+            },
+            "169": {
+                "description": "Menu_Function"
+            },
+            "616": {
+                "description": "Run MRP"
+            },
+            "796": {
+                "description": "Screen Object"
+            },
+            "617": {
+                "description": "Warehouse_Bin"
+            },
+            "7622": {
+                "description": "Location_Transfer_Report"
+            },
+            "606": {
+                "description": "Customer Order"
+            },
+            "7637": {
+                "description": "GRN_History_Report"
+            },
+            "284": {
+                "description": "Supplier_Bank"
+            },
+            "105": {
+                "description": "Valueset_Parameter"
+            },
+            "66": {
+                "description": "Department"
+            },
+            "620": {
+                "description": "Raw Material Inspection"
+            },
+            "660": {
+                "description": "Sub Menu"
+            },
+            "1128": {
+                "description": "Quality WorkOrder Report"
+            },
+            "294": {
+                "description": "Email_Alert"
+            },
+            "7647": {
+                "description": "Physical_Inventory_Summary_Report"
+            },
+            "107": {
+                "description": "Config_Settings"
+            },
+            "285": {
+                "description": "Customer"
+            },
+            "373": {
+                "description": "Item Transaction History"
+            },
+            "615": {
+                "description": "Kitting Work Order"
+            },
+            "7636": {
+                "description": "GRN_Details_Report"
+            },
+            "211": {
+                "description": "Device_Movement_History"
+            },
+            "170": {
+                "description": "Role"
+            },
+            "830": {
+                "description": "WorkFlow Approval Group"
+            },
+            "168": {
+                "description": "Menu_Role"
+            },
+            "216": {
+                "description": "Device_View"
+            },
+            "500": {
+                "description": "Receipt_By_User"
+            },
+            "1395": {
+                "description": "Item_Category_Checklist_Values"
+            },
+            "5918": {
+                "description": "Rework_Order_Dashboard"
+            },
+            "60": {
+                "description": "Password Generation"
+            },
+            "95": {
+                "description": "Module"
+            },
+            "551": {
+                "description": "Item_Operation_Characteristic_Log"
+            },
+            "3781": {
+                "description": "Sub_Operation_Master_List"
+            },
+            "7327": {
+                "description": "Shift_Sequence_New"
+            },
+            "7633": {
+                "description": "GRN_Against_FG_Report"
+            },
+            "1099": {
+                "description": "Rework Production Issue"
+            },
+            "1143": {
+                "description": "DisplayLocator_and_StockQuality_against_PalletId_Report"
+            },
+            "7746": {
+                "description": "Item_Type_Group"
+            },
+            "1064": {
+                "description": "Location Change"
+            },
+            "212": {
+                "description": "Activity_Event"
+            },
+            "526": {
+                "description": "Quarterly"
+            },
+            "785": {
+                "description": "IME"
+            },
+            "958": {
+                "description": "Workflow Transaction"
+            },
+            "1377": {
+                "description": "Workflow_Report"
+            },
+            "302": {
+                "description": "Material In"
+            },
+            "6204": {
+                "description": "Failed Data Manual Push"
+            },
+            "7627": {
+                "description": "Skip_Device_Report"
+            },
+            "267": {
+                "description": "Day"
+            },
+            "661": {
+                "description": "Dashboard Widgets"
+            },
+            "1065": {
+                "description": "Kitstore To Production Line"
+            },
+            "52": {
+                "description": "Login"
+            },
+            "520": {
+                "description": "Send Outside For Calibration"
+            },
+            "353": {
+                "description": "Locator"
+            },
+            "1135": {
+                "description": "WorkOrder_Operation_History_Report"
+            },
+            "1194": {
+                "description": "Return To Store"
+            },
+            "752": {
+                "description": "Operation Activity Event"
+            },
+            "6159": {
+                "description": "Data Print Data Size"
+            },
+            "498": {
+                "description": "Received_At_Lab"
+            },
+            "1396": {
+                "description": "Empty_Pallet_Id_List"
+            },
+            "651": {
+                "description": "Functionality_Activity_Event"
+            },
+            "699": {
+                "description": "Inspection Plan Report"
+            },
+            "286": {
+                "description": "Customer_Bank"
+            },
+            "1374": {
+                "description": "Item_Storage_Report"
+            },
+            "645": {
+                "description": "Location Details"
+            },
+            "7616": {
+                "description": "Location_Quantities_Report"
+            },
+            "349": {
+                "description": "Sequence Limit Page"
+            },
+            "243": {
+                "description": "BOM Line Item"
+            },
+            "7651": {
+                "description": "MHE_Report"
+            },
+            "1063": {
+                "description": "Issue To FG Warehouse"
+            },
+            "122": {
+                "description": "Employee_Skill"
+            },
+            "1089": {
+                "description": "Issue To Shipping"
+            },
+            "7626": {
+                "description": "Rework_Order_Operation_History_Report"
+            },
+            "543": {
+                "description": "WO_Item_Serialization"
+            },
+            "198": {
+                "description": "Interaction"
+            },
+            "6086": {
+                "description": "Send To SAP"
+            },
+            "977": {
+                "description": "Kit BOM"
+            },
+            "1127": {
+                "description": "IME_Report"
+            },
+            "7682": {
+                "description": "Inspection Certification Upload"
+            },
+            "89": {
+                "description": "Address_Setup"
+            },
+            "437": {
+                "description": "Weekly Sequence Page"
+            },
+            "1145": {
+                "description": "Kitting_Work_Order_Report"
+            },
+            "345": {
+                "description": "Warehouse"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "7679": {
+                "description": "Inspection Work order"
+            },
+            "1103": {
+                "description": "Production Pickslip Reprint Report"
+            },
+            "996": {
+                "description": "Sales Work Order"
+            },
+            "725": {
+                "description": "Routing_Header"
+            },
+            "1021": {
+                "description": "Scrap Work Order"
+            },
+            "5942": {
+                "description": "Inspection_Return_Transaction"
+            },
+            "7604": {
+                "description": "Interface_Routing_Report"
+            },
+            "967": {
+                "description": "Automation Rule"
+            },
+            "1182": {
+                "description": "Tool_Mapping_List_Report"
+            },
+            "270": {
+                "description": "Shift_Break_Timings"
+            },
+            "293": {
+                "description": "Work_Flow_Action"
+            },
+            "795": {
+                "description": "Size Resolution"
+            },
+            "199": {
+                "description": "Interaction_Data_Structure"
+            },
+            "1102": {
+                "description": "Enterprise Structure Report"
+            },
+            "7650": {
+                "description": "Bin_Report"
+            },
+            "436": {
+                "description": "Monthly Sequence Page"
+            },
+            "5834": {
+                "description": "Inspection Work Order"
+            },
+            "715": {
+                "description": "Pallet"
+            },
+            "742": {
+                "description": "Routing_Line_Item"
+            },
+            "6243": {
+                "description": "Data_Print_Image_Upload"
+            },
+            "96": {
+                "description": "Overtime"
+            },
+            "265": {
+                "description": "Month"
+            },
+            "7644": {
+                "description": "Cycle_Count_Summary_Report"
+            },
+            "308": {
+                "description": "Task"
+            },
+            "662": {
+                "description": "Rolebased Widgets"
+            },
+            "6233": {
+                "description": "Container"
+            },
+            "215": {
+                "description": "Firmware_Update"
+            },
+            "347": {
+                "description": "Material Gate Out"
+            },
+            "1134": {
+                "description": "Item_Operation_Characteristic_Log_Report"
+            },
+            "6309": {
+                "description": "Locator_Lable"
+            },
+            "214": {
+                "description": "Rule_Definition"
+            },
+            "7602": {
+                "description": "Interface Bill_Of_Material_Report"
+            },
+            "147": {
+                "description": "User_Crew"
+            },
+            "435": {
+                "description": "Quarterly Sequence Page"
+            },
+            "990": {
+                "description": "Rework Order"
+            },
+            "1146": {
+                "description": "Workorder_item_serialization_Report"
+            },
+            "1165": {
+                "description": "Production Pickslip History Report"
+            },
+            "7639": {
+                "description": "Single_Sales_Order_Pickslip_Report"
+            },
+            "1141": {
+                "description": "Issue_To_Shipped_Report"
+            },
+            "6318": {
+                "description": "Data Print Multi Language"
+            },
+            "7609": {
+                "description": "Receipt_Traveler_Report"
+            },
+            "6241": {
+                "description": "Engine_Action_Rule"
+            },
+            "124": {
+                "description": "Employee_Skill_Attribute"
+            },
+            "499": {
+                "description": "Issue_To_User"
+            },
+            "4718": {
+                "description": "Cycle Count Header"
+            },
+            "5835": {
+                "description": "Shift_Sequence"
+            },
+            "350": {
+                "description": "Sub Inventory"
+            },
+            "750": {
+                "description": "Label Print"
+            },
+            "972": {
+                "description": "Sample Plan"
+            },
+            "248": {
+                "description": "Operation"
+            },
+            "961": {
+                "description": "Inspection Plan"
+            },
+            "523": {
+                "description": "Outside Calibration Receipt"
+            },
+            "7646": {
+                "description": "Cycle_Count_Entries_And_Adjustments_Report"
+            },
+            "833": {
+                "description": "Workflow Approval Log"
+            },
+            "1160": {
+                "description": "Traceability_View_Serial_Number_Report"
+            },
+            "497": {
+                "description": "Send_For_Calibration"
+            },
+            "470": {
+                "description": "Calibration Transaction"
+            },
+            "594": {
+                "description": "Ware"
+            },
+            "1074": {
+                "description": "Unit Of Measure"
+            },
+            "1144": {
+                "description": "Display_PalletId_and_Locator_against_SerialNumber_Report"
+            },
+            "629": {
+                "description": "Warehouse_Dock"
+            },
+            "784": {
+                "description": "Signal Attribute"
+            },
+            "1121": {
+                "description": "Scrap_WorkOrder_Report"
+            },
+            "245": {
+                "description": "Routing"
+            },
+            "90": {
+                "description": "Calendar"
+            },
+            "203": {
+                "description": "Functionality_Type"
+            },
+            "92": {
+                "description": "Company"
+            },
+            "65": {
+                "description": "Company_Plant"
+            },
+            "7648": {
+                "description": "Cycle_Counts_Pending_Approval_Report"
+            },
+            "85": {
+                "description": "Machine_Location"
+            },
+            "246": {
+                "description": "BOM Header"
+            },
+            "317": {
+                "description": "Vehicle Inward"
+            },
+            "438": {
+                "description": "Daily Sequence Page"
+            },
+            "7610": {
+                "description": "Batch_Transaction_Register_Report"
+            },
+            "7638": {
+                "description": "Pick_Slip_Report"
+            },
+            "591": {
+                "description": "Transaction Movement"
+            },
+            "776": {
+                "description": "Operation Functionality Interaction"
+            },
+            "1142": {
+                "description": "Machine_Line_Congfiguration_Report"
+            },
+            "1181": {
+                "description": "WO_Material_Consumption_View_Report"
+            },
+            "1180": {
+                "description": "WO_SCRAP_BOOKING"
+            },
+            "6252": {
+                "description": "Data_Print_Brand_Name"
+            },
+            "7643": {
+                "description": "Operator_History_Report"
+            },
+            "354": {
+                "description": "Locator Items"
+            },
+            "97": {
+                "description": "Prefix"
+            },
+            "1172": {
+                "description": "Collection_Plan_Details_Report"
+            },
+            "1117": {
+                "description": "Date Against WorkOrder Report"
+            },
+            "5838": {
+                "description": "MBOM Validation"
+            },
+            "6154": {
+                "description": "Data_Print"
+            },
+            "7645": {
+                "description": "Discrepancy_Analysis_Report"
+            },
+            "64": {
+                "description": "Country"
+            },
+            "126": {
+                "description": "User"
+            },
+            "640": {
+                "description": "Storage Location Details"
+            },
+            "1137": {
+                "description": "Production_Work_Order_Report"
+            },
+            "196": {
+                "description": "Event"
+            },
+            "433": {
+                "description": "Sequence Rule Page"
+            },
+            "1061": {
+                "description": "Material Inward"
+            },
+            "1122": {
+                "description": "MBOM_Report"
+            },
+            "6038": {
+                "description": "Deviation"
+            },
+            "7621": {
+                "description": "Item_Reservations_Report"
+            },
+            "91": {
+                "description": "Cell_Machine"
+            },
+            "6310": {
+                "description": "Locator_View_Lable"
+            },
+            "7607": {
+                "description": "Material_Transaction_Detail_Report_Against_Production_Order"
+            },
+            "656": {
+                "description": "Flowchart Menu"
+            },
+            "7611": {
+                "description": "Receiving_Transactions_Register_Report"
+            },
+            "7619": {
+                "description": "Material_Transaction_Detail_Report"
+            },
+            "7629": {
+                "description": "Consolidate_Work_Order_View_Report"
+            },
+            "1107": {
+                "description": "Production Kitting Report"
+            },
+            "491": {
+                "description": "Work Order"
+            },
+            "7680": {
+                "description": "Issue To Inspection Internal"
+            },
+            "282": {
+                "description": "Supplier"
+            },
+            "1075": {
+                "description": "Trolly"
+            },
+            "1393": {
+                "description": "Released_Serial_Number_for_Job_Completion"
+            },
+            "5973": {
+                "description": "Sales_Pickslip_Consolidated_Header"
+            },
+            "101": {
+                "description": "State"
+            },
+            "1164": {
+                "description": "Item_Details_Report"
+            },
+            "7355": {
+                "description": "Reprint Data Log"
+            },
+            "1118": {
+                "description": "Pallet Details Report"
+            },
+            "1106": {
+                "description": "Employee Details Report"
+            },
+            "289": {
+                "description": "Work_Flow_Rule"
+            },
+            "290": {
+                "description": "Material Gate In"
+            },
+            "337": {
+                "description": "Purchase Order"
+            },
+            "205": {
+                "description": "Device_Model"
+            },
+            "469": {
+                "description": "Operation_Characteristic"
+            },
+            "7608": {
+                "description": "Material_Transaction_Detail_against_SalesWorkOrder"
+            },
+            "7618": {
+                "description": "Material_Inward_Report"
+            },
+            "44": {
+                "description": "Valueset"
+            },
+            "1110": {
+                "description": "Material_Workbench_Report"
+            },
+            "244": {
+                "description": "Item"
+            },
+            "264": {
+                "description": "Year"
+            },
+            "299": {
+                "description": "Recipient_Group"
+            },
+            "777": {
+                "description": "Interaction Header"
+            },
+            "1105": {
+                "description": "Consolidated Production Pickslip"
+            },
+            "7770": {
+                "description": "Hourly_Production_Dynamic_Report"
+            },
+            "7623": {
+                "description": "Sales_Order_Interface_LA_To_SAP_Report"
+            },
+            "7328": {
+                "description": "Machine_Group"
+            },
+            "6236": {
+                "description": "Engine_Rule"
+            },
+            "7634": {
+                "description": "Hourly_Production_Report"
+            },
+            "601": {
+                "description": "WareHouse_To_KitStore_Transaction"
+            },
+            "1382": {
+                "description": "Characteristics_Log_For_Production_Report"
+            }
+        },
+        "App_Module_VSP_ID": {
+            "316": {
+                "description": "Quality"
+            },
+            "194": {
+                "description": "Digital Twin"
+            },
+            "43": {
+                "description": "Application Common Master"
+            },
+            "193": {
+                "description": "Device Management"
+            },
+            "319": {
+                "description": "Production"
+            },
+            "605": {
+                "description": "Sequencing"
+            },
+            "192": {
+                "description": "Manufacturing Core"
+            },
+            "121": {
+                "description": "User Management"
+            },
+            "417": {
+                "description": "WareHouse"
+            },
+            "1034": {
+                "description": "Kitting"
+            },
+            "63": {
+                "description": "Enterprise Structure"
+            },
+            "6203": {
+                "description": "Implementation"
+            }
+        },
+        "Language_Type_VSP_ID": {
+            "639": {
+                "description": "Hindi"
+            },
+            "62": {
+                "description": "English"
+            }
+        }
+    },
+    "ACM_M_CONFIG_SETTINGS": {
+        "Config_DataType_VSP_ID": {
+            "14": {
+                "description": "Int"
+            },
+            "16": {
+                "description": "String"
+            }
+        },
+        "Module_VSP_ID": {
+            "121": {
+                "description": "User Management"
+            },
+            "319": {
+                "description": "Production"
+            },
+            "544": {
+                "description": "App Label Page"
+            },
+            "605": {
+                "description": "Sequencing"
+            }
+        }
+    },
+    "ACM_M_DATA_PRINT_ADDRESS_PACKING_SLIP": {
+        "Sticker_Type_VSP_ID": {
+            "6247": {
+                "description": "Name Plate"
+            },
+            "6248": {
+                "description": "Packing Slip"
+            }
+        }
+    },
+    "ACM_M_DATA_PRINT_TEMPLATE_NAME": {
+        "Template_Type_VSP_ID": {
+            "7595": {
+                "description": "Data Printing"
+            }
+        }
+    },
+    "ACM_M_EMAIL_TEMPLATE": {
+        "Email_Type_VSP_ID": {
+            "361": {
+                "description": "Transactional"
+            },
+            "362": {
+                "description": "Broadcast"
+            }
+        }
+    },
+    "ACM_M_ERR_MESSAGE": {
+        "Error_Type_VSP_ID": {
+            "23": {
+                "description": "Error"
+            },
+            "673": {
+                "description": "Success"
+            },
+            "674": {
+                "description": "Error"
+            },
+            "772": {
+                "description": "ERR:Company already registered"
+            }
+        }
+    },
+    "ACM_M_LABEL_PRINTING_TEMPLATE": {
+        "Curve_VSP_ID": {
+            "760": {
+                "description": "Sharp Edges"
+            },
+            "761": {
+                "description": "Curved Edges"
+            }
+        },
+        "Label_Printing_Template_Name_VSP_ID": {
+            "1187": {
+                "description": "Tube Sticker 100*20mm"
+            },
+            "1188": {
+                "description": "Name plate - Tormac Sticker"
+            },
+            "1189": {
+                "description": "Name plate -RF pump Sticker"
+            },
+            "1190": {
+                "description": "Name plate -MF pump Sticker"
+            },
+            "1191": {
+                "description": "Packing slip -domestic model inc (panel box) Sticker"
+            },
+            "1192": {
+                "description": "Packing slip exports Sticker"
+            },
+            "4464": {
+                "description": "ZNAME_PLATE"
+            },
+            "5488": {
+                "description": "Capacitor Box Spare Pack Slip"
+            },
+            "5489": {
+                "description": "Hub Spare Packing Slip"
+            },
+            "5490": {
+                "description": "Dom Sub Packing Slip"
+            },
+            "5491": {
+                "description": "Warranty Sticker"
+            },
+            "5492": {
+                "description": "Tube Sticker"
+            },
+            "5493": {
+                "description": "Packing Slip Common"
+            },
+            "5494": {
+                "description": "Export Packing Slip"
+            },
+            "5495": {
+                "description": "Packing Slip CPF"
+            },
+            "5496": {
+                "description": "Packing Slip PW"
+            },
+            "5497": {
+                "description": "BEE STAR"
+            },
+            "5498": {
+                "description": "LASER"
+            },
+            "5499": {
+                "description": "ENGRAVING"
+            },
+            "5500": {
+                "description": "Domestic Name Plate Sticker"
+            },
+            "5519": {
+                "description": "Tube Sticker 60*30mm"
+            },
+            "5520": {
+                "description": "Tube Sticker 80*20mm"
+            },
+            "5521": {
+                "description": "Warranty Sticker"
+            },
+            "5522": {
+                "description": "Star Label"
+            },
+            "5532": {
+                "description": "Tube Sticker (80x20)"
+            },
+            "5717": {
+                "description": "ZFDY_ITEM_DETAILS"
+            },
+            "5862": {
+                "description": "Tube Sticker 100*20"
+            },
+            "5914": {
+                "description": "Z_BATCH"
+            },
+            "5961": {
+                "description": "LASER MARKING"
+            },
+            "5966": {
+                "description": "Preview_Testing"
+            },
+            "6053": {
+                "description": "Single Core"
+            },
+            "6128": {
+                "description": "Test_CRI"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            },
+            "87": {
+                "description": "Plant_Line"
+            }
+        }
+    },
+    "ACM_M_MACHINE": {
+        "Machine_Model_VSP_ID": {
+            "5858": {
+                "description": "TTP 244 Pro"
+            },
+            "5859": {
+                "description": "ZD230tt"
+            }
+        },
+        "Machine_Type_VSP_ID": {
+            "5857": {
+                "description": "Label Printer"
+            }
+        }
+    },
+    "ACM_M_MACHINE_COMMAND_SET": {
+        "Communication_Direction_VSP_ID": {
+            "3760": {
+                "description": "Upward"
+            },
+            "3761": {
+                "description": "Downward"
+            },
+            "5898": {
+                "description": "Label Start"
+            },
+            "5899": {
+                "description": "Label End"
+            },
+            "5900": {
+                "description": "Horizontal Separator"
+            },
+            "5901": {
+                "description": "Vertical Separator"
+            },
+            "5903": {
+                "description": "Position Command"
+            },
+            "5904": {
+                "description": "Start Command"
+            },
+            "5905": {
+                "description": "End Command"
+            },
+            "5906": {
+                "description": "Bold Command"
+            },
+            "5907": {
+                "description": "Barcode Command"
+            },
+            "5908": {
+                "description": "Hide Command"
+            },
+            "5909": {
+                "description": "QR Command"
+            },
+            "5910": {
+                "description": "QR End Command"
+            }
+        }
+    },
+    "ACM_M_PROCESS_TEMPLATE": {
+        "Process_Template_Type_VSP_ID": {
+            "7348": {
+                "description": "In Bound"
+            },
+            "7349": {
+                "description": "Out Bound"
+            }
+        },
+        "Process_Type_VSP_ID": {
+            "319": {
+                "description": "Production"
+            },
+            "459": {
+                "description": "Characteristic"
+            },
+            "680": {
+                "description": "Sub Assembly"
+            },
+            "1279": {
+                "description": "Operation Tool"
+            },
+            "1345": {
+                "description": "Part Validation"
+            },
+            "5959": {
+                "description": "QAD Validation"
+            },
+            "7354": {
+                "description": "Part Process"
+            },
+            "7356": {
+                "description": "Serial Number Printing"
+            },
+            "7659": {
+                "description": "Data Printing"
+            },
+            "7660": {
+                "description": "Laser Marking"
+            }
+        }
+    },
+    "ACM_M_SERIAL_NUMBER_GENERATION_HEADER": {
+        "Serial_Number_Type_VSP_ID": {
+            "1123": {
+                "description": "Pallet Serial Number"
+            },
+            "1124": {
+                "description": "Bin Serial Number"
+            },
+            "1175": {
+                "description": "Assembly Pallet"
+            },
+            "1176": {
+                "description": "Assembly ISO BIN Serial Number"
+            },
+            "1371": {
+                "description": "Winding Pallet"
+            },
+            "5517": {
+                "description": "Z017"
+            },
+            "5518": {
+                "description": "Z018"
+            },
+            "5839": {
+                "description": "Permanent Employee"
+            },
+            "5848": {
+                "description": "Apprentice Employee"
+            },
+            "5855": {
+                "description": "Staff"
+            },
+            "5856": {
+                "description": "Contract"
+            },
+            "5965": {
+                "description": "LOT NUMBER"
+            },
+            "6140": {
+                "description": "Fixed Term"
+            },
+            "6219": {
+                "description": "Container Type"
+            },
+            "7329": {
+                "description": "LogicApps Employee"
+            }
+        }
+    },
+    "ACM_M_WORKFLOW": {
+        "Business_Function_Type_VSP_ID": {
+            "1030": {
+                "description": "Work Order Exception With Calibration Due"
+            },
+            "1093": {
+                "description": "New Employee Approval"
+            },
+            "1094": {
+                "description": "User Role Approval"
+            },
+            "1392": {
+                "description": "Outbound Interface"
+            },
+            "5533": {
+                "description": "Inbound Interface"
+            },
+            "6125": {
+                "description": "Calibration Tool Alert"
+            },
+            "6158": {
+                "description": "Not Ok"
+            },
+            "6160": {
+                "description": "Ok Status"
+            },
+            "6217": {
+                "description": "Tool Received At Lab Alert"
+            },
+            "6235": {
+                "description": "Send For Calibration Alert"
+            },
+            "6250": {
+                "description": "Received at Lab Alert"
+            },
+            "7514": {
+                "description": "Released Status are need to Update as In-Progress within a hour"
+            },
+            "7535": {
+                "description": "Transaction Failed Record"
+            },
+            "7536": {
+                "description": "Copy Template Configuration Alert"
+            },
+            "7601": {
+                "description": "Job Error Log"
+            },
+            "7661": {
+                "description": "Serial Number Hold"
+            },
+            "7678": {
+                "description": "Checklist Missing Alert"
+            },
+            "7689": {
+                "description": "Job Not Processed for Transaction History"
+            }
+        },
+        "Communication_Type_VSP_ID": {
+            "552": {
+                "description": "E-Mail"
+            }
+        },
+        "Line_Type_VSP_ID": {
+            "7684": {
+                "description": "Domestic"
+            },
+            "7685": {
+                "description": "Export"
+            }
+        },
+        "Module_VSP_ID": {
+            "43": {
+                "description": "Application Common Master"
+            },
+            "121": {
+                "description": "User Management"
+            },
+            "316": {
+                "description": "Quality"
+            },
+            "319": {
+                "description": "Production"
+            },
+            "544": {
+                "description": "App Label Page"
+            },
+            "605": {
+                "description": "Sequencing"
+            },
+            "1391": {
+                "description": "Interface"
+            },
+            "6203": {
+                "description": "Implementation"
+            }
+        },
+        "Workflow_Type_VSP_ID": {
+            "845": {
+                "description": "Notification"
+            },
+            "846": {
+                "description": "Approval Task"
+            }
+        }
+    },
+    "ACM_M_WORKFLOW_APPROVAL_GROUP_LIST": {
+        "Workflow_Level_VSP_ID": {
+            "834": {
+                "description": "Level 1"
+            },
+            "835": {
+                "description": "Level 2"
+            },
+            "836": {
+                "description": "Level 3"
+            },
+            "837": {
+                "description": "Level 4"
+            }
+        }
+    },
+    "ACM_M_WORKFLOW_APPROVAL_LOG": {
+        "Approval_Status_VSP_ID": {
+            "556": {
+                "description": "Status Approved"
+            },
+            "557": {
+                "description": "Status Not Approved"
+            }
+        }
+    },
+    "ACM_T_COMMUNICATION": {
+        "Com_Status_VSP_ID": {
+            "7683": {
+                "description": "Failed"
+            },
+            "547": {
+                "description": "Not Started"
+            },
+            "548": {
+                "description": "Completed"
+            }
+        },
+        "Com_Type_VSP_ID": {
+            "552": {
+                "description": "E-Mail"
+            }
+        },
+        "Function_VSP_ID": {
+            "842": {
+                "description": "WorkFlow"
+            },
+            "845": {
+                "description": "Notification"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            }
+        }
+    },
+    "Data_Printing_TempTable": {
+        "Field_Data_Type": {
+            "Image": {
+                "description": "Image"
+            },
+            "Shape": {
+                "description": "Shape"
+            },
+            "Text": {
+                "description": "Text"
+            }
+        },
+        "Field_Type": {
+            "Dynamic": {
+                "description": "Dynamic label"
+            },
+            "Static": {
+                "description": "Static Lable"
+            }
+        }
+    },
+    "DMT_L_DEVICE": {
+        "Device_Model_Type_ID": {
+            "15": {
+                "description": "Strong"
+            },
+            "16": {
+                "description": "String"
+            },
+            "18": {
+                "description": "India"
+            }
+        },
+        "Device_Role_VSP_ID": {
+            "210": {
+                "description": "Single Role"
+            }
+        }
+    },
+    "DMT_L_DEVICE_MODEL_TYPE": {
+        "Device_Model_Type_ID": {
+            "3": {
+                "description": "Teamwork"
+            },
+            "9": {
+                "description": "MR MEANS MEN"
+            },
+            "10": {
+                "description": "MRS MEANS WOMEN"
+            },
+            "11": {
+                "description": "Chief Executive Officer"
+            },
+            "14": {
+                "description": "Int"
+            },
+            "15": {
+                "description": "Strong"
+            },
+            "16": {
+                "description": "String"
+            },
+            "18": {
+                "description": "India"
+            }
+        },
+        "Device_Type_ID": {
+            "22": {
+                "description": "Warning"
+            },
+            "23": {
+                "description": "Error"
+            }
+        }
+    },
+    "DMT_M_DEVICE_TYPE": {
+        "Device_Type_ID": {
+            "3": {
+                "description": "Teamwork"
+            },
+            "9": {
+                "description": "MR MEANS MEN"
+            },
+            "10": {
+                "description": "MRS MEANS WOMEN"
+            },
+            "11": {
+                "description": "Chief Executive Officer"
+            },
+            "14": {
+                "description": "Int"
+            },
+            "15": {
+                "description": "Strong"
+            },
+            "16": {
+                "description": "String"
+            },
+            "18": {
+                "description": "India"
+            },
+            "20": {
+                "description": "US"
+            },
+            "22": {
+                "description": "Warning"
+            },
+            "23": {
+                "description": "Error"
+            }
+        }
+    },
+    "DTW_L_ACTIVITY_EVENT": {
+        "Type_VSP_ID": {
+            "657": {
+                "description": "Activity"
+            },
+            "658": {
+                "description": "Event"
+            }
+        }
+    },
+    "DTW_L_FUNCTIONALITY": {
+        "Functionality_Type_ID": {
+            "55": {
+                "description": "OTP"
+            },
+            "61": {
+                "description": "Weight Machine"
+            },
+            "62": {
+                "description": "English"
+            },
+            "63": {
+                "description": "Enterprise Structure"
+            },
+            "64": {
+                "description": "Country"
+            },
+            "66": {
+                "description": "Department"
+            },
+            "69": {
+                "description": "Cell"
+            }
+        },
+        "Signal_VSP_ID": {
+            "183": {
+                "description": "Dignal Type"
+            }
+        }
+    },
+    "DTW_L_INTERACTION_LINE_ITEM": {
+        "Interaction_Code_VSP_ID": {
+            "187": {
+                "description": "Machine to Device"
+            },
+            "188": {
+                "description": "Device to Gateway"
+            },
+            "189": {
+                "description": "Gateway to Server"
+            },
+            "276": {
+                "description": "Device to Machine interaction"
+            },
+            "277": {
+                "description": "Gateway to Device interaction"
+            },
+            "278": {
+                "description": "Server to Gateway interaction"
+            }
+        }
+    },
+    "DTW_L_SIGNAL_ATTRIBUTE": {
+        "Signal_Property_Name_VSP_ID": {
+            "3768": {
+                "description": "No Of Register"
+            },
+            "3769": {
+                "description": "First Register"
+            },
+            "3770": {
+                "description": "Modbus Point Type"
+            },
+            "3772": {
+                "description": "Slave ID"
+            },
+            "3773": {
+                "description": "Mode"
+            },
+            "3774": {
+                "description": "Destination Port Number"
+            },
+            "3775": {
+                "description": "Destination IP Address"
+            },
+            "3776": {
+                "description": "Handshake"
+            },
+            "3777": {
+                "description": "Stop Bits"
+            },
+            "3778": {
+                "description": "Parity"
+            },
+            "3779": {
+                "description": "DataBits"
+            },
+            "3780": {
+                "description": "BaudRate"
+            }
+        }
+    },
+    "DTW_M_FUNCTIONALITY_TYPE": {
+        "Functionality_Type_ID": {
+            "55": {
+                "description": "OTP"
+            },
+            "61": {
+                "description": "Weight Machine"
+            },
+            "62": {
+                "description": "English"
+            },
+            "63": {
+                "description": "Enterprise Structure"
+            },
+            "64": {
+                "description": "Country"
+            },
+            "66": {
+                "description": "Department"
+            },
+            "69": {
+                "description": "Cell"
+            }
+        },
+        "Industry_Type_VSP_ID": {
+            "185": {
+                "description": "Assembly Line"
+            },
+            "186": {
+                "description": "Machine Shop"
+            }
+        }
+    },
+    "DTW_M_SIGNAL_CONFIG": {
+        "Signal_Type_VSP_ID": {
+            "3762": {
+                "description": "RS232"
+            },
+            "3763": {
+                "description": "RS485"
+            },
+            "3764": {
+                "description": "TCP-IP Client"
+            },
+            "3765": {
+                "description": "Modbus Master"
+            },
+            "3766": {
+                "description": "Modbus Slave"
+            },
+            "3767": {
+                "description": "TCP-IP Server"
+            }
+        }
+    },
+    "EMD_L_SCREEN_TYPE": {
+        "Screen_Type_ID": {
+            "3": {
+                "description": "Teamwork"
+            }
+        },
+        "Screen_Type_Name_VSP_ID": {
+            "514": {
+                "description": "Center Screen"
+            }
+        }
+    },
+    "EMD_M_SCREEN_CONSTRUCTION": {
+        "Screen_Type_ID": {
+            "3": {
+                "description": "Teamwork"
+            }
+        }
+    },
+    "EMD_M_SCREEN_OBJECT": {
+        "Object_Type_VSP_ID": {
+            "507": {
+                "description": "Image"
+            },
+            "508": {
+                "description": "Lable"
+            },
+            "509": {
+                "description": "TextArea"
+            },
+            "510": {
+                "description": "Button"
+            }
+        }
+    },
+    "EMD_M_SIZE_RESOLUTION": {
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "EMD_T_APP_API_SENDER_LOG": {
+        "API_Call_Type_VSP_ID": {
+            "7687": {
+                "description": "Routing Link"
+            },
+            "7686": {
+                "description": "Work Order Link"
+            },
+            "7688": {
+                "description": "Master Link"
+            },
+            "7510": {
+                "description": "Common Link"
+            }
+        }
+    },
+    "ENT_L_MONTH": {
+        "Month_Name_VSP_ID": {
+            "255": {
+                "description": "May"
+            },
+            "256": {
+                "description": "Feb"
+            },
+            "258": {
+                "description": "March"
+            },
+            "460": {
+                "description": "January Month"
+            },
+            "461": {
+                "description": "April Month"
+            },
+            "462": {
+                "description": "June Month"
+            },
+            "463": {
+                "description": "July Month"
+            },
+            "464": {
+                "description": "Augest Month"
+            },
+            "465": {
+                "description": "September Month"
+            },
+            "466": {
+                "description": "October Month"
+            },
+            "467": {
+                "description": "November Month"
+            },
+            "468": {
+                "description": "December Month"
+            }
+        }
+    },
+    "ENT_L_PLANT_LINE": {
+        "Line_Type_VSP_ID": {
+            "7684": {
+                "description": "Domestic"
+            },
+            "7685": {
+                "description": "Export"
+            }
+        }
+    },
+    "ENT_L_QUARTER_YEAR": {
+        "Quarter_Name_VSP_ID": {
+            "357": {
+                "description": "April, May and June (Q1)"
+            },
+            "358": {
+                "description": "July, August and September (Q2)"
+            },
+            "359": {
+                "description": "October, November and December (Q3)"
+            },
+            "360": {
+                "description": "January, February and March (Q4)"
+            }
+        }
+    },
+    "ENT_L_SHIFT_BREAK_TIMINGS": {
+        "Break_Type_VSP_ID": {
+            "272": {
+                "description": "Lunch_Break"
+            }
+        }
+    },
+    "ENT_M_ADDRESS": {
+        "Address_Type_VSP_ID": {
+            "46": {
+                "description": "International"
+            },
+            "2874": {
+                "description": "Domestic"
+            },
+            "7594": {
+                "description": "Employee"
+            }
+        },
+        "Sticker_Type_VSP_ID": {
+            "6247": {
+                "description": "Name Plate"
+            },
+            "6248": {
+                "description": "Packing Slip"
+            }
+        }
+    },
+    "ENT_M_AGENCIES": {
+        "City_VSP_ID": {
+            "783": {
+                "description": "Coimbatore"
+            }
+        }
+    },
+    "ENT_M_CELL_MACHINE": {
+        "Machine_Type_VSP_ID": {
+            "7331": {
+                "description": "WORK CENTER GROUP"
+            },
+            "7332": {
+                "description": "WORK CENTER"
+            }
+        }
+    },
+    "ENT_M_CURRENCY": {
+        "Currency_Format_VSP_ID": {
+            "2877": {
+                "description": "Rupee"
+            }
+        }
+    },
+    "ENT_M_MANUFACTURER": {
+        "City_VSP_ID": {
+            "783": {
+                "description": "Coimbatore"
+            }
+        }
+    },
+    "ENT_M_PREFIX": {
+        "Function_VSP_ID": {
+            "88": {
+                "description": "Address"
+            },
+            "785": {
+                "description": "IME"
+            }
+        },
+        "Module_VSP_ID": {
+            "43": {
+                "description": "Application Common Master"
+            },
+            "192": {
+                "description": "Manufacturing Core"
+            }
+        }
+    },
+    "ENT_M_SUPPLIER": {
+        "City_VSP_ID": {
+            "783": {
+                "description": "Coimbatore"
+            }
+        },
+        "Contact_Position_VSP_ID": {
+            "288": {
+                "description": "Contact_Position"
+            }
+        },
+        "Ship_Via_VSP_ID": {
+            "275": {
+                "description": "By Road"
+            }
+        }
+    },
+    "INT_IB_LOCATION_CHANGE_LINE": {
+        "Item_UOM_VSP": {
+            "EA": {
+                "description": "EA"
+            }
+        },
+        "Move_UOM_VSP": {
+            "EA": {
+                "description": "EA"
+            }
+        }
+    },
+    "INT_IB_MATERIAL_INWARD_POST_INSPECTION_LINE": {
+        "UOM_VSP": {
+            "EA": {
+                "description": "EA"
+            }
+        }
+    },
+    "INT_IB_PICKSLIP_CONSUMPTION_LINE": {
+        "Status_VSP": {
+            "Created": {
+                "description": "Created"
+            }
+        }
+    },
+    "INT_IB_ROUTING_CONFIRMATION_LINE": {
+        "Status_VSP": {
+            "Ok": {
+                "description": "Ok"
+            }
+        }
+    },
+    "INT_TRANSACTION_HEADER_LOG": {
+        "Interface_Type_VSP_ID": {
+            "764": {
+                "description": "ERP To LA"
+            },
+            "765": {
+                "description": "LA To ERP"
+            }
+        },
+        "Transaction_Status_VSP_ID": {
+            "1067": {
+                "description": "Success"
+            },
+            "1068": {
+                "description": "Failure"
+            }
+        }
+    },
+    "LAMI_RPT_GRN_Against_FG": {
+        "Serial_Number_Status": {
+            "Ok": {
+                "description": "Ok"
+            }
+        }
+    },
+    "LAMI_RPT_MFG_Characteristics_Log": {
+        "Inspection_Type": {
+            "HIGH NO LOAD CURRENT": {
+                "description": "HIGH NO LOAD CURRENT"
+            }
+        },
+        "Order_Type": {
+            "Production Order": {
+                "description": "Production Order"
+            }
+        },
+        "status": {
+            "Ok": {
+                "description": "Ok"
+            },
+            "Not Ok": {
+                "description": "Not Ok"
+            }
+        },
+        "Work_Order_Type_VSP_ID": {
+            "1013": {
+                "description": "MFG WO"
+            }
+        }
+    },
+    "LAMI_RPT_Production_Order": {
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        },
+        "Work_Order_Status_VSP_ID": {
+            "484": {
+                "description": "In Progress"
+            },
+            "485": {
+                "description": "Completed"
+            }
+        },
+        "Work_Order_Type": {
+            "MFG WO": {
+                "description": "MFG WO"
+            }
+        },
+        "Work_Order_Type_VSP_ID": {
+            "1013": {
+                "description": "MFG WO"
+            }
+        }
+    },
+    "LAMI_RPT_Production_Order_Operation_History": {
+        "Status": {
+            "Ok": {
+                "description": "Ok"
+            },
+            "Not Ok": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "LAMI_RPT_Rework_Order_Operation_History": {
+        "Rework_Order_Type": {
+            "RWO DISAMBL": {
+                "description": "RWO DISAMBL"
+            },
+            "RWO INLINE": {
+                "description": "RWO INLINE"
+            }
+        },
+        "Status": {
+            "Ok": {
+                "description": "Ok"
+            }
+        }
+    },
+    "LAMI_RPT_RWO_Characteristics_Log": {
+        "Rework_Order_Type": {
+            "RWO DISAMBL": {
+                "description": "RWO DISAMBL"
+            },
+            "RWO INLINE": {
+                "description": "RWO INLINE"
+            }
+        },
+        "RWO_Type_VSP_ID": {
+            "1243": {
+                "description": "RWO DISAMBL"
+            },
+            "1073": {
+                "description": "RWO INLINE"
+            }
+        },
+        "Status": {
+            "Ok": {
+                "description": "Ok"
+            }
+        }
+    },
+    "LAMI_RPT_Testing_Panel_Characteristic_Reworkorder": {
+        "Order_Type": {
+            "Rework Order": {
+                "description": "Rework Order"
+            }
+        },
+        "Status": {
+            "Ok": {
+                "description": "Ok"
+            }
+        }
+    },
+    "LAMI_RPT_Testing_Panel_Characteristic_Workorder": {
+        "Status": {
+            "Ok": {
+                "description": "Ok"
+            },
+            "Not Ok": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "MFC_L_BOM_LINE_ITEM": {
+        "BOM_Level_VSP_ID": {
+            "3732": {
+                "description": "SAP NULL"
+            }
+        },
+        "INT_Item_Category_VSP_ID": {
+            "3741": {
+                "description": "Stock item"
+            }
+        },
+        "UOM_VSP_ID": {
+            "266": {
+                "description": "Week"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "90": {
+                "description": "Calendar"
+            },
+            "49": {
+                "description": "Email"
+            },
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "MFC_L_ITEM_PHYSICAL_ATTRIBUTES": {
+        "Weight_UOM_VSP_ID": {
+            "297": {
+                "description": "Item Model Type"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "49": {
+                "description": "Email"
+            }
+        }
+    },
+    "MFC_L_ITEM_PROPERTY": {
+        "Property_Group_VSP_ID": {
+            "2882": {
+                "description": "SAP NULL"
+            }
+        },
+        "Property_Name_VSP_ID": {
+            "5463": {
+                "description": "ZMM_PUMPIDENTIFICATION"
+            },
+            "5722": {
+                "description": "ZMM_CORES"
+            },
+            "5728": {
+                "description": "ZMM_SAND_METAL_RATIO"
+            },
+            "7534": {
+                "description": "ZMM_PVARRAYRATING"
+            },
+            "5421": {
+                "description": "ZMM_INSULATIONCLASS"
+            },
+            "5389": {
+                "description": "ZMM_BRAND"
+            },
+            "6214": {
+                "description": "ZMM_FOUNDRY"
+            },
+            "6194": {
+                "description": "LOBM_APO_SL_MAX"
+            },
+            "5414": {
+                "description": "ZMM_HEAD"
+            },
+            "6197": {
+                "description": "LOBM_LWEDT"
+            },
+            "5446": {
+                "description": "ZMM_NEWT_PSET"
+            },
+            "5410": {
+                "description": "ZMM_GRWT_CABLE"
+            },
+            "5465": {
+                "description": "ZMM_PUMPSERIES"
+            },
+            "7359": {
+                "description": "ZMM_LASER_NAME"
+            },
+            "5448": {
+                "description": "ZMM_NEWT_MOTOR"
+            },
+            "5482": {
+                "description": "ZMM_EFF_TTL"
+            },
+            "5476": {
+                "description": "ZMM_SUCTION"
+            },
+            "6308": {
+                "description": "Z_FURNACE"
+            },
+            "5390": {
+                "description": "ZMM_CAPACITORRUN"
+            },
+            "5409": {
+                "description": "ZMM_GRWT_PSET"
+            },
+            "5391": {
+                "description": "ZMM_CAPACITORSTART"
+            },
+            "5429": {
+                "description": "ZMM_KVACODE"
+            },
+            "6305": {
+                "description": "ZMM_DIR_ROT"
+            },
+            "5447": {
+                "description": "ZMM_NEWT_CABLE"
+            },
+            "5468": {
+                "description": "ZMM_RATEDPOWER"
+            },
+            "5729": {
+                "description": "ZMM_TOOL_CODE"
+            },
+            "5437": {
+                "description": "ZMM_MIN_BORE_SIZE"
+            },
+            "5478": {
+                "description": "ZMM_SUPPLYSOURCE"
+            },
+            "5724": {
+                "description": "ZMM_MATCH_PLATE"
+            },
+            "5438": {
+                "description": "ZMM_MINCOOLINGFLOW"
+            },
+            "5450": {
+                "description": "ZMM_NEWT_PUMP"
+            },
+            "5458": {
+                "description": "ZMM_PHASE"
+            },
+            "5387": {
+                "description": "ZMM_BEENUMBER"
+            },
+            "5396": {
+                "description": "ZMM_CONNECTION"
+            },
+            "5444": {
+                "description": "ZMM_MOTORSERIES"
+            },
+            "6200": {
+                "description": "Z_LINENUMBER"
+            },
+            "5464": {
+                "description": "ZMM_PUMP_MODEL"
+            },
+            "5398": {
+                "description": "ZMM_DEGREEOFPROTECTION"
+            },
+            "5418": {
+                "description": "ZMM_HEADING"
+            },
+            "5392": {
+                "description": "ZMM_CATEGORY"
+            },
+            "5425": {
+                "description": "ZMM_ISIPUMPSET"
+            },
+            "5453": {
+                "description": "ZMM_EFF_OVRALL"
+            },
+            "6199": {
+                "description": "Z_HEAT_NUMBER"
+            },
+            "5721": {
+                "description": "ZMM_CAVITY"
+            },
+            "5417": {
+                "description": "ZMM_HEADRANGE"
+            },
+            "5481": {
+                "description": "ZMM_THRUSTLOAD"
+            },
+            "5452": {
+                "description": "ZMM_OUTLET"
+            },
+            "5723": {
+                "description": "ZMM_CORE_TYPE"
+            },
+            "5400": {
+                "description": "ZMM_DISCHARGE"
+            },
+            "5407": {
+                "description": "ZMM_FREQUENCY"
+            },
+            "5730": {
+                "description": "ZMM_YIELD"
+            },
+            "5426": {
+                "description": "ZMM_ISIREFERENCE"
+            },
+            "7515": {
+                "description": "ZMM_ROTORMOC"
+            },
+            "6216": {
+                "description": "ZMM_PERFORMANCE_FACTOR"
+            },
+            "5420": {
+                "description": "ZMM_INCH"
+            },
+            "5455": {
+                "description": "ZMM_PACKTYPE"
+            },
+            "5393": {
+                "description": "ZMM_LOGO_CE"
+            },
+            "5430": {
+                "description": "ZMM_LABELPERIOD"
+            },
+            "5894": {
+                "description": "Motor Model"
+            },
+            "5422": {
+                "description": "ZMM_ISI"
+            },
+            "5473": {
+                "description": "ZMM_SPEED"
+            },
+            "5415": {
+                "description": "ZMM_HEAD_MAX"
+            },
+            "5727": {
+                "description": "ZMM_RUNNER_WT"
+            },
+            "5442": {
+                "description": "ZMM_MOTORIDENTIFICATION"
+            },
+            "6195": {
+                "description": "LOBM_FVDT1"
+            },
+            "5413": {
+                "description": "ZMM_GRWT_PUMP"
+            },
+            "5434": {
+                "description": "ZMM_MAXAMBTEMP"
+            },
+            "5460": {
+                "description": "ZMM_PRESSURE"
+            },
+            "5416": {
+                "description": "ZMM_HEAD_MINIMUM"
+            },
+            "5718": {
+                "description": "ZMM_BOX_CWT"
+            },
+            "5408": {
+                "description": "ZMM_GRADE"
+            },
+            "5445": {
+                "description": "ZMM_MOTOR_TYPE"
+            },
+            "5423": {
+                "description": "ZMM_ISIMOTOR"
+            },
+            "5485": {
+                "description": "ZMM_VOLTS"
+            },
+            "5470": {
+                "description": "ZMM_SERVICEFACTOR"
+            },
+            "5471": {
+                "description": "ZMM_SERVICEFACTORMAXIMUMAMPS"
+            },
+            "5475": {
+                "description": "ZMM_SUBMERGENCE"
+            },
+            "5466": {
+                "description": "ZMM_PUMPSET_MODEL"
+            },
+            "5441": {
+                "description": "ZMM_EFF_MOTOR"
+            },
+            "5411": {
+                "description": "ZMM_GRWT_MOTOR"
+            },
+            "5462": {
+                "description": "ZMM_PUMPFLOWTYPE"
+            },
+            "5454": {
+                "description": "ZMM_PACKAGE"
+            },
+            "5486": {
+                "description": "ZMM_WIRE"
+            },
+            "5456": {
+                "description": "ZMM_PANEL"
+            },
+            "5424": {
+                "description": "ZMM_ISIPUMP"
+            },
+            "5459": {
+                "description": "ZMM_POWERFACTOR"
+            },
+            "6196": {
+                "description": "LOBM_HSDAT"
+            },
+            "5897": {
+                "description": "ZMM_BEESTAR"
+            },
+            "5399": {
+                "description": "ZMM_DELIVERY"
+            },
+            "6215": {
+                "description": "ZMM_MODELYEAR"
+            },
+            "5719": {
+                "description": "ZMM_BOX_PWT"
+            },
+            "5725": {
+                "description": "ZMM_MOULD_WT"
+            },
+            "5405": {
+                "description": "ZMM_EFFICIENCY_CLASS"
+            },
+            "6198": {
+                "description": "LOBM_VFDAT"
+            },
+            "5720": {
+                "description": "ZMM_CAST_WT"
+            },
+            "5480": {
+                "description": "ZMM_TEMPERATURE"
+            },
+            "5726": {
+                "description": "ZMM_POR_WT"
+            },
+            "5469": {
+                "description": "ZMM_REGION"
+            },
+            "5477": {
+                "description": "ZMM_SUCTIONXDELIVERY"
+            },
+            "5404": {
+                "description": "ZMM_DUTY"
+            },
+            "5385": {
+                "description": "ZMM_AMPS"
+            },
+            "5474": {
+                "description": "ZMM_STAGES"
+            },
+            "5451": {
+                "description": "ZMM_LOGO_NSF"
+            }
+        }
+    },
+    "MFC_L_MBOM": {
+        "Is_SubAssembly_Operation_VSP_ID": {
+            "5846": {
+                "description": "Main Assembly Start"
+            },
+            "5919": {
+                "description": "Main Assembly End"
+            }
+        }
+    },
+    "MFC_L_MBOM_LA_OPERATION": {
+        "Activity_Type_VSP_ID": {
+            "6087": {
+                "description": "Activity 1"
+            },
+            "6088": {
+                "description": "Activity 2"
+            },
+            "6089": {
+                "description": "Activity 3"
+            },
+            "6090": {
+                "description": "Activity 4"
+            }
+        }
+    },
+    "MFC_L_MBOM_OPERATION_PART": {
+        "Validate_Type_VSP_ID": {
+            "1154": {
+                "description": "Serial Number"
+            },
+            "1155": {
+                "description": "Item Code"
+            },
+            "7653": {
+                "description": "QR Code"
+            }
+        }
+    },
+    "MFC_L_OPERATION_REJECTION_REASON": {
+        "Rejection_Reason_VSP_ID": {
+            "7434": {
+                "description": "WRONG BODY"
+            },
+            "7435": {
+                "description": "WRONG CONNECTION"
+            },
+            "7436": {
+                "description": "WINDING CUT"
+            },
+            "7437": {
+                "description": "RESISTANCE VARIATION"
+            },
+            "7438": {
+                "description": "STUD PROBLEM"
+            },
+            "7439": {
+                "description": "BODY DENT"
+            },
+            "7440": {
+                "description": "CABLE DAMAGE"
+            },
+            "7441": {
+                "description": "CABLE OXIDATION"
+            },
+            "7442": {
+                "description": "CABLE LENGTH ISSUE"
+            },
+            "7443": {
+                "description": "SPLINES PROBLEM"
+            },
+            "7444": {
+                "description": "BEFORE IR FAILURE"
+            },
+            "7445": {
+                "description": "BEFORE IR WEAK"
+            },
+            "7446": {
+                "description": "ROTOR TIGHT"
+            },
+            "7447": {
+                "description": "MOTOR CAPACITOR ISSUE"
+            },
+            "7448": {
+                "description": "CABLE COLOUR CODING ISSUE"
+            },
+            "7449": {
+                "description": "ROTOR FAILURE"
+            },
+            "7450": {
+                "description": "PICKUP PROBLEM"
+            },
+            "7451": {
+                "description": "SOUND"
+            },
+            "7452": {
+                "description": "HIGH NO LOAD CURRENT"
+            },
+            "7453": {
+                "description": "WATTS OVER"
+            },
+            "7454": {
+                "description": "WRONG DIRECTION"
+            },
+            "7455": {
+                "description": "VIBRATION"
+            },
+            "7456": {
+                "description": "IR FAILURE HEAT"
+            },
+            "7457": {
+                "description": "IR WEAK HEAT"
+            },
+            "7458": {
+                "description": "IR FAILURE COOL"
+            },
+            "7459": {
+                "description": "IR WEAK COOL"
+            },
+            "7460": {
+                "description": "HIGH VOLTAGE TEST FAIL"
+            },
+            "7461": {
+                "description": "HV IR FAILURE"
+            },
+            "7462": {
+                "description": "HV IR WEAK"
+            },
+            "7463": {
+                "description": "CABLE LEAK"
+            },
+            "7465": {
+                "description": "NUT LEAK"
+            },
+            "7466": {
+                "description": "OIL SEAL LEAK"
+            },
+            "7467": {
+                "description": "ROTOR RUNOUT"
+            },
+            "7468": {
+                "description": "HANDLING DAMAGE"
+            },
+            "7469": {
+                "description": "LIFT PROBLEM"
+            },
+            "7470": {
+                "description": "FACEOUT PROBLEM"
+            },
+            "7471": {
+                "description": "RUNOUT PROBLEM"
+            },
+            "7472": {
+                "description": "SIDE SCREW TORQUE PROBLEM"
+            },
+            "7473": {
+                "description": "DRAIN PLUG O-RING PROJECTION"
+            },
+            "7474": {
+                "description": "SNAP RING ID UNDERSIZE OR OVERSIZE"
+            },
+            "7475": {
+                "description": "UPPER HOUSING LEAK"
+            },
+            "7479": {
+                "description": "PCD PROBLEM"
+            },
+            "7480": {
+                "description": "DRAIN PLUG TORQUE PROBLEM"
+            },
+            "7481": {
+                "description": "GROMMET SCREW TORQUE PROBLEM"
+            },
+            "7483": {
+                "description": "WEIGHT MISMATCH"
+            },
+            "7484": {
+                "description": "WINDING CUT OD PLUS"
+            },
+            "7485": {
+                "description": "OUTER SHELL DAMAGE"
+            },
+            "7486": {
+                "description": "WINDING STATOR LEAD CUT AND STATOR LEAD LENGTH PROBLEM"
+            },
+            "7487": {
+                "description": "MANDLE PROBLEM"
+            },
+            "7488": {
+                "description": "OUT SHELL TOTAL LENGTH PLUS"
+            },
+            "7489": {
+                "description": "BOTTOM OD PLUS"
+            },
+            "7490": {
+                "description": "AIRHOLES"
+            },
+            "7491": {
+                "description": "WAITING FOR MATERIAL"
+            },
+            "7492": {
+                "description": "SHELL  AIRHOLES"
+            },
+            "7493": {
+                "description": "VISUAL (DENT, DAMAGE & RUST)"
+            },
+            "7494": {
+                "description": "FREE ROTATION"
+            },
+            "7495": {
+                "description": "LEAK FOR UPPER HOUSING"
+            },
+            "7496": {
+                "description": "EARTH CABLE SHORT AND LENGTH"
+            },
+            "7497": {
+                "description": "SPLINES PROBLEM"
+            }
+        }
+    },
+    "MFC_L_OPERATION_VERSION_LOG": {
+        "INT_Activity_Type5": {
+            "TOOL": {
+                "description": "Tool"
+            }
+        },
+        "INT_Control_Key_VSP_ID": {
+            "3789": {
+                "description": "Routing/Ref. op. set -"
+            }
+        },
+        "INT_Tasklist_Type_VSP_ID": {
+            "3826": {
+                "description": "Routing"
+            }
+        },
+        "INT_UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "MFC_L_PRINTER_FONT_MAPPING": {
+        "Font_VSP_ID": {
+            "6201": {
+                "description": "SwitzerlandCondensed"
+            }
+        }
+    },
+    "MFC_M_BOM_HEADER": {
+        "BOM_Type_VSP_ID": {
+            "231": {
+                "description": "MFG BOM"
+            }
+        },
+        "INT_Base_UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        },
+        "INT_BOM_Status_VSP_ID": {
+            "3734": {
+                "description": "Active"
+            }
+        },
+        "INT_BOM_Usage_VSP_ID": {
+            "3746": {
+                "description": "Production"
+            }
+        }
+    },
+    "MFC_M_ERP_OPERATION": {
+        "INT_Activity_Type5": {
+            "TOOL": {
+                "description": "Tool"
+            }
+        },
+        "INT_Control_Key_VSP_ID": {
+            "3789": {
+                "description": "Routing/Ref. op. set -"
+            }
+        },
+        "INT_Tasklist_Type_VSP_ID": {
+            "3826": {
+                "description": "Routing"
+            }
+        },
+        "INT_UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "MFC_M_ISI_CERTIFICATE_UPLOAD": {
+        "Inspection_Rejection_Reason_VSP_ID": {
+            "7434": {
+                "description": "WRONG BODY"
+            },
+            "7435": {
+                "description": "WRONG CONNECTION"
+            },
+            "7436": {
+                "description": "WINDING CUT"
+            },
+            "7446": {
+                "description": "ROTOR TIGHT"
+            },
+            "7497": {
+                "description": "SPLINES PROBLEM"
+            },
+            "7657": {
+                "description": "To Manage User Rejection Reason"
+            }
+        },
+        "ISI_Inspection_Result_VSP_ID": {
+            "6024": {
+                "description": "Fail"
+            },
+            "6025": {
+                "description": "Pass"
+            }
+        },
+        "QWO_Inspection_Type_VSP_ID": {
+            "5828": {
+                "description": "ISI INSPECTION"
+            },
+            "5829": {
+                "description": "THIRD PARTY INSPECTION"
+            }
+        }
+    },
+    "MFC_M_ITEM": {
+        "Cycle_Count_Identifier_VSP_ID": {
+            "2866": {
+                "description": "SAP NULL"
+            }
+        },
+        "INT_Mat_Status_VSP_ID": {
+            "5998": {
+                "description": "Data Incomplete To Be Pop"
+            }
+        },
+        "INT_Sales_Mat_Status_VSP_ID": {
+            "6004": {
+                "description": "Data Incomplete"
+            }
+        },
+        "Item_Classification_VSP_ID": {
+            "2863": {
+                "description": "SAP NULL"
+            }
+        },
+        "Item_Group_VSP_ID": {
+            "2195": {
+                "description": "CONVERTER"
+            },
+            "2006": {
+                "description": "PLATE BASE"
+            },
+            "2383": {
+                "description": "IMPELLER"
+            },
+            "2624": {
+                "description": "SHAFT ROTOR"
+            },
+            "2524": {
+                "description": "PACKING BOX CART"
+            },
+            "2095": {
+                "description": "CAPACITOR"
+            },
+            "2483": {
+                "description": "SEAL MECHANICAL"
+            },
+            "2551": {
+                "description": "PLUG"
+            },
+            "2680": {
+                "description": "SLEEVE"
+            },
+            "2171": {
+                "description": "CONE"
+            },
+            "2513": {
+                "description": "PAD"
+            },
+            "2334": {
+                "description": "GROMMET"
+            },
+            "2737": {
+                "description": "SUPPORT"
+            },
+            "2809": {
+                "description": "VALVE"
+            },
+            "2209": {
+                "description": "CAP DUMMY"
+            },
+            "2825": {
+                "description": "WEDGE"
+            },
+            "2467": {
+                "description": "METER"
+            },
+            "2090": {
+                "description": "GUARD CABLE"
+            },
+            "2286": {
+                "description": "FLANGE"
+            },
+            "7255": {
+                "description": "STATOR"
+            },
+            "2104": {
+                "description": "CASING"
+            },
+            "2722": {
+                "description": "STRAINER"
+            },
+            "2296": {
+                "description": "FOAM"
+            },
+            "2449": {
+                "description": "STRIP LOCKING"
+            },
+            "2538": {
+                "description": "PIPE"
+            },
+            "2610": {
+                "description": "RING"
+            },
+            "2638": {
+                "description": "SCREW"
+            },
+            "2692": {
+                "description": "SPACER"
+            },
+            "2702": {
+                "description": "SPRING"
+            },
+            "2822": {
+                "description": "WOUNDED COIL"
+            },
+            "2106": {
+                "description": "TIE CABLE"
+            },
+            "2615": {
+                "description": "ROD"
+            },
+            "2215": {
+                "description": "PLATE DIFFUSER"
+            },
+            "6936": {
+                "description": "COMPOUND"
+            },
+            "7191": {
+                "description": "RESISTOR"
+            },
+            "2732": {
+                "description": "STUD"
+            },
+            "2656": {
+                "description": "SENSOR TEMPERATURE"
+            },
+            "2565": {
+                "description": "PAPER TUBE"
+            },
+            "2083": {
+                "description": "CABLE"
+            },
+            "2746": {
+                "description": "BOLT T"
+            },
+            "1963": {
+                "description": "ADHESIVE"
+            },
+            "2731": {
+                "description": "STATOR"
+            },
+            "2128": {
+                "description": "CLAMP"
+            },
+            "2059": {
+                "description": "BARE PUMP"
+            },
+            "2192": {
+                "description": "COUPLING"
+            },
+            "7305": {
+                "description": "WINDING GUARD"
+            },
+            "2718": {
+                "description": "STICKER"
+            },
+            "2626": {
+                "description": "SANDGUARD"
+            },
+            "7228": {
+                "description": "SHCA"
+            },
+            "2258": {
+                "description": "ENCLOSURE"
+            },
+            "2217": {
+                "description": "DIAPHRAGM"
+            },
+            "2072": {
+                "description": "BUFFER"
+            },
+            "2126": {
+                "description": "CIRCLIP"
+            },
+            "2505": {
+                "description": "OIL"
+            },
+            "2535": {
+                "description": "PIN"
+            },
+            "2564": {
+                "description": "SHAFT PUMP"
+            },
+            "2775": {
+                "description": "TIE ROD"
+            },
+            "2646": {
+                "description": "SEGMENT"
+            },
+            "2525": {
+                "description": "P.BOX"
+            },
+            "2668": {
+                "description": "SHIM"
+            },
+            "2223": {
+                "description": "PLATE DIAPHRAGM"
+            },
+            "2159": {
+                "description": "COIL"
+            },
+            "2834": {
+                "description": "WIRE"
+            },
+            "2339": {
+                "description": "GUIDE"
+            },
+            "2526": {
+                "description": "PACKING BOX WOOD"
+            },
+            "2374": {
+                "description": "HOUSING"
+            },
+            "2515": {
+                "description": "PAINT"
+            },
+            "2366": {
+                "description": "HOOP"
+            },
+            "2472": {
+                "description": "BASE MOTOR"
+            },
+            "2379": {
+                "description": "INLINE CONNECTOR"
+            },
+            "2350": {
+                "description": "HARDNER"
+            },
+            "2157": {
+                "description": "GUARD COUPLING"
+            },
+            "6934": {
+                "description": "COIW"
+            },
+            "2759": {
+                "description": "THRUST BASE"
+            },
+            "2612": {
+                "description": "RIVET"
+            },
+            "2720": {
+                "description": "STOPPER"
+            },
+            "2501": {
+                "description": "NUT"
+            },
+            "2836": {
+                "description": "WIND KIT"
+            },
+            "2241": {
+                "description": "PLUG DRAIN"
+            },
+            "2052": {
+                "description": "BOLT ELEVATOR"
+            },
+            "2414": {
+                "description": "KIT"
+            },
+            "2285": {
+                "description": "FIXTURE"
+            },
+            "2117": {
+                "description": "CHEMICAL"
+            },
+            "2047": {
+                "description": "BARE MOTOR"
+            },
+            "7134": {
+                "description": "PUSH BUTTON"
+            },
+            "2219": {
+                "description": "DIFFUSER"
+            },
+            "2518": {
+                "description": "PAPER"
+            },
+            "2635": {
+                "description": "SCRAP NO MODIFIER"
+            },
+            "2064": {
+                "description": "BEARING"
+            },
+            "2778": {
+                "description": "TOOL"
+            },
+            "2443": {
+                "description": "NUT LOCK"
+            },
+            "2456": {
+                "description": "MAGNET"
+            },
+            "2451": {
+                "description": "LUGS"
+            },
+            "2174": {
+                "description": "CONNECTOR"
+            },
+            "2543": {
+                "description": "PLATE"
+            },
+            "2460": {
+                "description": "CIRCUIT BREAKER MOLDED CASE"
+            },
+            "2176": {
+                "description": "CONTROL UNIT"
+            },
+            "2484": {
+                "description": "SHAFT MOTOR"
+            },
+            "2067": {
+                "description": "BRACKET"
+            },
+            "2619": {
+                "description": "ROPE"
+            },
+            "2408": {
+                "description": "KEY"
+            },
+            "2600": {
+                "description": "RESIN"
+            },
+            "2509": {
+                "description": "O-RING"
+            },
+            "2839": {
+                "description": "WINDING STATOR"
+            },
+            "2510": {
+                "description": "SEAL OIL"
+            },
+            "2277": {
+                "description": "FINISHED GOODS"
+            },
+            "2224": {
+                "description": "DIFFUSER PROFILE"
+            },
+            "2094": {
+                "description": "CAP"
+            },
+            "2280": {
+                "description": "FILM"
+            },
+            "2499": {
+                "description": "CHECK VALVE"
+            },
+            "2308": {
+                "description": "GASKET"
+            },
+            "2233": {
+                "description": "NUT DOOM"
+            },
+            "7162": {
+                "description": "POLY COVER"
+            },
+            "2821": {
+                "description": "WASHER"
+            },
+            "2665": {
+                "description": "SHELL NO MODIFIER"
+            },
+            "2452": {
+                "description": "BOOK MANUAL"
+            },
+            "2050": {
+                "description": "BODY"
+            },
+            "2079": {
+                "description": "BUSH"
+            },
+            "2489": {
+                "description": "PLATE NAME"
+            },
+            "7001": {
+                "description": "FRONT BRACKET"
+            }
+        },
+        "Item_Serialisation_Type_VSP_ID": {
+            "2864": {
+                "description": "SAP NULL"
+            }
+        },
+        "Item_Type_VSP_ID": {
+            "5524": {
+                "description": "Base finished Goods"
+            },
+            "2843": {
+                "description": "Raw Materials"
+            },
+            "2841": {
+                "description": "Finished Goods"
+            },
+            "2852": {
+                "description": "Scrap Materials"
+            },
+            "2844": {
+                "description": "Semifinished Goods"
+            },
+            "2855": {
+                "description": "Production Resource Tools"
+            },
+            "2856": {
+                "description": "Subassembly"
+            },
+            "5523": {
+                "description": "Machined Material"
+            }
+        },
+        "Production_Class_VSP_ID": {
+            "2865": {
+                "description": "SAP NULL"
+            }
+        },
+        "UOM_Type_VSP_ID": {
+            "266": {
+                "description": "Week"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "90": {
+                "description": "Calendar"
+            },
+            "49": {
+                "description": "Email"
+            },
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "MFC_M_LA_OPERATION": {
+        "Functionality_Type_ID": {
+            "55": {
+                "description": "OTP"
+            },
+            "64": {
+                "description": "Country"
+            }
+        },
+        "Required_Buttons_VSP_ID": {
+            "7500": {
+                "description": "Required Buttons For LA Operation"
+            },
+            "7501": {
+                "description": "Required Buttons For LA Operation"
+            },
+            "7502": {
+                "description": "Required Buttons For LA Operation"
+            },
+            "7503": {
+                "description": "Required Buttons For LA operation"
+            },
+            "7654": {
+                "description": "Label"
+            }
+        }
+    },
+    "MFC_M_LASER_MARKING_FIELDS": {
+        "Laser_Marking_Template_VSP_ID": {
+            "5498": {
+                "description": "LASER"
+            }
+        },
+        "Laser_Marking_Value_VSP_ID": {
+            "5384": {
+                "description": "ZMM_AMBTEMP"
+            },
+            "5385": {
+                "description": "ZMM_AMPS"
+            },
+            "5386": {
+                "description": "ZMM_BEENOTE"
+            },
+            "5389": {
+                "description": "ZMM_BRAND"
+            },
+            "5390": {
+                "description": "ZMM_CAPACITORRUN"
+            },
+            "5391": {
+                "description": "ZMM_CAPACITORSTART"
+            },
+            "5392": {
+                "description": "ZMM_CATEGORY"
+            },
+            "5393": {
+                "description": "ZMM_LOGO_CE"
+            },
+            "5396": {
+                "description": "ZMM_CONNECTION"
+            },
+            "5397": {
+                "description": "ZMM_LOGO_CP"
+            },
+            "5398": {
+                "description": "ZMM_DEGREEOFPROTECTION"
+            },
+            "5399": {
+                "description": "ZMM_DELIVERY"
+            },
+            "5400": {
+                "description": "ZMM_DISCHARGE"
+            },
+            "5401": {
+                "description": "ZMM_DISCHARGE_MAX"
+            },
+            "5402": {
+                "description": "ZMM_DISCHARGE_MIN"
+            },
+            "5403": {
+                "description": "ZMM_DISCHARGERANGE"
+            },
+            "5404": {
+                "description": "ZMM_DUTY"
+            },
+            "5405": {
+                "description": "ZMM_EFFICIENCY_CLASS"
+            },
+            "5406": {
+                "description": "ZMM_FRAMESIZE"
+            },
+            "5407": {
+                "description": "ZMM_FREQUENCY"
+            },
+            "5414": {
+                "description": "ZMM_HEAD"
+            },
+            "5415": {
+                "description": "ZMM_HEAD_MAX"
+            },
+            "5416": {
+                "description": "ZMM_HEAD_MINIMUM"
+            },
+            "5417": {
+                "description": "ZMM_HEADRANGE"
+            },
+            "5418": {
+                "description": "ZMM_HEADING"
+            },
+            "5419": {
+                "description": "ZMM_IMPELLERDIAMETER"
+            },
+            "5420": {
+                "description": "ZMM_INCH"
+            },
+            "5421": {
+                "description": "ZMM_INSULATIONCLASS"
+            },
+            "5422": {
+                "description": "ZMM_ISI"
+            },
+            "5423": {
+                "description": "ZMM_ISIMOTOR"
+            },
+            "5424": {
+                "description": "ZMM_ISIPUMP"
+            },
+            "5425": {
+                "description": "ZMM_ISIPUMPSET"
+            },
+            "5426": {
+                "description": "ZMM_ISIREFERENCE"
+            },
+            "5429": {
+                "description": "ZMM_KVACODE"
+            },
+            "5433": {
+                "description": "ZMM_MTRLOFCONST"
+            },
+            "5434": {
+                "description": "ZMM_MAXAMBTEMP"
+            },
+            "5435": {
+                "description": "ZMM_MAXFLOW"
+            },
+            "5437": {
+                "description": "ZMM_MIN_BORE_SIZE"
+            },
+            "5438": {
+                "description": "ZMM_MINCOOLINGFLOW"
+            },
+            "5439": {
+                "description": "ZMM_MINHEAD"
+            },
+            "5441": {
+                "description": "ZMM_EFF_MOTOR"
+            },
+            "5444": {
+                "description": "ZMM_MOTORSERIES"
+            },
+            "5445": {
+                "description": "ZMM_MOTOR_TYPE"
+            },
+            "5451": {
+                "description": "ZMM_LOGO_NSF"
+            },
+            "5452": {
+                "description": "ZMM_OUTLET"
+            },
+            "5453": {
+                "description": "ZMM_EFF_OVRALL"
+            },
+            "5454": {
+                "description": "ZMM_PACKAGE"
+            },
+            "5458": {
+                "description": "ZMM_PHASE"
+            },
+            "5459": {
+                "description": "ZMM_POWERFACTOR"
+            },
+            "5460": {
+                "description": "ZMM_PRESSURE"
+            },
+            "5461": {
+                "description": "ZMM_EFF_PUMP"
+            },
+            "5462": {
+                "description": "ZMM_PUMPFLOWTYPE"
+            },
+            "5465": {
+                "description": "ZMM_PUMPSERIES"
+            },
+            "5466": {
+                "description": "ZMM_PUMPSET_MODEL"
+            },
+            "5468": {
+                "description": "ZMM_RATEDPOWER"
+            },
+            "5469": {
+                "description": "ZMM_REGION"
+            },
+            "5470": {
+                "description": "ZMM_SERVICEFACTOR"
+            },
+            "5471": {
+                "description": "ZMM_SERVICEFACTORMAXIMUMAMPS"
+            },
+            "5473": {
+                "description": "ZMM_SPEED"
+            },
+            "5474": {
+                "description": "ZMM_STAGES"
+            },
+            "5475": {
+                "description": "ZMM_SUBMERGENCE"
+            },
+            "5476": {
+                "description": "ZMM_SUCTION"
+            },
+            "5477": {
+                "description": "ZMM_SUCTIONXDELIVERY"
+            },
+            "5478": {
+                "description": "ZMM_SUPPLYSOURCE"
+            },
+            "5479": {
+                "description": "ZMM_TAGNO"
+            },
+            "5480": {
+                "description": "ZMM_TEMPERATURE"
+            },
+            "5481": {
+                "description": "ZMM_THRUSTLOAD"
+            },
+            "5485": {
+                "description": "ZMM_VOLTS"
+            },
+            "5486": {
+                "description": "ZMM_WIRE"
+            },
+            "5487": {
+                "description": "ZMM_YEAR"
+            },
+            "5894": {
+                "description": "Motor Model"
+            },
+            "6194": {
+                "description": "LOBM_APO_SL_MAX"
+            },
+            "6305": {
+                "description": "ZMM_DIR_ROT"
+            },
+            "7515": {
+                "description": "ZMM_ROTORMOC"
+            },
+            "7534": {
+                "description": "ZMM_PVARRAYRATING"
+            }
+        }
+    },
+    "MFC_M_ROUTING_HEADER": {
+        "INT_Tasklist_Status_VSP_ID": {
+            "3817": {
+                "description": "Released (General)"
+            }
+        },
+        "INT_Tasklist_Type_VSP_ID": {
+            "3826": {
+                "description": "Routing"
+            }
+        },
+        "INT_Tasklist_Usage_VSP_ID": {
+            "3805": {
+                "description": "Production"
+            }
+        },
+        "Routing_Type_VSP_ID": {
+            "1198": {
+                "description": "MFG Routing"
+            },
+            "1199": {
+                "description": "Disassemble Routing"
+            },
+            "1200": {
+                "description": "Dismantle Routing"
+            },
+            "1201": {
+                "description": "Patrol Routing"
+            },
+            "1202": {
+                "description": "Performance Routing"
+            },
+            "5833": {
+                "description": "Third Party Routing"
+            },
+            "5923": {
+                "description": "Endurance Test"
+            }
+        }
+    },
+    "MFC_M_UOM": {
+        "UOM_Type_VSP_ID": {
+            "423": {
+                "description": "mm"
+            },
+            "425": {
+                "description": "cm"
+            },
+            "1951": {
+                "description": "TBD"
+            },
+            "2935": {
+                "description": "Inch"
+            }
+        }
+    },
+    "MFC_M_VEHICLE": {
+        "Mode_Of_Transport_VSP_ID": {
+            "642": {
+                "description": "By Road"
+            }
+        },
+        "Vehicle_Status_VSP_ID": {
+            "304": {
+                "description": "Vehicle In"
+            }
+        },
+        "Vehicle_Type_VSP_ID": {
+            "342": {
+                "description": "Load Truck"
+            }
+        }
+    },
+    "MFC_T_BOM_VERSION_LOG": {
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "MFC_T_IME": {
+        "Calibrate_Type_VSP_ID": {
+            "6020": {
+                "description": "Internal"
+            },
+            "6021": {
+                "description": "External"
+            }
+        },
+        "Calibration_Current_Status_VSP_ID": {
+            "501": {
+                "description": "Send For Calibration"
+            },
+            "542": {
+                "description": "Received At Lab"
+            },
+            "6137": {
+                "description": "Waiting For Approval"
+            }
+        },
+        "IME_Category_VSP_ID": {
+            "6043": {
+                "description": "Mechanical"
+            }
+        },
+        "IME_Reverse_Status_VSP_ID": {
+            "820": {
+                "description": "Available"
+            },
+            "1027": {
+                "description": "Not Available"
+            },
+            "4715": {
+                "description": "Available"
+            }
+        },
+        "IME_Status_VSP_ID": {
+            "820": {
+                "description": "Available"
+            },
+            "1027": {
+                "description": "Not Available"
+            },
+            "4715": {
+                "description": "Available"
+            }
+        },
+        "IME_Type_VSP_ID": {
+            "792": {
+                "description": "Ransar-1 Tool For ME"
+            },
+            "1028": {
+                "description": "Ransar-1 Tool For Quality"
+            },
+            "7692": {
+                "description": "Ransar-1 Fixture For production"
+            }
+        }
+    },
+    "MFC_TT_ITEM_RECEIPT": {
+        "UOM_VSP_ID": {
+            "49": {
+                "description": "Email"
+            },
+            "64": {
+                "description": "Country"
+            },
+            "90": {
+                "description": "Calendar"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "266": {
+                "description": "Week"
+            }
+        }
+    },
+    "MFC_TT_ITEM_TRANSACTION": {
+        "Transaction_Method_VSP_ID": {
+            "7532": {
+                "description": "Return To Store"
+            },
+            "849": {
+                "description": "Issue Item"
+            },
+            "7522": {
+                "description": "Issue to Shipping"
+            },
+            "7664": {
+                "description": "Issue To Sales Packing"
+            },
+            "7505": {
+                "description": "Issued To Inspection"
+            },
+            "7663": {
+                "description": "Issue To Sales Warehouse"
+            },
+            "7336": {
+                "description": "Issue To Line"
+            },
+            "7569": {
+                "description": "Inspection Return"
+            },
+            "7511": {
+                "description": "Rework Issue To Line"
+            },
+            "7662": {
+                "description": "ISI Location Change"
+            },
+            "7334": {
+                "description": "Material Inward"
+            },
+            "7346": {
+                "description": "Issue To FG warehouse"
+            },
+            "7690": {
+                "description": "Warehouse Stock"
+            }
+        },
+        "Transaction_Type_VSP_ID": {
+            "7347": {
+                "description": "Picking"
+            },
+            "1113": {
+                "description": "Scrap Issue"
+            },
+            "7335": {
+                "description": "Put Away"
+            }
+        }
+    },
+    "MFC_TT_SERIALIZE_RECEIPT_ITEM": {
+        "Serialization_Status_VSP_ID": {
+            "530": {
+                "description": "Serial No Assigned"
+            }
+        }
+    },
+    "PRD_L_API_WORK_ORDER_BOM_LINE_ITEM": {
+        "BOM_Type": {
+            "MFG BOM": {
+                "description": "MFG BOM"
+            }
+        },
+        "Work_Order_Type": {
+            "MFG WO": {
+                "description": "MFG WO"
+            }
+        }
+    },
+    "PRD_L_MASTER_PACKING_SALES_PICKSLIP": {
+        "Status_VSP_ID": {
+            "851": {
+                "description": "Picked"
+            }
+        }
+    },
+    "PRD_L_PALLETIZATION_HEADER": {
+        "Palletization_Status_VSP_ID": {
+            "1130": {
+                "description": "Partially Filled"
+            }
+        }
+    },
+    "PRD_L_PALLETIZATION_LINE_ITEM": {
+        "Palletization_Item_Status_VSP_ID": {
+            "1086": {
+                "description": "Locator Assigned"
+            },
+            "1178": {
+                "description": "Issued"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "PRD_L_PRD_PICKSLIP_WO_CONSOLIDATED_HEADER": {
+        "WO_Consolidated_Status_VSP_ID": {
+            "1056": {
+                "description": "Not Completed"
+            },
+            "1057": {
+                "description": "Completed"
+            }
+        },
+        "WO_Consolidated_Type_VSP_ID": {
+            "1054": {
+                "description": "Single"
+            },
+            "1055": {
+                "description": "Consolidated"
+            }
+        }
+    },
+    "PRD_L_REWORK_ORDER": {
+        "Order_Type_VSP_ID": {
+            "5944": {
+                "description": "MFG WO"
+            },
+            "5967": {
+                "description": "SubAssembly Lot"
+            }
+        },
+        "Rework_Order_Status_VSP_ID": {
+            "483": {
+                "description": "Not Started"
+            },
+            "485": {
+                "description": "Completed"
+            },
+            "493": {
+                "description": "In Progress"
+            },
+            "1100": {
+                "description": "Hold"
+            }
+        },
+        "RWO_Type_VSP_ID": {
+            "1073": {
+                "description": "RWO INLINE"
+            },
+            "1243": {
+                "description": "RWO DISAMBL"
+            }
+        }
+    },
+    "PRD_L_REWORK_ORDER_PICKSLIP": {
+        "RWO_Pickslip_Generate_Status_VSP_ID": {
+            "1056": {
+                "description": "Not Completed"
+            }
+        },
+        "RWO_Pickslip_Status_VSP_ID": {
+            "850": {
+                "description": "Created"
+            },
+            "851": {
+                "description": "Picked"
+            },
+            "852": {
+                "description": "Issued"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            },
+            "90": {
+                "description": "Calendar"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "266": {
+                "description": "Week"
+            }
+        }
+    },
+    "PRD_L_REWORK_ORDER_SERIAL_NUMBER": {
+        "Status_VSP_ID": {
+            "492": {
+                "description": "Not Started"
+            },
+            "493": {
+                "description": "In Progress"
+            },
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "PRD_L_RWO_SUBASSEMBLY_LOT": {
+        "Rejection_Reason_VSP_ID": {
+            "7434": {
+                "description": "WRONG BODY"
+            },
+            "7435": {
+                "description": "WRONG CONNECTION"
+            },
+            "7436": {
+                "description": "WINDING CUT"
+            },
+            "7437": {
+                "description": "RESISTANCE VARIATION"
+            },
+            "7440": {
+                "description": "CABLE DAMAGE"
+            },
+            "7442": {
+                "description": "CABLE LENGTH ISSUE"
+            },
+            "7444": {
+                "description": "BEFORE IR FAILURE"
+            },
+            "7455": {
+                "description": "VIBRATION"
+            },
+            "7463": {
+                "description": "CABLE LEAK"
+            },
+            "7468": {
+                "description": "HANDLING DAMAGE"
+            },
+            "7496": {
+                "description": "EARTH CABLE SHORT AND LENGTH"
+            }
+        },
+        "Status_VSP_ID": {
+            "485": {
+                "description": "Completed"
+            }
+        }
+    },
+    "PRD_L_SALES_DATA_PRINT_PREVIEW": {
+        "Export_Dynamic_VSP_ID": {
+            "6175": {
+                "description": "Static"
+            },
+            "7558": {
+                "description": "DETAILS OF CONTENTS"
+            },
+            "7559": {
+                "description": "PACK DIMENSIONS"
+            },
+            "7560": {
+                "description": "GROSS WEGHT"
+            },
+            "7561": {
+                "description": "PACK NO"
+            },
+            "7562": {
+                "description": "FINAL DESTINATION"
+            },
+            "7563": {
+                "description": "PORT OF DISCHARGE"
+            },
+            "7564": {
+                "description": "CONSIGNEE SHIPPING MARK"
+            }
+        }
+    },
+    "PRD_L_SALES_DATA_PRINTING": {
+        "SWO_Type_VSP_ID": {
+            "1055": {
+                "description": "Consolidated"
+            }
+        }
+    },
+    "PRD_L_SALES_OPERATION_LOG": {
+        "Operation_VSP_ID": {
+            "7547": {
+                "description": "OK"
+            }
+        },
+        "Status_VSP_ID": {
+            "496": {
+                "description": "Completed"
+            }
+        },
+        "SWO_Type_VSP_ID": {
+            "7527": {
+                "description": "Export Spare"
+            }
+        }
+    },
+    "PRD_L_SALES_ORDER_GROUP": {
+        "Sale_Order_Type_VSP_ID": {
+            "5983": {
+                "description": "Domestic Order"
+            },
+            "5984": {
+                "description": "Export Order"
+            },
+            "7527": {
+                "description": "Export Spare"
+            }
+        },
+        "SAP_Order_VSP_ID": {
+            "7520": {
+                "description": "Z110"
+            },
+            "7521": {
+                "description": "Z130"
+            },
+            "7529": {
+                "description": "Z160"
+            },
+            "7530": {
+                "description": "Z170"
+            },
+            "7745": {
+                "description": "NPO - BR"
+            }
+        }
+    },
+    "PRD_L_SALES_PICKSLIP": {
+        "Status_VSP_ID": {
+            "851": {
+                "description": "Picked"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "PRD_L_SALES_PICKSLIP_CONSOLIDATED_HEADER": {
+        "SWO_Consolidated_Status_VSP_ID": {
+            "5976": {
+                "description": "Completed"
+            }
+        },
+        "SWO_Consolidated_Type_VSP_ID": {
+            "1055": {
+                "description": "Consolidated"
+            }
+        },
+        "SWO_Order_Type": {
+            "7527": {
+                "description": "Export Spare"
+            }
+        }
+    },
+    "PRD_L_SALES_WORK_ORDER": {
+        "Sales_Wo_Status_VSP_ID": {
+            "483": {
+                "description": "Not Started"
+            },
+            "485": {
+                "description": "Completed"
+            }
+        },
+        "SWO_Type_VSP_ID": {
+            "5984": {
+                "description": "Export Order"
+            },
+            "7527": {
+                "description": "Export Spare"
+            }
+        }
+    },
+    "PRD_L_SCRAP_WO_ITEM": {
+        "Scrap_Item_Status_VSP_ID": {
+            "852": {
+                "description": "Issued"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "PRD_L_SCRAP_WORK_ORDER": {
+        "Scrap_WO_Status_VSP_ID": {
+            "496": {
+                "description": "Completed"
+            }
+        }
+    },
+    "PRD_LGW_L_MBOM": {
+        "Is_SubAssembly_Operation_Type": {
+            "Main Assembly End": {
+                "description": "Main Assembly End"
+            },
+            "Main Assembly Start": {
+                "description": "Main Assembly Start"
+            }
+        }
+    },
+    "PRD_M_ENGINE_RULE": {
+        "Rule_Type_VSP_ID": {
+            "6246": {
+                "description": "Data Printing"
+            }
+        }
+    },
+    "PRD_M_ENGINE_TRANSACTION": {
+        "Transaction_type": {
+            "6246": {
+                "description": "Data Printing"
+            }
+        }
+    },
+    "PRD_T_API_MBOM_LOG": {
+        "Is_SubAssembly_Operation_Type": {
+            "Main Assembly End": {
+                "description": "Main Assembly End"
+            },
+            "Main Assembly Start": {
+                "description": "Main Assembly Start"
+            }
+        }
+    },
+    "PRD_T_API_OPERATION_CHARACTERISTICS_LOG": {
+        "Characteristic_Type_VSP": {
+            "Range": {
+                "description": "Range"
+            },
+            "Visual": {
+                "description": "Visual"
+            }
+        }
+    },
+    "PRD_T_API_OPERATION_LOG": {
+        "INT_Activity_Type5": {
+            "TOOL": {
+                "description": "Tool"
+            }
+        }
+    },
+    "PRD_T_API_OPERATION_REJECTION_REASON_LOG": {
+        "Rejection_Reason_VSP": {
+            "7452": {
+                "description": "HIGH NO LOAD CURRENT"
+            },
+            "7443": {
+                "description": "SPLINES PROBLEM"
+            },
+            "7449": {
+                "description": "ROTOR FAILURE"
+            },
+            "7495": {
+                "description": "LEAK FOR UPPER HOUSING"
+            },
+            "7463": {
+                "description": "CABLE LEAK"
+            },
+            "7483": {
+                "description": "WEIGHT MISMATCH"
+            },
+            "7496": {
+                "description": "EARTH CABLE SHORT AND LENGTH"
+            },
+            "7440": {
+                "description": "CABLE DAMAGE"
+            },
+            "7435": {
+                "description": "WRONG CONNECTION"
+            },
+            "7442": {
+                "description": "CABLE LENGTH ISSUE"
+            },
+            "7438": {
+                "description": "STUD PROBLEM"
+            },
+            "7445": {
+                "description": "BEFORE IR WEAK"
+            },
+            "7456": {
+                "description": "IR FAILURE HEAT"
+            },
+            "7461": {
+                "description": "HV IR FAILURE"
+            },
+            "7484": {
+                "description": "WINDING CUT OD PLUS"
+            },
+            "7450": {
+                "description": "PICKUP PROBLEM"
+            },
+            "7473": {
+                "description": "DRAIN PLUG O-RING PROJECTION"
+            },
+            "7471": {
+                "description": "RUNOUT PROBLEM"
+            },
+            "7434": {
+                "description": "WRONG BODY"
+            },
+            "7490": {
+                "description": "AIRHOLES"
+            },
+            "7448": {
+                "description": "CABLE COLOUR CODING ISSUE"
+            },
+            "7497": {
+                "description": "SPLINES PROBLEM"
+            },
+            "7441": {
+                "description": "CABLE OXIDATION"
+            },
+            "7454": {
+                "description": "WRONG DIRECTION"
+            },
+            "7467": {
+                "description": "ROTOR RUNOUT"
+            },
+            "7475": {
+                "description": "UPPER HOUSING LEAK"
+            },
+            "7455": {
+                "description": "VIBRATION"
+            },
+            "7468": {
+                "description": "HANDLING DAMAGE"
+            },
+            "7466": {
+                "description": "OIL SEAL LEAK"
+            },
+            "7439": {
+                "description": "BODY DENT"
+            },
+            "7453": {
+                "description": "WATTS OVER"
+            },
+            "7492": {
+                "description": "SHELL  AIRHOLES"
+            },
+            "7459": {
+                "description": "IR WEAK COOL"
+            },
+            "7460": {
+                "description": "HIGH VOLTAGE TEST FAIL"
+            },
+            "7451": {
+                "description": "SOUND"
+            },
+            "7446": {
+                "description": "ROTOR TIGHT"
+            },
+            "7447": {
+                "description": "MOTOR CAPACITOR ISSUE"
+            },
+            "7487": {
+                "description": "MANDLE PROBLEM"
+            },
+            "7444": {
+                "description": "BEFORE IR FAILURE"
+            },
+            "7457": {
+                "description": "IR WEAK HEAT"
+            },
+            "7494": {
+                "description": "FREE ROTATION"
+            },
+            "7465": {
+                "description": "NUT LEAK"
+            },
+            "7437": {
+                "description": "RESISTANCE VARIATION"
+            },
+            "7436": {
+                "description": "WINDING CUT"
+            }
+        }
+    },
+    "PRD_T_API_OPERATION_SUB_OPERATION_LOG": {
+        "Activity_Type_VSP_ID": {
+            "6090": {
+                "description": "Activity 4"
+            },
+            "6089": {
+                "description": "Activity 3"
+            },
+            "6087": {
+                "description": "Activity 1"
+            },
+            "6088": {
+                "description": "Activity 2"
+            }
+        }
+    },
+    "PRD_T_CHARACTERISTIC": {
+        "Characteristic_Type_VSP_ID": {
+            "1151": {
+                "description": "Visual"
+            },
+            "5851": {
+                "description": "Range"
+            }
+        },
+        "Criticality_VSP_ID": {
+            "324": {
+                "description": "High"
+            }
+        },
+        "INT_MIC_VSP_ID": {
+            "4079": {
+                "description": "LASER MARKING VERIFICATION"
+            },
+            "4084": {
+                "description": "Check sheet verification"
+            },
+            "4334": {
+                "description": "Runout"
+            },
+            "4338": {
+                "description": "Faceout"
+            },
+            "4414": {
+                "description": "visual"
+            },
+            "6045": {
+                "description": "MEGG01"
+            }
+        },
+        "Method_Of_Inspection_VSP_ID": {
+            "4023": {
+                "description": "SPL GAUGE R/O"
+            },
+            "4038": {
+                "description": "INSULATION TESTER"
+            },
+            "4051": {
+                "description": "Smoke Density Test"
+            },
+            "4060": {
+                "description": "VERNIER BALL"
+            },
+            "4061": {
+                "description": "VERNIER DEPTH"
+            },
+            "4072": {
+                "description": "VISUAL"
+            },
+            "5981": {
+                "description": "DIGITAL TESTING PANNEL"
+            },
+            "6854": {
+                "description": "Gauge"
+            }
+        },
+        "UOM_Type_VSP_ID": {
+            "49": {
+                "description": "Email"
+            },
+            "64": {
+                "description": "Country"
+            },
+            "87": {
+                "description": "Plant_Line"
+            },
+            "361": {
+                "description": "Transactional"
+            },
+            "366": {
+                "description": "Ransar I warehouse"
+            },
+            "388": {
+                "description": "Time Dependent"
+            }
+        }
+    },
+    "PRD_T_ITEM_OPERATION_CHARACTERISTIC_LOG": {
+        "Status_VSP_ID": {
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "PRD_T_ITEM_OPERATION_HISTORY": {
+        "Rejection_Reason_VSP_ID": {
+            "7434": {
+                "description": "WRONG BODY"
+            },
+            "7435": {
+                "description": "WRONG CONNECTION"
+            },
+            "7436": {
+                "description": "WINDING CUT"
+            },
+            "7437": {
+                "description": "RESISTANCE VARIATION"
+            },
+            "7438": {
+                "description": "STUD PROBLEM"
+            },
+            "7440": {
+                "description": "CABLE DAMAGE"
+            },
+            "7441": {
+                "description": "CABLE OXIDATION"
+            },
+            "7442": {
+                "description": "CABLE LENGTH ISSUE"
+            },
+            "7443": {
+                "description": "SPLINES PROBLEM"
+            },
+            "7444": {
+                "description": "BEFORE IR FAILURE"
+            },
+            "7446": {
+                "description": "ROTOR TIGHT"
+            },
+            "7448": {
+                "description": "CABLE COLOUR CODING ISSUE"
+            },
+            "7449": {
+                "description": "ROTOR FAILURE"
+            },
+            "7451": {
+                "description": "SOUND"
+            },
+            "7454": {
+                "description": "WRONG DIRECTION"
+            },
+            "7455": {
+                "description": "VIBRATION"
+            },
+            "7457": {
+                "description": "IR WEAK HEAT"
+            },
+            "7460": {
+                "description": "HIGH VOLTAGE TEST FAIL"
+            },
+            "7463": {
+                "description": "CABLE LEAK"
+            },
+            "7466": {
+                "description": "OIL SEAL LEAK"
+            },
+            "7467": {
+                "description": "ROTOR RUNOUT"
+            },
+            "7468": {
+                "description": "HANDLING DAMAGE"
+            },
+            "7496": {
+                "description": "EARTH CABLE SHORT AND LENGTH"
+            }
+        },
+        "Status_VSP_ID": {
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "PRD_T_ITEM_ROUTING_HISTORY": {
+        "Rejection_Reason_VSP_ID": {
+            "7434": {
+                "description": "WRONG BODY"
+            },
+            "7435": {
+                "description": "WRONG CONNECTION"
+            },
+            "7436": {
+                "description": "WINDING CUT"
+            },
+            "7437": {
+                "description": "RESISTANCE VARIATION"
+            },
+            "7438": {
+                "description": "STUD PROBLEM"
+            },
+            "7440": {
+                "description": "CABLE DAMAGE"
+            },
+            "7441": {
+                "description": "CABLE OXIDATION"
+            },
+            "7442": {
+                "description": "CABLE LENGTH ISSUE"
+            },
+            "7443": {
+                "description": "SPLINES PROBLEM"
+            },
+            "7444": {
+                "description": "BEFORE IR FAILURE"
+            },
+            "7446": {
+                "description": "ROTOR TIGHT"
+            },
+            "7448": {
+                "description": "CABLE COLOUR CODING ISSUE"
+            },
+            "7449": {
+                "description": "ROTOR FAILURE"
+            },
+            "7454": {
+                "description": "WRONG DIRECTION"
+            },
+            "7455": {
+                "description": "VIBRATION"
+            },
+            "7457": {
+                "description": "IR WEAK HEAT"
+            },
+            "7460": {
+                "description": "HIGH VOLTAGE TEST FAIL"
+            },
+            "7463": {
+                "description": "CABLE LEAK"
+            },
+            "7466": {
+                "description": "OIL SEAL LEAK"
+            },
+            "7467": {
+                "description": "ROTOR RUNOUT"
+            },
+            "7468": {
+                "description": "HANDLING DAMAGE"
+            },
+            "7496": {
+                "description": "EARTH CABLE SHORT AND LENGTH"
+            }
+        },
+        "Status_VSP_ID": {
+            "493": {
+                "description": "In Progress"
+            },
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "PRD_T_OPERATION_ITEM_LOG": {
+        "Log_Status_VSP_ID": {
+            "5956": {
+                "description": "Ok"
+            }
+        },
+        "UOM_VSP_ID": {
+            "266": {
+                "description": "Week"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "90": {
+                "description": "Calendar"
+            },
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "PRD_T_PICKSLIP": {
+        "Pickslip_Status_VSP_ID": {
+            "851": {
+                "description": "Picked"
+            },
+            "852": {
+                "description": "Issued"
+            }
+        }
+    },
+    "PRD_T_REWORK_ORDER_OPERATION_CHARACTERISTIC_LOG": {
+        "Status_VSP_ID": {
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "PRD_T_REWORK_ORDER_OPERATION_HISTORY": {
+        "Rejection_Reason_VSP_ID": {
+            "7446": {
+                "description": "ROTOR TIGHT"
+            },
+            "7449": {
+                "description": "ROTOR FAILURE"
+            },
+            "7459": {
+                "description": "IR WEAK COOL"
+            }
+        },
+        "Status_VSP_ID": {
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "PRD_T_REWORK_ORDER_OPERATION_ITEM_LOG": {
+        "Log_Status_VSP_ID": {
+            "5956": {
+                "description": "Ok"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            },
+            "90": {
+                "description": "Calendar"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "266": {
+                "description": "Week"
+            }
+        }
+    },
+    "PRD_T_REWORK_ORDER_ROUTING_HISTORY": {
+        "Rejection_Reason_VSP_ID": {
+            "7446": {
+                "description": "ROTOR TIGHT"
+            },
+            "7459": {
+                "description": "IR WEAK COOL"
+            }
+        },
+        "Status_VSP_ID": {
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "PRD_T_WO_ITEM_SERIALIZATION": {
+        "Status_VSP_ID": {
+            "492": {
+                "description": "Not Started"
+            },
+            "493": {
+                "description": "In Progress"
+            },
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            },
+            "1100": {
+                "description": "Hold"
+            },
+            "1111": {
+                "description": "Mapped"
+            },
+            "5934": {
+                "description": "Inspection Hold"
+            },
+            "6042": {
+                "description": "Issued"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "QAL_L_CALIBRATION_TEMPLATE_DETAILS": {
+        "Parameter_VSP_ID": {
+            "426": {
+                "description": "Inner Diameter"
+            },
+            "7768": {
+                "description": "Visual check"
+            }
+        },
+        "UOM_VSP_ID": {
+            "3": {
+                "description": "Teamwork"
+            }
+        }
+    },
+    "QAL_L_QUALITY_WORK_ORDER": {
+        "Inspection_Type_VSP_ID": {
+            "5926": {
+                "description": "Quality WO"
+            }
+        },
+        "Quality_WO_Status_VSP_ID": {
+            "484": {
+                "description": "In Progress"
+            },
+            "485": {
+                "description": "Completed"
+            }
+        },
+        "QWO_Inspection_Type_VSP_ID": {
+            "5926": {
+                "description": "Quality WO"
+            }
+        },
+        "QWO_Type_VSP_ID": {
+            "5828": {
+                "description": "ISI INSPECTION"
+            },
+            "5829": {
+                "description": "THIRD PARTY INSPECTION"
+            },
+            "5927": {
+                "description": "PERFORMANCE TEST"
+            },
+            "5928": {
+                "description": "PATROL INSPECTION"
+            }
+        }
+    },
+    "QAL_L_QUALITY_WORK_ORDER_SERIAL_NUMBER": {
+        "ISI_Inspection_Type_VSP_ID": {
+            "7542": {
+                "description": "Internal Inspection"
+            },
+            "7543": {
+                "description": "External Inspection"
+            },
+            "7551": {
+                "description": "ISI Lab Test"
+            }
+        },
+        "Status_VSP_ID": {
+            "493": {
+                "description": "In Progress"
+            },
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "QAL_L_SAMPLE_PLAN_DETAILS": {
+        "Frequancy_VSP_ID": {
+            "974": {
+                "description": "Quantity"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "QAL_L_SAMPLE_PLAN_SAMPLE_RULE": {
+        "Calculation_Method_VSP_ID": {
+            "976": {
+                "description": "Percentage"
+            }
+        }
+    },
+    "QAL_M_CALIBRATION": {
+        "MD_Calibration_Status_VSP_ID": {
+            "542": {
+                "description": "Received At Lab"
+            }
+        }
+    },
+    "QAL_T_CALIBRATION_TRANSACTION": {
+        "Transaction_Status_VSP_ID": {
+            "501": {
+                "description": "Send For Calibration"
+            },
+            "542": {
+                "description": "Received At Lab"
+            },
+            "6137": {
+                "description": "Waiting For Approval"
+            }
+        },
+        "Transaction_Type_VSP_ID": {
+            "505": {
+                "description": "Send For Calibration"
+            },
+            "828": {
+                "description": "Received At Lab"
+            }
+        }
+    },
+    "QAL_T_CALIBRATION_TRANSACTION_DETAILS": {
+        "Transaction_Details_Status_VSP_ID": {
+            "501": {
+                "description": "Send For Calibration"
+            },
+            "542": {
+                "description": "Received At Lab"
+            },
+            "6137": {
+                "description": "Waiting For Approval"
+            }
+        }
+    },
+    "QAL_T_IME_TRANSACTION_HISTORY": {
+        "Calibrate_Type_VSP_ID": {
+            "6020": {
+                "description": "Internal"
+            }
+        },
+        "IME_Status_VSP_ID": {
+            "1027": {
+                "description": "Not Available"
+            }
+        },
+        "MD_Calibration_Status_VSP_ID": {
+            "501": {
+                "description": "Send For Calibration"
+            },
+            "542": {
+                "description": "Received At Lab"
+            },
+            "593": {
+                "description": "Calibrated"
+            }
+        }
+    },
+    "QAL_T_INCOMING_OPERATION_CHARACTERISTICS_LOG": {
+        "Status_VSP_ID": {
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "QAL_T_INCOMING_OPERATION_HISTORY": {
+        "Rejection_Reason_VSP_ID": {
+            "7436": {
+                "description": "WINDING CUT"
+            },
+            "7461": {
+                "description": "HV IR FAILURE"
+            },
+            "7495": {
+                "description": "LEAK FOR UPPER HOUSING"
+            }
+        },
+        "Status_VSP_ID": {
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "QAL_T_INCOMING_ROUTING_HISTORY": {
+        "Rejection_Reason_VSP_ID": {
+            "7436": {
+                "description": "WINDING CUT"
+            },
+            "7461": {
+                "description": "HV IR FAILURE"
+            },
+            "7495": {
+                "description": "LEAK FOR UPPER HOUSING"
+            }
+        },
+        "Status_VSP_ID": {
+            "494": {
+                "description": "Ok"
+            },
+            "495": {
+                "description": "Not Ok"
+            }
+        }
+    },
+    "QAL_T_INSPECTION_AUTOMATION_RULE": {
+        "Order_Creation_Type_VSP_ID": {
+            "969": {
+                "description": "Combined Item"
+            }
+        },
+        "QWO_Inspection_Type_VSP_ID": {
+            "5927": {
+                "description": "PERFORMANCE TEST"
+            },
+            "5928": {
+                "description": "PATROL INSPECTION"
+            }
+        }
+    },
+    "QAL_T_PICKSLIP": {
+        "QAL_Pickslip_Status_VSP_ID": {
+            "850": {
+                "description": "Created"
+            },
+            "851": {
+                "description": "Picked"
+            },
+            "852": {
+                "description": "Issued"
+            }
+        },
+        "Quality_Work_Order_Type": {
+            "5828": {
+                "description": "ISI INSPECTION"
+            },
+            "5829": {
+                "description": "THIRD PARTY INSPECTION"
+            }
+        }
+    },
+    "SEQ_L_SHIFT_SEQUENCE": {
+        "Sequance_Status_VSP_ID": {
+            "582": {
+                "description": "planned"
+            },
+            "5952": {
+                "description": "Release"
+            }
+        }
+    },
+    "SEQ_L_SHIFT_SEQUENCE_DETAILS": {
+        "Order_Type_VSP_ID": {
+            "1013": {
+                "description": "MFG WO"
+            },
+            "5939": {
+                "description": "MFG Endurance"
+            },
+            "5940": {
+                "description": "Sub Assembly Lot"
+            }
+        },
+        "Shift_Sequence_Status": {
+            "582": {
+                "description": "planned"
+            },
+            "5952": {
+                "description": "Release"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        }
+    },
+    "SEQ_L_WO_SCRAP_BOOKING": {
+        "Booking_Status_VSP_ID": {
+            "492": {
+                "description": "Not Started"
+            },
+            "496": {
+                "description": "Completed"
+            }
+        },
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            },
+            "90": {
+                "description": "Calendar"
+            },
+            "166": {
+                "description": "User Activation Tracker"
+            },
+            "266": {
+                "description": "Week"
+            }
+        }
+    },
+    "SEQ_L_WO_SCRAP_BOOKING_LINE_ITEM": {
+        "Action_VSP_ID": {
+            "1157": {
+                "description": "Stored"
+            },
+            "1158": {
+                "description": "Scrap"
+            }
+        },
+        "Status_VSP_ID": {
+            "850": {
+                "description": "Created"
+            },
+            "852": {
+                "description": "Issued"
+            }
+        }
+    },
+    "SEQ_L_WORK_ORDER": {
+        "UOM_VSP_ID": {
+            "64": {
+                "description": "Country"
+            }
+        },
+        "Work_Order_Status_VSP_ID": {
+            "483": {
+                "description": "Not Started"
+            },
+            "484": {
+                "description": "In Progress"
+            },
+            "485": {
+                "description": "Completed"
+            }
+        },
+        "Work_Order_Type_VSP_ID": {
+            "1013": {
+                "description": "MFG WO"
+            }
+        }
+    },
+    "USR_L_CREW_MEMBERS": {
+        "User_Crew_Role_VSP_ID": {
+            "150": {
+                "description": "Operator"
+            },
+            "156": {
+                "description": "Testing"
+            },
+            "158": {
+                "description": "Management"
+            },
+            "7499": {
+                "description": "EXPORT QUALITY"
+            }
+        }
+    },
+    "USR_L_EMPLOYEE_SKILL_ATTRIBUTE": {
+        "Skill_Attribute_Type_VSP_ID": {
+            "119": {
+                "description": "work ethic"
+            },
+            "139": {
+                "description": "Collaboration"
+            },
+            "140": {
+                "description": "Written"
+            },
+            "141": {
+                "description": "Problem Solving"
+            },
+            "5564": {
+                "description": "Cannot perform the job"
+            },
+            "5570": {
+                "description": "Can perfrom the Job and teach others"
+            }
+        },
+        "Skill_Attribute_VSP_ID": {
+            "120": {
+                "description": "Training"
+            },
+            "142": {
+                "description": "Technical Skills"
+            },
+            "144": {
+                "description": "Time Management"
+            },
+            "146": {
+                "description": "Communication Skills"
+            },
+            "5565": {
+                "description": "Cannot perform the job"
+            },
+            "6056": {
+                "description": "Can Perfrom The Job And Teach Others"
+            }
+        }
+    },
+    "USR_L_USER_ACTIVATION_TRACKER": {
+        "Account_Status_VSP_ID": {
+            "37": {
+                "description": "Activated"
+            }
+        },
+        "Notification_Type_VSP_ID": {
+            "38": {
+                "description": "OTP Notification"
+            },
+            "49": {
+                "description": "Email"
+            }
+        }
+    },
+    "USR_M_DASHBOARD_WIDGETS": {
+        "Widget_Type_VSP_ID": {
+            "726": {
+                "description": "Grid"
+            }
+        }
+    },
+    "USR_M_EMPLOYEE": {
+        "Emp_Designation_VSP_ID": {
+            "220": {
+                "description": "Manager"
+            },
+            "5573": {
+                "description": "Employee"
+            },
+            "6129": {
+                "description": "Assistant Manager"
+            },
+            "6132": {
+                "description": "Supervisor"
+            },
+            "6135": {
+                "description": "Team Leader"
+            }
+        },
+        "Emp_Gender_VSP_ID": {
+            "127": {
+                "description": "Male"
+            },
+            "128": {
+                "description": "Female"
+            }
+        },
+        "Emp_Role_VSP_ID": {
+            "1952": {
+                "description": "Digital Manufacture Engineer"
+            },
+            "1953": {
+                "description": "Production Head"
+            },
+            "1954": {
+                "description": "Line Supervisor"
+            },
+            "5542": {
+                "description": "Engine Assembly Operator"
+            },
+            "5580": {
+                "description": "Executive Engineer"
+            },
+            "5585": {
+                "description": "Engineer"
+            },
+            "5675": {
+                "description": "Apprentice"
+            },
+            "5695": {
+                "description": "Fixed Term"
+            },
+            "5986": {
+                "description": "Permanent Employee"
+            },
+            "6142": {
+                "description": "F&H Contract"
+            }
+        },
+        "Emp_Salutation_VSP_ID": {
+            "9": {
+                "description": "MR MEANS MEN"
+            },
+            "10": {
+                "description": "MRS MEANS WOMEN"
+            },
+            "6338": {
+                "description": "MS"
+            }
+        },
+        "Emp_Type_VSP_ID": {
+            "2867": {
+                "description": "Permanent Employee"
+            },
+            "5847": {
+                "description": "Apprentice Employee"
+            },
+            "5853": {
+                "description": "Staff"
+            },
+            "7343": {
+                "description": "LogicApps Employee"
+            }
+        }
+    },
+    "USR_M_EMPLOYEE_SKILL": {
+        "Skill_Name_VSP_ID": {
+            "5545": {
+                "description": "Assembly Fitter"
+            },
+            "5549": {
+                "description": "Painter"
+            },
+            "5551": {
+                "description": "Packing"
+            },
+            "5553": {
+                "description": "Motor Testing"
+            },
+            "5555": {
+                "description": "Quality Inspector"
+            },
+            "5557": {
+                "description": "Fork Lift"
+            },
+            "5559": {
+                "description": "Electrical Maintenance"
+            },
+            "5561": {
+                "description": "Service Engineer"
+            },
+            "5563": {
+                "description": "Staff"
+            }
+        },
+        "Skill_Type_VSP_ID": {
+            "224": {
+                "description": "LeaderShip"
+            },
+            "5544": {
+                "description": "Production"
+            },
+            "5550": {
+                "description": "Production"
+            },
+            "5552": {
+                "description": "Testing"
+            },
+            "5554": {
+                "description": "Quality"
+            },
+            "5556": {
+                "description": "Operator"
+            },
+            "5558": {
+                "description": "Maintenance"
+            },
+            "5560": {
+                "description": "Service"
+            }
+        }
+    },
+    "USR_M_FLOWCHART_MENU": {
+        "Flowchart_Type_VSP_ID": {
+            "654": {
+                "description": "Circle"
+            },
+            "655": {
+                "description": "Rectangle"
+            }
+        }
+    },
+    "USR_M_USER": {
+        "User_2FAType_VSP_ID": {
+            "5915": {
+                "description": "Google Authentication"
+            }
+        }
+    },
+    "USR_T_USER_PWD_HISTORY": {
+        "Pwd_Strength_VSP_ID": {
+            "15": {
+                "description": "Strong"
+            }
+        }
+    },
+    "WMS_L_BIN": {
+        "Bin_Status_VSP_ID": {
+            "714": {
+                "description": "Empty"
+            },
+            "713": {
+                "description": "Complete"
+            }
+        },
+        "Bin_Type_VSP_ID": {
+            "5822": {
+                "description": "STD"
+            }
+        }
+    },
+    "WMS_L_CONTAINER": {
+        "Container_Condition_VSP_ID": {
+            "6227": {
+                "description": "Good"
+            }
+        },
+        "Container_Status_VSP_ID": {
+            "6230": {
+                "description": "Empty"
+            },
+            "6231": {
+                "description": "Partially filled"
+            },
+            "6232": {
+                "description": "Complete"
+            }
+        }
+    },
+    "WMS_L_CYCLE_COUNT_ADJUSTMENT": {
+        "Cycle_Count_Status": {
+            "7524": {
+                "description": "Approved"
+            },
+            "7525": {
+                "description": "Rejected"
+            },
+            "7526": {
+                "description": "Recount"
+            }
+        }
+    },
+    "WMS_L_CYCLE_COUNT_LINE_ITEM": {
+        "Cycle_Count_Status_VSP_ID": {
+            "4719": {
+                "description": "Created"
+            },
+            "7538": {
+                "description": "In Progress"
+            }
+        }
+    },
+    "WMS_L_LOCATION": {
+        "Location_Type_VSP_ID": {
+            "5849": {
+                "description": "Square/Rectangle"
+            },
+            "6083": {
+                "description": "Parallelogram"
+            }
+        },
+        "StorageType": {
+            "7506": {
+                "description": "Zone Storage"
+            }
+        }
+    },
+    "WMS_L_SHELF_ZONE": {
+        "ShelfType": {
+            "7504": {
+                "description": "Floor Storage Type"
+            },
+            "7518": {
+                "description": "HIGH RACK"
+            }
+        },
+        "Storage_Area_VSP_ID": {
+            "7760": {
+                "description": "Storage Area"
+            },
+            "7761": {
+                "description": "Testing Area"
+            },
+            "7762": {
+                "description": "Inspection area"
+            },
+            "7763": {
+                "description": "Scrap Area"
+            },
+            "7764": {
+                "description": "Rework area"
+            }
+        },
+        "Zone_Item_Type_Header_ID": {
+            "3": {
+                "description": "Teamwork"
+            }
+        }
+    },
+    "WMS_L_ZONE_ITEM_TYPE_LINE": {
+        "Item_Type_VSP_ID": {
+            "2841": {
+                "description": "Finished Goods"
+            },
+            "2843": {
+                "description": "Raw Materials"
+            },
+            "2844": {
+                "description": "Semifinished Goods"
+            },
+            "2856": {
+                "description": "Subassembly"
+            },
+            "5523": {
+                "description": "Machined Material"
+            },
+            "5524": {
+                "description": "Base finished Goods"
+            }
+        },
+        "Zone_Item_Type_Header_ID": {
+            "3": {
+                "description": "Teamwork"
+            }
+        },
+        "Zone_Item_Type_Line_ID": {
+            "3": {
+                "description": "Teamwork"
+            },
+            "9": {
+                "description": "MR MEANS MEN"
+            }
+        }
+    },
+    "WMS_M_CONTAINER_TYPE_ATTRIBUTES": {
+        "Container_Material_VSP_ID": {
+            "6220": {
+                "description": "Wood"
+            },
+            "6224": {
+                "description": "Steal"
+            }
+        },
+        "Container_Type_ID": {
+            "9": {
+                "description": "MR MEANS MEN"
+            }
+        }
+    },
+    "WMS_M_CYCLE_COUNT_HEADER": {
+        "Cycle_Count_Status_VSP_ID": {
+            "4719": {
+                "description": "Created"
+            },
+            "4723": {
+                "description": "Counted"
+            }
+        }
+    },
+    "WMS_M_KIT": {
+        "Kit_Type_VSP_ID": {
+            "1081": {
+                "description": "Single"
+            },
+            "1082": {
+                "description": "Multiple"
+            }
+        }
+    },
+    "WMS_M_WAREHOUSE": {
+        "WareHouse_Type_VSP_ID": {
+            "366": {
+                "description": "Ransar I warehouse"
+            }
+        }
+    },
+    "WMS_M_ZONE_ITEM_TYPE_HEADER": {
+        "Zone_Item_Type_Desc": {
+            "fG": {
+                "description": "FG"
+            },
+            "ZBFG": {
+                "description": "Base finished Goods"
+            },
+            "ZMMA": {
+                "description": "Machined Material"
+            },
+            "ZRAW": {
+                "description": "Raw Materials"
+            }
+        },
+        "Zone_Item_Type_Header_ID": {
+            "3": {
+                "description": "Teamwork"
+            }
+        },
+        "Zone_Item_Type_Name": {
+            "ZBFG": {
+                "description": "Base finished Goods"
+            },
+            "ZFGS": {
+                "description": "Finished Goods"
+            },
+            "ZMMA": {
+                "description": "Machined Material"
+            },
+            "ZRAW": {
+                "description": "Raw Materials"
+            }
+        }
+    },
+    "WO_LGW_T_POST_ROUTING": {
+        "Rejection_Reason_VSP_ID": {
+            "7443": {
+                "description": "SPLINES PROBLEM"
+            },
+            "7449": {
+                "description": "ROTOR FAILURE"
+            },
+            "7495": {
+                "description": "LEAK FOR UPPER HOUSING"
+            },
+            "7463": {
+                "description": "CABLE LEAK"
+            },
+            "7496": {
+                "description": "EARTH CABLE SHORT AND LENGTH"
+            },
+            "7440": {
+                "description": "CABLE DAMAGE"
+            },
+            "7435": {
+                "description": "WRONG CONNECTION"
+            },
+            "7442": {
+                "description": "CABLE LENGTH ISSUE"
+            },
+            "7438": {
+                "description": "STUD PROBLEM"
+            },
+            "7461": {
+                "description": "HV IR FAILURE"
+            },
+            "7434": {
+                "description": "WRONG BODY"
+            },
+            "7448": {
+                "description": "CABLE COLOUR CODING ISSUE"
+            },
+            "7441": {
+                "description": "CABLE OXIDATION"
+            },
+            "7454": {
+                "description": "WRONG DIRECTION"
+            },
+            "7467": {
+                "description": "ROTOR RUNOUT"
+            },
+            "7455": {
+                "description": "VIBRATION"
+            },
+            "7468": {
+                "description": "HANDLING DAMAGE"
+            },
+            "7466": {
+                "description": "OIL SEAL LEAK"
+            },
+            "7459": {
+                "description": "IR WEAK COOL"
+            },
+            "7460": {
+                "description": "HIGH VOLTAGE TEST FAIL"
+            },
+            "7451": {
+                "description": "SOUND"
+            },
+            "7446": {
+                "description": "ROTOR TIGHT"
+            },
+            "7444": {
+                "description": "BEFORE IR FAILURE"
+            },
+            "7457": {
+                "description": "IR WEAK HEAT"
+            },
+            "7437": {
+                "description": "RESISTANCE VARIATION"
+            },
+            "7436": {
+                "description": "WINDING CUT"
+            }
+        }
+    }
+}

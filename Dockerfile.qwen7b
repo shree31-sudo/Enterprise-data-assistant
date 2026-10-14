@@ -1,0 +1,15 @@
+FROM mcr.microsoft.com/windows/servercore:ltsc2022
+
+WORKDIR C:/llama
+
+COPY vc_redist.x64.exe C:/vc_redist.x64.exe
+
+RUN C:/vc_redist.x64.exe /install /quiet /norestart
+
+COPY llama-server/ C:/llama/
+
+EXPOSE 8082
+
+ENTRYPOINT ["C:/llama/llama-server.exe"]
+
+CMD ["-m", "C:/models/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf", "--host", "0.0.0.0", "--port", "8082", "-ngl", "0", "-c", "4096", "-t", "24"]

@@ -1,0 +1,2139 @@
+{
+  "modules": {
+    "items": {
+      "module_label": "Items",
+      "module_icon": "📦",
+      "description": "Item master records, plant assignment, properties, routing linkage, attributes, barcode, container quantity and physical attributes",
+      "subgroups": {
+        "item_master_and_attributes": {
+          "tables": [
+            {
+              "table_name": "MFC_M_ITEM",
+              "table_type": "MASTER",
+              "table_role": "master",
+              "domain": "item",
+              "parent_entity": null,
+              "parent_entity_status": "n/a",
+              "business_purpose": "Stores master data for items, including their classification, description, code, and other attributes relevant to inventory and production management. This table serves as a central repository for item definitions, enabling tracking of item properties, relationships, and status across different plants and systems.",
+              "row_represents": "A specific item definition, including its attributes, classifications, and relationships to other entities such as plants, work centers, and material statuses.",
+              "synonyms": [
+                "item master",
+                "item definition",
+                "material master",
+                "item record",
+                "item data",
+                "product definition",
+                "item master data",
+                "material definition"
+              ],
+              "use_when": [
+                "Looking up item details by code or name",
+                "Finding item classification and type",
+                "Checking item status and validity",
+                "Finding alternate or substitute items",
+                "Tracking item revisions and changes",
+                "Finding item relationships to plants and work centers",
+                "Checking item UOM and material status"
+              ],
+              "columns": {
+                "Item_ID": "Unique system-generated ID for each item",
+                "Item_Prefix_ID": "Prefix used to identify the item in business processes",
+                "Plant_ID": "Plant or location where the item is defined or used",
+                "Item_Name": "Name or title of the item",
+                "Item_Description": "Description of the item's purpose or characteristics",
+                "Item_Code": "Unique business code used to identify the item",
+                "Production_Class_VSP_ID": "Reference to production class classification",
+                "Item_Revision_Number": "Revision number for the item definition",
+                "Cycle_Count_Identifier_VSP_ID": "Reference to cycle count identifier",
+                "Item_Type_VSP_ID": "Reference to item type classification",
+                "Item_Classification_VSP_ID": "Reference to item classification",
+                "Item_Serialisation_Type_VSP_ID": "Reference to item serialisation type",
+                "Item_Model_VSP_ID": "Reference to item model classification",
+                "Item_Group_VSP_ID": "Reference to item group classification",
+                "Serial_Number_Engine_ID": "Reference to serial number engine",
+                "Alternate_Item_ID1": "Alternate item ID 1",
+                "Alternate_Item_ID2": "Alternate item ID 2",
+                "Alternate_Item_ID3": "Alternate item ID 3",
+                "Alternate_Item_ID4": "Alternate item ID 4",
+                "Alternate_Item_ID5": "Alternate item ID 5",
+                "Substitute_Item_ID1": "Substitute item ID 1",
+                "Substitute_Item_ID2": "Substitute item ID 2",
+                "Substitute_Item_ID3": "Substitute item ID 3",
+                "Substitute_Item_ID4": "Substitute item ID 4",
+                "Substitute_Item_ID5": "Substitute item ID 5",
+                "Image": "Image associated with the item",
+                "Calibration_Template_ID": "Reference to calibration template",
+                "UOM_Type_VSP_ID": "Reference to unit of measure type",
+                "Travel_Card": "Flag indicating if the item requires a travel card",
+                "Is_Part_Validation": "Flag indicating if part validation is required",
+                "Is_Make_Item": "Flag indicating if the item is a make item",
+                "Is_Buy_Item": "Flag indicating if the item is a buy item",
+                "Is_Non_Reusable": "Flag indicating if the item is non-reusable",
+                "Chassis_Number_Engine_ID": "Reference to chassis number engine",
+                "LAMI_Cdate": "Date and time when the item was created",
+                "LAMI_Cuser": "User who created the item record",
+                "LAMI_Udate": "Date and time when the item was last updated",
+                "LAMI_Uuser": "User who last updated the item record",
+                "LAMI_Status": "Current status of the item (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the item is inactive",
+                "INT_QM_Is_Active": "Flag indicating if the item is active in quality management",
+                "INT_Change_Number": "Change number associated with the item",
+                "INT_Valid_From": "Date from which the item is valid",
+                "INT_Mat_Status_VSP_ID": "Reference to material status",
+                "INT_Sales_Mat_Status_VSP_ID": "Reference to sales material status",
+                "Item_MRP": "MRP value for the item"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate",
+                "INT_Valid_From"
+              ],
+              "quantity_columns": [
+                "Cycle_Count_Identifier_VSP_ID"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_ITEM_PLANT",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "item",
+              "parent_entity": "MFC_M_ITEM",
+              "parent_entity_status": "present",
+              "business_purpose": "Links items to specific manufacturing plants, defining where an item is available, managed, or produced. This table ensures that item data is contextualized to the plant level, supporting inventory tracking, procurement, and production planning by plant.",
+              "row_represents": "A relationship between an item and a specific plant, including status and inactivity reasons.",
+              "synonyms": [
+                "item-plant link",
+                "item plant relationship",
+                "plant item mapping",
+                "item location link",
+                "plant item association"
+              ],
+              "use_when": [
+                "Linking items to plants",
+                "Checking item availability by plant",
+                "Managing item status per plant",
+                "Tracking inactive items by plant",
+                "Finding the reason for item inactivity",
+                "Filtering items by plant",
+                "Searching item-plant relationships",
+                "Recently created item-plant links",
+                "Recently updated item-plant links",
+                "Active or inactive item-plant records"
+              ],
+              "columns": {
+                "Item_Plant_ID": "Unique system-generated identifier for this item-plant relationship",
+                "Item_Plant_Prefix_ID": "Prefix or identifier used to distinguish item-plant relationships",
+                "Item_ID": "Reference to the item master record",
+                "Plant_ID": "Reference to the manufacturing plant",
+                "LAMI_Cdate": "Date and time when this item-plant relationship was created",
+                "LAMI_Cuser": "User who created this item-plant relationship",
+                "LAMI_Udate": "Date and time when this item-plant relationship was last updated",
+                "LAMI_Uuser": "User who last updated this item-plant relationship",
+                "LAMI_Status": "Current status of the item-plant relationship (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity, if applicable"
+              },
+              "foreign_keys": [
+                "Item_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_ITEM_PROPERTY",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "item",
+              "parent_entity": "MFC_M_ITEM",
+              "parent_entity_status": "present",
+              "business_purpose": "Stores item-specific property details, such as custom attributes, values, and descriptions, associated with items or item barcodes. This table is used to maintain additional information that is not covered by standard item master data, allowing for flexible and extensible item property management.",
+              "row_represents": "A specific property assigned to an item or item barcode, including its value, description, and status.",
+              "synonyms": [
+                "item property",
+                "item attribute",
+                "item detail",
+                "item characteristic",
+                "item parameter",
+                "item value",
+                "item description",
+                "item property detail",
+                "item property line",
+                "item property entry"
+              ],
+              "use_when": [
+                "Looking up custom properties for an item",
+                "Maintaining item-specific attributes",
+                "Tracking item property status",
+                "Managing item property descriptions",
+                "Linking properties to item barcodes",
+                "Finding properties by value or description",
+                "Checking property status (active/inactive)",
+                "Filtering properties by item or barcode"
+              ],
+              "columns": {
+                "Property_ID": "Unique system-generated ID for this item property record",
+                "Property_Prefix_ID": "Prefix identifier for the property",
+                "Item_ID": "Reference to the item this property belongs to",
+                "Property_Name_VSP_ID": "Reference to the property name definition",
+                "Value": "Value of the property for the item",
+                "Property_Group_VSP_ID": "Reference to the property group definition",
+                "Description": "Description of the property",
+                "Item_Barcode_ID": "Reference to the item barcode this property is associated with",
+                "LAMI_Cdate": "Date and time when the property was created",
+                "LAMI_Cuser": "User who created the property",
+                "LAMI_Udate": "Date and time when the property was last updated",
+                "LAMI_Uuser": "User who last updated the property",
+                "LAMI_Status": "Status indicating if the property is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the property is inactive",
+                "IsData_Changed": "Indicates if the property data has been modified",
+                "Label_Printing_Template_Details_ID": "Reference to label printing template details"
+              },
+              "foreign_keys": [
+                "Item_Barcode_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ],
+              "value_columns": [
+                "Value"
+              ]
+            },
+            {
+              "table_name": "MFC_L_ITEM_ROUTING",
+              "table_type": "LINK",
+              "table_role": "junction",
+              "domain": "item",
+              "parent_entity": "MFC_M_ITEM",
+              "parent_entity_status": "present",
+              "secondary_references": [
+                "MFC_M_ROUTING_HEADER"
+              ],
+              "note": "Junction: links an item (Item_ID) to a routing header (Routing_Header_ID).",
+              "business_purpose": "Links items to specific routing headers, defining which routing is associated with a given item for manufacturing or processing. This table is essential for associating items with their respective production workflows, enabling accurate scheduling, cost calculations, and process execution.",
+              "row_represents": "A link between an item and a routing header, defining the association for manufacturing or processing purposes.",
+              "synonyms": [
+                "item routing link",
+                "item to routing mapping",
+                "item routing association",
+                "item routing detail",
+                "item routing line",
+                "item routing configuration"
+              ],
+              "use_when": [
+                "Linking items to routing headers",
+                "Finding which routing is associated with an item",
+                "Managing item-to-routing associations",
+                "Checking routing assignments for items",
+                "Filtering item routing links by status",
+                "Finding inactive item routing reasons",
+                "Recently created or updated item routing links",
+                "Active or inactive item routing records"
+              ],
+              "columns": {
+                "Item_Routing_ID": "Unique system-generated identifier for this item/routing link row",
+                "Item_Routing_Prefix_ID": "Prefix identifier for the item routing (optional)",
+                "Item_ID": "Reference to the item this routing is associated with",
+                "Routing_Header_ID": "Reference to the routing header this item is linked to",
+                "LAMI_Cdate": "Date and time when this item/routing link was created",
+                "LAMI_Cuser": "User who created this item/routing link",
+                "LAMI_Udate": "Date and time when this item/routing link was last updated",
+                "LAMI_Uuser": "User who last updated this item/routing link",
+                "LAMI_Status": "Status flag indicating whether this item/routing link is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for inactivity, if applicable"
+              },
+              "foreign_keys": [
+                "Routing_Header_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_ITEM_ATTRIBUTE",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "item",
+              "parent_entity": "MFC_M_ITEM",
+              "parent_entity_status": "present",
+              "business_purpose": "Links the data related to item attributes, including inventory control settings, costing parameters, batch/serial controls, and other item-specific configuration details that define how items are managed within the system.",
+              "row_represents": "A record defining specific attribute configurations for an item, including inventory status, control settings, costing, and other operational parameters.",
+              "synonyms": [
+                "item attribute",
+                "item configuration",
+                "item settings",
+                "item parameters",
+                "item control details",
+                "inventory item attributes",
+                "item management settings",
+                "item configuration record",
+                "item attribute transaction"
+              ],
+              "use_when": [
+                "Looking up item attribute configurations",
+                "Managing inventory control settings for items",
+                "Checking if an item is stockable or transactable",
+                "Determining batch or serial control requirements",
+                "Reviewing item status or inactivity reasons",
+                "Tracking item creation and update timestamps",
+                "Checking if an item is a phantom or reusable item",
+                "Reviewing first-off quantity settings",
+                "Checking if an item requires inspection",
+                "Managing default location assignments"
+              ],
+              "columns": {
+                "Item_Attributes_ID": "Unique system-generated ID for each item attribute record",
+                "Item_Attributes_Prefix_ID": "Prefix identifier for item attributes",
+                "Item_ID": "Reference to the item this attribute belongs to",
+                "Primary_UOM_VSP_ID": "Primary unit of measure for the item",
+                "User_Item_Type_VSP_ID": "User-defined item type classification",
+                "Item_Status": "Status of the item (active/inactive)",
+                "Inventory_Item": "Indicates if the item is an inventory item",
+                "Stockable": "Indicates if the item is stockable",
+                "Transactable": "Indicates if the item is transactable",
+                "Shelf_Life_Control": "Indicates if shelf life control is enabled",
+                "Curing_Time": "Time required for curing the item",
+                "Shelf_Life_Days": "Number of days for shelf life",
+                "No_Control": "Indicates if no control is applied",
+                "Batch_Control": "Indicates if batch control is enabled",
+                "Serial_Control": "Indicates if serial control is enabled",
+                "Batch_And_Serial_Control": "Indicates if both batch and serial control are enabled",
+                "Mixed_Item_Enable": "Indicates if mixed item functionality is enabled",
+                "Cycle_Count_Enabbled": "Indicates if cycle count is enabled",
+                "Serial_Generation": "Indicates if serial numbers are generated",
+                "Locator_Control": "Indicates if locator control is enabled",
+                "Restrict_Subinventories": "Indicates if subinventories are restricted",
+                "Restrict_Locators": "Indicates if locators are restricted",
+                "Costing_Enabbled": "Indicates if costing is enabled",
+                "Build_In_WIP": "Indicates if the item is built in WIP",
+                "First_Off_Quantity": "Quantity for first-off production",
+                "Reusable": "Indicates if the item is reusable",
+                "Warrenty": "Indicates if warranty is applicable",
+                "Is_Post_Roll_Down_Item": "Indicates if the item is a post-roll-down item",
+                "Is_Phantom_Item": "Indicates if the item is a phantom item",
+                "Package_Count": "Number of packages per item",
+                "Default_Location_Must": "Indicates if a default location is required",
+                "Default_Location": "Default location for the item",
+                "Inspection_Required": "Indicates if inspection is required",
+                "Sub_Assembly_Lot": "Indicates if sub-assembly lot is enabled",
+                "LAMI_Cdate": "Date and time when the record was created",
+                "LAMI_Cuser": "User who created the record",
+                "LAMI_Udate": "Date and time when the record was last updated",
+                "LAMI_Uuser": "User who last updated the record",
+                "LAMI_Status": "Status of the record (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity",
+                "Non_Container_Item": "Indicates if the item is a non-container item"
+              },
+              "time_columns": [
+                "Item_Attributes_ID",
+                "Item_Attributes_Prefix_ID",
+                "Curing_Time",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "First_Off_Quantity"
+              ],
+              "status_columns": [
+                "Item_Status",
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_ITEM_BARCODE",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "item",
+              "parent_entity": "MFC_M_ITEM",
+              "parent_entity_status": "present",
+              "business_purpose": "Links item master data to barcode configurations, defining how barcodes are printed, including label and data templates, sticker counts, and status tracking for barcode configurations.",
+              "row_represents": "A specific barcode configuration linked to an item, including template assignments, sticker counts, and status.",
+              "synonyms": [
+                "item barcode configuration",
+                "barcode item link",
+                "item barcode mapping",
+                "barcode template assignment",
+                "item barcode detail"
+              ],
+              "use_when": [
+                "Linking items to barcode templates",
+                "Tracking barcode configuration status",
+                "Managing label and data printing templates for items",
+                "Checking sticker counts for barcode configurations",
+                "Finding barcode configurations for a specific item"
+              ],
+              "columns": {
+                "Item_Barcode_ID": "Unique system-generated ID for this barcode configuration",
+                "Item_Barcode_Prefix_ID": "Prefix identifier for the barcode",
+                "Item_ID": "Reference to the item master record",
+                "Label_Printing_Template_ID": "Reference to the label printing template",
+                "Data_Printing_Template_ID": "Reference to the data printing template",
+                "BOM_Item_ID": "Reference to the BOM item if applicable",
+                "No_Of_Stickers": "Number of stickers per barcode configuration",
+                "IsData_Changed": "Indicates if data has been modified",
+                "LAMI_Cdate": "Date and time when the barcode configuration was created",
+                "LAMI_Cuser": "User who created the barcode configuration",
+                "LAMI_Udate": "Date and time when the barcode configuration was last updated",
+                "LAMI_Uuser": "User who last updated the barcode configuration",
+                "LAMI_Status": "Status of the barcode configuration (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if status is inactive"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_ITEM_CONTAINER_QUANTITY",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "item",
+              "parent_entity": "MFC_M_ITEM",
+              "parent_entity_status": "present",
+              "business_purpose": "Links items to their container types and specifies the quantity of items stored in each container type. This table is used to manage inventory container configurations, ensuring that item quantities are properly associated with specific container types for storage and tracking purposes.",
+              "row_represents": "A specific quantity of an item associated with a container type.",
+              "synonyms": [
+                "item container quantity",
+                "item container mapping",
+                "container item quantity",
+                "item to container link",
+                "container quantity definition",
+                "item container association"
+              ],
+              "use_when": [
+                "Linking items to container types",
+                "Specifying how many items are stored in a container type",
+                "Managing inventory container configurations",
+                "Tracking item quantities per container type",
+                "Finding container types associated with an item",
+                "Checking container quantity definitions",
+                "Managing item-container relationships",
+                "Inventory planning and container allocation"
+              ],
+              "columns": {
+                "Item_Container_ID": "Unique system-generated identifier for this item/container link row",
+                "Item_Container_Prefix_ID": "Prefix identifier for the item/container link",
+                "Item_ID": "Reference to the item being associated with a container type",
+                "Container_Type_ID": "Reference to the container type this item is associated with",
+                "Quantity": "Quantity of the item stored in the specified container type",
+                "LAMI_Cdate": "Date and time when this item/container link was created",
+                "LAMI_Cuser": "User who created this item/container link",
+                "LAMI_Udate": "Date and time when this item/container link was last updated",
+                "LAMI_Uuser": "User who last updated this item/container link",
+                "LAMI_Status": "Status indicating whether this item/container link is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the link is marked as inactive"
+              },
+              "foreign_keys": [
+                "Container_Type_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "Quantity"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_ITEM_PHYSICAL_ATTRIBUTES",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "item",
+              "parent_entity": "MFC_M_ITEM",
+              "parent_entity_status": "present",
+              "business_purpose": "Stores physical attributes of items such as weight, volume, dimensions, container details, and related parameters. This table provides detailed physical characteristics for items, which are essential for logistics, packaging, and storage planning.",
+              "row_represents": "A specific set of physical attributes associated with an item, including weight, volume, dimensions, and container information.",
+              "synonyms": [
+                "item physical attributes",
+                "item dimensions",
+                "item weight and volume",
+                "item container details",
+                "item physical properties",
+                "item packaging attributes",
+                "item storage parameters"
+              ],
+              "use_when": [
+                "Looking up physical attributes of an item",
+                "Checking weight and volume details for an item",
+                "Finding container type and maximum load weight",
+                "Accessing item dimensions (length, height, width)",
+                "Tracking item physical attribute status",
+                "Finding inactive reasons for item attributes",
+                "Checking net and gross weight of items"
+              ],
+              "columns": {
+                "Item_Physical_Attributes_ID": "Unique system-generated ID for each item physical attribute record",
+                "Item_Physical_Attributes_Prefix_ID": "Prefix identifier for item physical attributes",
+                "Item_ID": "Reference to the item for which physical attributes are defined",
+                "Weight_UOM_VSP_ID": "Reference to the unit of measure for weight",
+                "Unit_Weight": "Weight per unit of the item",
+                "Volume_UOM_VSP_ID": "Reference to the unit of measure for volume",
+                "Unit_Volume": "Volume per unit of the item",
+                "Container": "Container type or description used for the item",
+                "Container_Type_VSP_ID": "Reference to the container type classification",
+                "Maximum_Load_Weight": "Maximum allowable weight for the container",
+                "Item_Dimension_UOM_ID": "Reference to the unit of measure for dimensions",
+                "Gross_Weight_UOM": "Unit of measure for gross weight",
+                "Item_Length": "Length of the item",
+                "Item_Height": "Height of the item",
+                "Item_Width": "Width of the item",
+                "LAMI_Cdate": "Date and time when the item physical attribute was created",
+                "LAMI_Cuser": "User who created the item physical attribute record",
+                "LAMI_Udate": "Date and time when the item physical attribute was last updated",
+                "LAMI_Uuser": "User who last updated the item physical attribute record",
+                "LAMI_Status": "Status indicating whether the item physical attribute is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the item physical attribute is inactive",
+                "Dimensions": "Combined dimension information for the item",
+                "Net_Weight": "Net weight of the item",
+                "Gross_Weight": "Gross weight of the item"
+              },
+              "time_columns": [
+                "Item_Physical_Attributes_ID",
+                "Item_Physical_Attributes_Prefix_ID",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "Unit_Weight",
+                "Unit_Volume",
+                "Maximum_Load_Weight",
+                "Item_Length",
+                "Item_Height",
+                "Item_Width",
+                "Net_Weight",
+                "Gross_Weight"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "bom": {
+      "module_label": "BOM",
+      "module_icon": "📐",
+      "description": "Engineering Bill of Materials header, line items and plant assignment",
+      "subgroups": {
+        "bom_header_and_lines": {
+          "tables": [
+            {
+              "table_name": "MFC_M_BOM_HEADER",
+              "table_type": "MASTER",
+              "table_role": "master",
+              "domain": "bom",
+              "parent_entity": null,
+              "parent_entity_status": "n/a",
+              "business_purpose": "Stores master data for Bill of Materials (BOM) headers, defining the structure, validity periods, and basic configuration details for each BOM used in production planning and execution.",
+              "row_represents": "One unique BOM header, including its code, description, effective dates, status, and associated item.",
+              "synonyms": [
+                "BOM header",
+                "bill of materials header",
+                "BOM master",
+                "material structure header",
+                "BOM configuration",
+                "BOM definition",
+                "BOM master data",
+                "BOM setup",
+                "BOM master record"
+              ],
+              "use_when": [
+                "Looking up BOM master data",
+                "Maintaining BOM configurations",
+                "Checking BOM validity periods",
+                "Filtering BOMs by item or status",
+                "Searching BOMs by code or description",
+                "Finding BOMs effective on a date",
+                "BOMs active in a date range",
+                "Recently created or updated BOMs",
+                "Checking BOM status or inactivity reasons"
+              ],
+              "columns": {
+                "BOM_Header_ID": "Unique system-generated ID for each BOM header",
+                "BOM_Header_Prefix_ID": "Prefix used to identify the BOM header",
+                "Item_ID": "Reference to the item for which this BOM is defined",
+                "Header_Code": "Code used to identify the BOM header",
+                "Header_Description": "Description of the BOM header",
+                "BOM_Type_VSP_ID": "Reference to the BOM type classification",
+                "LAMI_Effective_From": "Date when the BOM becomes valid",
+                "LAMI_Effective_To": "Date until which the BOM is valid",
+                "LAMI_Cdate": "Date and time when the BOM header was created",
+                "LAMI_Cuser": "User who created the BOM header",
+                "LAMI_Udate": "Date and time when the BOM header was last updated",
+                "LAMI_Uuser": "User who last updated the BOM header",
+                "LAMI_Status": "Current status of the BOM header (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the BOM is inactive",
+                "INT_Base_Quantity": "Base quantity for the BOM",
+                "INT_Base_UOM_VSP_ID": "Reference to the unit of measure for the base quantity",
+                "INT_Alternate_BOM": "Indicator for alternate BOMs",
+                "INT_Plant_ID": "Reference to the plant associated with the BOM",
+                "INT_BOM_Header_Code": "Alternate code for the BOM header",
+                "INT_Deletion_Indicator": "Indicator for deletion status",
+                "INT_BOM_Status_VSP_ID": "Reference to the BOM status classification",
+                "INT_BOM_Usage_VSP_ID": "Reference to the BOM usage classification"
+              },
+              "foreign_keys": [
+                "Item_ID"
+              ],
+              "time_columns": [
+                "LAMI_Effective_From",
+                "LAMI_Effective_To",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "INT_Base_Quantity"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_BOM_LINE_ITEM",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "bom",
+              "parent_entity": "MFC_M_BOM_HEADER",
+              "parent_entity_status": "present",
+              "secondary_references": [
+                "MFC_M_ITEM"
+              ],
+              "business_purpose": "Stores detailed line item data for bill of materials (BOM) headers, specifying the components, quantities, revisions, and effective dates for each item included in a BOM. This table captures the composition of a BOM at a granular level, including item versions, UOMs, and status information.",
+              "row_represents": "A single line item within a BOM header, representing a specific component, its quantity, and associated metadata such as revision, effective dates, and status.",
+              "synonyms": [
+                "BOM line item",
+                "BOM component",
+                "BOM detail",
+                "BOM line",
+                "BOM item",
+                "BOM component line",
+                "BOM composition item",
+                "BOM line detail",
+                "BOM component entry",
+                "BOM line data"
+              ],
+              "use_when": [
+                "Looking up components in a BOM",
+                "Checking the quantity of a component in a BOM",
+                "Finding the effective dates for a BOM line item",
+                "Tracking the status of a BOM line item",
+                "Filtering BOM line items by item ID or revision",
+                "Finding BOM line items associated with a specific BOM header",
+                "Checking if a BOM line item is active or inactive",
+                "Finding BOM line items with a specific UOM",
+                "Reviewing BOM line item history",
+                "Checking BOM line item creation and update timestamps"
+              ],
+              "columns": {
+                "BOM_Line_Item_ID": "Unique system-generated ID for each BOM line item",
+                "BOM_Line_Item_Prefix_ID": "Prefix identifier for the BOM line item",
+                "BOM_Header_ID": "Reference to the BOM header this line item belongs to",
+                "Item_ID": "Reference to the item defined in the BOM line item",
+                "Item_Revision_Number": "Revision number of the item in the BOM line item",
+                "Quantity": "Quantity of the item required per BOM unit",
+                "Item_Version": "Version of the item used in the BOM line item",
+                "UOM_VSP_ID": "Reference to the unit of measure for the item quantity",
+                "BOM_Level_VSP_ID": "Reference to the BOM level for the line item",
+                "IsLevelMust": "Indicator if the BOM level is mandatory",
+                "Work_Order_Group": "Indicator if the line item belongs to a work order group",
+                "Effective_Date": "Date when the BOM line item becomes effective",
+                "LAMI_Effective_From": "Start date of the BOM line item's validity period",
+                "LAMI_Effective_To": "End date of the BOM line item's validity period",
+                "INT_Change_Number": "Change number associated with the BOM line item",
+                "INT_Co_Product_Indicator": "Indicator if the item is a co-product",
+                "INT_BOM_Sequence_Number": "Sequence number for the BOM line item",
+                "INT_BOM_Item_Number": "Item number within the BOM",
+                "INT_Item_Category_VSP_ID": "Reference to the item category for the BOM line item",
+                "INT_BOM_Line_Code": "Code for the BOM line item",
+                "INT_Plant_Maint_Indicator": "Indicator if the line item is for plant maintenance",
+                "LAMI_Cdate": "Date and time when the BOM line item was created",
+                "LAMI_Cuser": "User who created the BOM line item",
+                "LAMI_Udate": "Date and time when the BOM line item was last updated",
+                "LAMI_Uuser": "User who last updated the BOM line item",
+                "LAMI_Status": "Status of the BOM line item (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity of the BOM line item"
+              },
+              "foreign_keys": [
+                "Item_ID",
+                "UOM_VSP_ID",
+                "BOM_Header_ID"
+              ],
+              "time_columns": [
+                "Effective_Date",
+                "LAMI_Effective_From",
+                "LAMI_Effective_To",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "Quantity"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_BOM_PLANT",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "bom",
+              "parent_entity": "MFC_M_BOM_HEADER",
+              "parent_entity_status": "present",
+              "business_purpose": "Links a Bill of Materials (BOM) header to a specific plant, defining which plant the BOM is associated with. This table ensures that BOMs can be plant-specific, allowing for variations in materials, processes, or sourcing based on location.",
+              "row_represents": "A link between a BOM header and a plant, indicating the plant-specific association of the BOM.",
+              "synonyms": [
+                "BOM plant link",
+                "plant-specific BOM",
+                "BOM plant association",
+                "BOM plant mapping",
+                "plant BOM link"
+              ],
+              "use_when": [
+                "Linking a BOM to a specific plant",
+                "Finding which plants a BOM is associated with",
+                "Checking plant-specific BOM configurations",
+                "Filtering BOMs by plant",
+                "Managing plant-specific BOM variations",
+                "Finding inactive BOM plant links",
+                "Tracking BOM plant associations over time"
+              ],
+              "columns": {
+                "BOM_Plant_ID": "Unique system-generated ID for this BOM/plant link row",
+                "BOM_Plant_Prefix_ID": "Optional prefix or identifier for the BOM in the context of the plant",
+                "Plant_ID": "Reference to the plant this BOM is associated with",
+                "Bom_Header_ID": "Reference to the BOM header this link belongs to",
+                "LAMI_Cdate": "Date and time when this BOM/plant link was created",
+                "LAMI_Cuser": "User who created this BOM/plant link",
+                "LAMI_Udate": "Date and time when this BOM/plant link was last updated",
+                "LAMI_Uuser": "User who last updated this BOM/plant link",
+                "LAMI_Status": "Status indicating whether the BOM/plant link is active or inactive",
+                "LAMI_Inactive_Reason": "Optional reason for inactivity, if the link is marked as inactive"
+              },
+              "foreign_keys": [
+                "Bom_Header_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "routing": {
+      "module_label": "Routing",
+      "module_icon": "⚙️",
+      "description": "Routing header and routing line items",
+      "subgroups": {
+        "routing_header_and_lines": {
+          "tables": [
+            {
+              "table_name": "MFC_M_ROUTING_HEADER",
+              "table_type": "MASTER",
+              "table_role": "master",
+              "domain": "routing",
+              "parent_entity": null,
+              "parent_entity_status": "n/a",
+              "business_purpose": "Stores master data for routing headers that define the basic attributes, effective dates, and status of routing configurations used in manufacturing processes.",
+              "row_represents": "A unique routing header that contains core information such as routing code, description, stage, type, and validity period.",
+              "synonyms": [
+                "routing header",
+                "routing master",
+                "routing configuration header",
+                "routing master data",
+                "routing definition",
+                "routing master record"
+              ],
+              "use_when": [
+                "Looking up routing header information",
+                "Maintaining routing master data",
+                "Checking routing validity periods",
+                "Filtering routings by stage or type",
+                "Searching routing headers by code or description",
+                "Finding active or inactive routings",
+                "Checking routing status",
+                "Finding routings effective on a date",
+                "Recently created or updated routing headers"
+              ],
+              "columns": {
+                "Routing_Header_ID": "Unique system-generated ID for each routing header",
+                "Routing_Header_Prefix_ID": "Prefix identifier for the routing header",
+                "Routing_Code": "Unique business code used to identify the routing",
+                "Routing_Description": "Business description explaining the routing purpose or workflow",
+                "Routing_Stage": "Stage of the routing process",
+                "Routing_Type_VSP_ID": "Reference to routing type classification",
+                "Line_ID": "Line identifier associated with the routing",
+                "Cell_ID": "Cell identifier associated with the routing",
+                "Is_Primary_Routing": "Indicates if this is the primary routing",
+                "LAMI_Effective_From": "Date when the routing becomes valid",
+                "LAMI_Effective_To": "Date until which the routing is valid",
+                "INT_Plant_ID": "Plant or location identifier",
+                "INT_Item_ID": "Item identifier associated with the routing",
+                "INT_Tasklist_Type_VSP_ID": "Reference to tasklist type classification",
+                "INT_Group": "Group identifier for the routing",
+                "INT_Group_Counter": "Counter for the group identifier",
+                "INT_Tasklist_Usage_VSP_ID": "Reference to tasklist usage classification",
+                "INT_Tasklist_Status_VSP_ID": "Reference to tasklist status classification",
+                "INT_Deletion_Indicator": "Indicates if the routing is marked for deletion",
+                "LAMI_Cdate": "Date and time when the routing header was created",
+                "LAMI_Cuser": "User who created the routing header",
+                "LAMI_Udate": "Date and time when the routing header was last updated",
+                "LAMI_Uuser": "User who last updated the routing header",
+                "LAMI_Status": "Current status of the routing header (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the routing is marked as inactive"
+              },
+              "time_columns": [
+                "LAMI_Effective_From",
+                "LAMI_Effective_To",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_ROUTING_LINE_ITEM",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "routing",
+              "parent_entity": "MFC_M_ROUTING_HEADER",
+              "parent_entity_status": "present",
+              "business_purpose": "Links a routing header to its line items, capturing sequence, validity periods, and other operational details for each step in the routing. This table provides the detailed breakdown of operations within a routing, including validity dates, crew assignments, and status information.",
+              "row_represents": "One line item within a routing header, representing a specific operation or step in the routing process.",
+              "synonyms": [
+                "routing line item",
+                "routing detail",
+                "routing step item",
+                "routing line",
+                "routing operation line item",
+                "routing entry",
+                "routing component",
+                "routing detail line"
+              ],
+              "use_when": [
+                "Finding line items within a routing header",
+                "Checking validity periods for a routing line item",
+                "Tracking the status of a routing line item",
+                "Finding crew assignments for a routing line item",
+                "Looking up sequence numbers for routing steps",
+                "Checking if a routing line item is a sub-assembly or final routing"
+              ],
+              "columns": {
+                "Routing_Line_Item_ID": "Unique system-generated identifier for this routing line item",
+                "Routing_Line_Item_Prefix_ID": "Prefix identifier for the routing line item",
+                "Routing_Header_ID": "Reference to the routing header this line item belongs to",
+                "Routing_Number": "Routing number associated with the line item",
+                "Sequence_Number": "Sequence number indicating the order of the line item in the routing",
+                "Custom_Attribute_ID": "Reference to a custom attribute associated with the line item",
+                "User_Crew_ID": "Crew or team assigned to this line item",
+                "Is_Sub_Assembly_Routing": "Indicates if the line item is part of a sub-assembly routing",
+                "Is_Final_Routing": "Indicates if the line item represents the final routing",
+                "INT_Change_Number": "Change number associated with the line item",
+                "INT_Valid_From": "Date from which the line item is valid",
+                "INT_Valid_To": "Date until which the line item is valid",
+                "Routing_Version": "Version identifier for the routing line item",
+                "Device_ID": "Device associated with the line item",
+                "LAMI_Cdate": "Date and time when the line item was created",
+                "LAMI_Cuser": "User who created the line item",
+                "LAMI_Udate": "Date and time when the line item was last updated",
+                "LAMI_Uuser": "User who last updated the line item",
+                "LAMI_Status": "Current status of the line item (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the line item is inactive"
+              },
+              "foreign_keys": [
+                "Routing_Header_ID"
+              ],
+              "time_columns": [
+                "Custom_Attribute_ID",
+                "INT_Valid_From",
+                "INT_Valid_To",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "erp_operation": {
+      "module_label": "ERP Operation",
+      "module_icon": "🏷️",
+      "description": "ERP operation master lookup",
+      "subgroups": {
+        "erp_operation": {
+          "tables": [
+            {
+              "table_name": "MFC_M_ERP_OPERATION",
+              "table_type": "MASTER",
+              "table_role": "master",
+              "domain": "operation",
+              "parent_entity": null,
+              "parent_entity_status": "n/a",
+              "business_purpose": "Stores master data for ERP operations used within manufacturing routings, including operation numbering, sequencing, descriptions, setup/run times, movement details, and SAP integration fields (standard values, activity types, machine assignment) used to synchronize operations with the ERP system.",
+              "row_represents": "A single ERP operation step defined for a routing, including its sequence, timing, movement, and SAP/ERP integration attributes.",
+              "synonyms": [
+                "erp operation",
+                "operation master",
+                "routing operation",
+                "SAP operation",
+                "work center operation",
+                "operation step",
+                "process operation",
+                "manufacturing operation"
+              ],
+              "use_when": [
+                "Looking up ERP operation details by number or description",
+                "Finding operation sequence within a routing",
+                "Checking setup time, run time, or move time for an operation",
+                "Finding the machine or work center assigned to an operation",
+                "Checking SAP/ERP standard values and activity types for an operation",
+                "Tracking material movement quantities and timing for an operation",
+                "Checking operation version or revision",
+                "Finding whether an operation requires setup or run inspection",
+                "Checking if an operation is an ERP operation, application operation, or set mapping operation",
+                "Tracking creation and update history of an operation"
+              ],
+              "columns": {
+                "ERP_Operation_ID": "Unique system-generated identifier for each ERP operation record",
+                "ERP_Operation_Prefix_ID": "Prefix identifier used to distinguish the ERP operation",
+                "ERP_Operation_Number": "Business operation number within the routing (e.g. 0010, 0020, DR10)",
+                "ERP_Operation_Description": "Description of the ERP operation",
+                "ERP_Operation_Seq_Number": "Sequence number of the operation within the routing",
+                "Functionality_ID": "Reference to a functionality classification (not currently populated)",
+                "IsLevelMust": "Flag indicating whether the operation level is mandatory",
+                "IME_Item_ID": "Reference to an IME item (not currently populated)",
+                "Move_Hrs": "Hours allotted for moving material between operations",
+                "Move_Qty": "Quantity of material to be moved between operations",
+                "Setup_Time": "Time required to set up the operation",
+                "Work_Instruction_Prefix_ID": "Prefix identifier for the related work instruction (not currently populated)",
+                "Work_Instruction_Rev_No": "Revision number of the related work instruction",
+                "Work_Instruction_File_Ref": "File reference for the related work instruction document",
+                "Indus_Engg_Max_Time": "Maximum time allowed for the operation per industrial engineering standards (not currently populated)",
+                "Indus_Engg_Min_Time": "Minimum time allowed for the operation per industrial engineering standards (not currently populated)",
+                "Max_Gap_Frm_Prev_Opr": "Maximum allowable time gap from the previous operation",
+                "Opr_Process_Type_VSP_ID": "Reference to the operation process type classification (not currently populated)",
+                "Base_Charges": "Base charges associated with the operation (not currently populated)",
+                "Min_Charges": "Minimum charges associated with the operation (not currently populated)",
+                "Has_Material_Movement": "Flag indicating whether the operation involves material movement",
+                "Material_Movement_Time": "Time required for material movement in the operation (not currently populated)",
+                "Unit_Cost": "Unit cost associated with the operation (not currently populated)",
+                "Load_Size_Qty": "Load size quantity used for the operation",
+                "Run_Hrs": "Hours allotted for running the operation",
+                "Min_Move_Qty": "Minimum quantity required before material can be moved (not currently populated)",
+                "Is_ERP_Operation": "Flag indicating whether this record represents a true ERP operation",
+                "No_Of_Sub_Operation": "Number of sub-operations under this operation (not currently populated)",
+                "Begin_Traceability": "Flag indicating whether traceability begins at this operation",
+                "Service_Prefix_ID": "Prefix identifier for a related service (not currently populated)",
+                "Setup_Cost_Per_Hr": "Setup cost per hour for the operation (not currently populated)",
+                "Run_Cost_Per_Hr": "Run cost per hour for the operation (not currently populated)",
+                "Bur_Per_Hr_Setup": "Burden cost per hour during setup (not currently populated)",
+                "Bur_Percent_Setup": "Burden percentage applied during setup (not currently populated)",
+                "Bur_Per_Operation": "Burden cost applied per operation (not currently populated)",
+                "Scrap_Yield_PCT": "Expected scrap/yield percentage for the operation (not currently populated)",
+                "Tack_Time": "Tack time associated with the operation (not currently populated)",
+                "SPC_Qty": "Statistical process control quantity for the operation (not currently populated)",
+                "Max_Downtime": "Maximum allowable downtime for the operation (not currently populated)",
+                "Run_Qty_Per_Cycle": "Run quantity per cycle for the operation (not currently populated)",
+                "Est_Atl_Lab_Count": "Estimated actual labor count for the operation (not currently populated)",
+                "Setup_Inspect_Req": "Flag indicating whether setup inspection is required",
+                "Run_Inspect_Req": "Flag indicating whether run inspection is required",
+                "Is_Application_Operation": "Flag indicating whether this is an application operation",
+                "Is_Part_Validation": "Flag indicating whether this operation performs part validation",
+                "Is_Generate_Serial_Number": "Flag indicating whether this operation generates a serial number (not currently populated)",
+                "Is_Operation_Characteristics": "Flag indicating whether this operation defines operation characteristics",
+                "Is_Packing_Validation": "Flag indicating whether this operation performs packing validation",
+                "Is_Palletization": "Flag indicating whether this operation performs palletization",
+                "Is_Dismantled_Parts": "Flag indicating whether this operation handles dismantled parts",
+                "Is_Set_Mapping_Operation": "Flag indicating whether this operation is a set mapping operation",
+                "Is_Endurance": "Flag indicating whether this operation is an endurance operation",
+                "INT_Standard_Value1": "SAP standard value 1 used for interface/costing (e.g. setup)",
+                "INT_Activity_Type1": "SAP activity type for standard value 1 (e.g. SET_UP)",
+                "INT_Standard_Value_Unit1": "Unit of measure for SAP standard value 1",
+                "INT_Standard_Value2": "SAP standard value 2 used for interface/costing (e.g. machine)",
+                "INT_Activity_Type2": "SAP activity type for standard value 2 (e.g. MACHIN)",
+                "INT_Standard_Value_Unit2": "Unit of measure for SAP standard value 2",
+                "INT_Standard_Value3": "SAP standard value 3 used for interface/costing (e.g. labour)",
+                "INT_Activity_Type3": "SAP activity type for standard value 3 (e.g. LABOUR)",
+                "INT_Standard_Value_Unit3": "Unit of measure for SAP standard value 3",
+                "INT_Standard_Value4": "SAP standard value 4 used for interface/costing (e.g. fixed overhead)",
+                "INT_Activity_Type4": "SAP activity type for standard value 4 (e.g. F_OH)",
+                "INT_Standard_Value_Unit4": "Unit of measure for SAP standard value 4",
+                "INT_Standard_Value5": "SAP standard value 5 used for interface/costing (e.g. tooling) (not currently populated)",
+                "INT_Activity_Type5": "SAP activity type for standard value 5 (e.g. TOOL)",
+                "INT_Standard_Value_Unit5": "Unit of measure for SAP standard value 5",
+                "INT_Standard_Value6": "SAP standard value 6 used for interface/costing (e.g. certification)",
+                "INT_Activity_Type6": "SAP activity type for standard value 6 (e.g. CERT_D, CERT_E, F_OH)",
+                "INT_Standard_Value_Unit6": "Unit of measure for SAP standard value 6",
+                "INT_Machine_ID": "SAP machine/work center identifier assigned to the operation",
+                "INT_Machine_Name": "SAP machine/work center name assigned to the operation",
+                "INT_Control_Key_VSP_ID": "Reference to the SAP control key classification for the operation",
+                "INT_UOM_VSP_ID": "Reference to the unit of measure used in SAP for the operation",
+                "INT_Quantity": "Base quantity used for the SAP operation",
+                "INT_Tasklist_Type_VSP_ID": "Reference to the SAP tasklist type classification",
+                "INT_Field_Key_VSP_ID": "Reference to a SAP field key classification (not currently populated)",
+                "INT_Group_Counter": "SAP group counter for the operation",
+                "INT_Group": "SAP group identifier for the operation",
+                "INT_Opr_Seq_Number": "SAP operation sequence number",
+                "Label_Type_VSP_ID": "Reference to a label type classification (not currently populated)",
+                "INT_Alternative_BOM": "SAP alternative BOM identifier for the operation",
+                "Is_Activity_Interface": "Flag indicating whether this operation is interfaced for activity/cost postings",
+                "Operation_Version": "Version identifier of the operation definition (e.g. V1.0, V1.1)",
+                "IsData_Changed": "Flag indicating whether the operation data has been changed",
+                "LAMI_Cdate": "Date and time when the operation record was created",
+                "LAMI_Cuser": "User who created the operation record",
+                "LAMI_Udate": "Date and time when the operation record was last updated",
+                "LAMI_Uuser": "User who last updated the operation record",
+                "LAMI_Status": "Current status of the operation record (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the operation is inactive (not currently populated)"
+              },
+              "foreign_keys": [],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ],
+              "value_columns": [
+                "Base_Charges",
+                "Min_Charges",
+                "Unit_Cost",
+                "Setup_Cost_Per_Hr",
+                "Run_Cost_Per_Hr"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "la_operation": {
+      "module_label": "LA Operation",
+      "module_icon": "🏷️",
+      "description": "LA operation master lookup",
+      "subgroups": {
+        "la_operation": {
+          "tables": [
+            {
+              "table_name": "MFC_M_LA_OPERATION",
+              "table_type": "MASTER",
+              "table_role": "master",
+              "domain": "erp_operation",
+              "parent_entity": null,
+              "parent_entity_status": "n/a",
+              "business_purpose": "Stores master data for LA operations, defining operation codes, functionality types, part process codes, and other attributes related to LA operations within the system.",
+              "row_represents": "A unique LA operation definition, including its name, description, functionality, and status.",
+              "synonyms": [
+                "LA operation",
+                "LA operation master",
+                "LA operation definition",
+                "LA operation code",
+                "LA operation configuration"
+              ],
+              "use_when": [
+                "Looking up LA operation master data",
+                "Defining or maintaining LA operation configurations",
+                "Checking LA operation status",
+                "Filtering LA operations by functionality type",
+                "Searching LA operations by name or description",
+                "Finding LA operations with specific part process codes"
+              ],
+              "columns": {
+                "LA_Operation_ID": "Unique system-generated ID for each LA operation",
+                "LA_Operation_Prefix_ID": "Prefix identifier for the LA operation",
+                "Functionality_ID": "Reference to functionality classification",
+                "Functionality_Type_ID": "Reference to functionality type classification",
+                "Part_Process_Code_ID": "Reference to part process code classification",
+                "LA_Operation_Name": "Name or title of the LA operation",
+                "LA_Operation_Description": "Description explaining the purpose or details of the LA operation",
+                "Required_Buttons_VSP_ID": "Reference to required buttons or VSP configuration",
+                "LAMI_Cdate": "Date and time when the LA operation was created",
+                "LAMI_Cuser": "User who created the LA operation record",
+                "LAMI_Udate": "Date and time when the LA operation was last updated",
+                "LAMI_Uuser": "User who last updated the LA operation record",
+                "LAMI_Status": "Current status of the LA operation (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the LA operation is inactive",
+                "LGW1": "Flag indicating a specific LA operation attribute",
+                "LGW2": "Flag indicating a specific LA operation attribute",
+                "LGW3": "Flag indicating a specific LA operation attribute",
+                "LGW4": "Flag indicating a specific LA operation attribute",
+                "LGW5": "Flag indicating a specific LA operation attribute"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "uom": {
+      "module_label": "UOM",
+      "module_icon": "🏷️",
+      "description": "Unit of measure master lookup",
+      "subgroups": {
+        "uom": {
+          "tables": [
+            {
+              "table_name": "MFC_M_UOM",
+              "table_type": "MASTER",
+              "table_role": "master",
+              "domain": "uom",
+              "parent_entity": null,
+              "parent_entity_status": "n/a",
+              "business_purpose": "Stores master data for unit of measure (UOM) definitions, including standard units, conversion factors, and descriptions used across the system for quantity and measurement tracking.",
+              "row_represents": "A unique unit of measure definition, including its name, description, conversion factor, and status.",
+              "synonyms": [
+                "unit of measure",
+                "UOM definition",
+                "measurement unit",
+                "unit master",
+                "quantity unit",
+                "standard unit",
+                "UOM code",
+                "unit of measurement",
+                "UOM configuration",
+                "measurement standard"
+              ],
+              "use_when": [
+                "Looking up unit of measure definitions",
+                "Defining or maintaining UOM configurations",
+                "Checking UOM conversion factors",
+                "Filtering UOMs by standard unit",
+                "Searching UOMs by name or description",
+                "Checking UOM status (active/inactive)",
+                "Finding UOMs with specific conversion factors",
+                "Managing UOM master data",
+                "Recently created or updated UOMs"
+              ],
+              "columns": {
+                "UOM_ID": "Unique system-generated ID for each unit of measure",
+                "UOM_Prefix_ID": "Prefix associated with the unit of measure (e.g., 'kg', 'm')",
+                "UOM_Name": "Name or title of the unit of measure",
+                "UOM_Description": "Business description explaining the unit of measure",
+                "Standard_Unit": "Standard unit to which this UOM is related for conversion purposes",
+                "Conversion_Factor": "Factor used to convert this UOM to the standard unit",
+                "UOM_Type_VSP_ID": "Reference to UOM type classification",
+                "LAMI_Cdate": "Date and time when the UOM was created",
+                "LAMI_Cuser": "User who created the UOM record",
+                "LAMI_Udate": "Date and time when the UOM was last updated",
+                "LAMI_Uuser": "User who last updated the UOM record",
+                "LAMI_Status": "Current status of the UOM (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the UOM is marked as inactive"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "mbom_operations": {
+      "module_label": "MBOM & Operations Execution",
+      "module_icon": "🔧",
+      "description": "Manufacturing BOM structure, operation-level configuration, IME traceability and item receipt transactions connecting items, BOM, routing and operation masters",
+      "subgroups": {
+        "mbom_structure": {
+          "tables": [
+            {
+              "table_name": "MFC_M_MBOM_HEADER",
+              "table_type": "MASTER",
+              "table_role": "master",
+              "domain": "mbom_operations",
+              "parent_entity": null,
+              "parent_entity_status": "n/a",
+              "business_purpose": "Stores master data for the Master Bill of Materials (MBOM) header, defining the relationship between items, BOMs, and routings, including validity periods, status, and creation/update details.",
+              "row_represents": "A unique MBOM header record that links an item to a BOM and routing, defining its effective dates, status, and other metadata.",
+              "synonyms": [
+                "MBOM header",
+                "master BOM header",
+                "item routing header",
+                "BOM routing link",
+                "MBOM master data",
+                "BOM routing association",
+                "item routing configuration",
+                "MBOM definition",
+                "BOM header link",
+                "routing header association"
+              ],
+              "use_when": [
+                "Looking up MBOM header master data",
+                "Maintaining MBOM header configurations",
+                "Checking MBOM header validity periods",
+                "Tracking MBOM header status",
+                "Linking items to BOMs and routings",
+                "Filtering MBOM headers by item or routing",
+                "Finding MBOM headers effective on a date",
+                "MBOM headers active in a date range",
+                "Recently created MBOM headers",
+                "Recently updated MBOM headers",
+                "Active or inactive MBOM headers"
+              ],
+              "columns": {
+                "MBOM_Header_ID": "Unique system-generated ID for each MBOM header",
+                "MBOM_Header_Prefix_ID": "Prefix identifier for the MBOM header",
+                "Item_ID": "Reference to the item associated with this MBOM header",
+                "BOM_Header_ID": "Reference to the BOM header associated with this MBOM header",
+                "Routing_Header_ID": "Reference to the routing header associated with this MBOM header",
+                "Is_Default_Routing": "Indicates if this routing is the default for the item",
+                "Is_Parallel_Routing": "Indicates if this routing is parallel",
+                "LAMI_Effective_From": "Date when the MBOM header becomes valid",
+                "LAMI_Effective_To": "Date until which the MBOM header is valid",
+                "LAMI_Cdate": "Date and time when the MBOM header was created",
+                "LAMI_Cuser": "User who created the MBOM header",
+                "LAMI_Udate": "Date and time when the MBOM header was last updated",
+                "LAMI_Uuser": "User who last updated the MBOM header",
+                "LAMI_Status": "Current status of the MBOM header (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the MBOM header is inactive"
+              },
+              "foreign_keys": [
+                "Routing_Header_ID"
+              ],
+              "time_columns": [
+                "LAMI_Effective_From",
+                "LAMI_Effective_To",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_MBOM",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "mbom_operations",
+              "parent_entity": "MFC_M_MBOM_HEADER",
+              "parent_entity_status": "present",
+              "secondary_references": [
+                "MFC_M_ITEM",
+                "MFC_L_ROUTING_LINE_ITEM"
+              ],
+              "business_purpose": "Links a master bill of materials (MBOM) header to its detailed components, including routing line items, operations, and associated settings such as machine assignments, inspection requirements, and serial number generation. This table provides the detailed structure of how items are assembled, including operation sequences and work center assignments.",
+              "row_represents": "A specific line item within an MBOM header, detailing the item, routing operation, and associated settings for manufacturing or assembly.",
+              "synonyms": [
+                "MBOM line",
+                "MBOM detail",
+                "MBOM component",
+                "MBOM item",
+                "MBOM operation",
+                "MBOM routing line",
+                "MBOM step",
+                "MBOM operation line",
+                "MBOM assembly line",
+                "MBOM component line"
+              ],
+              "use_when": [
+                "Finding the components of an MBOM header",
+                "Checking operation details for a specific MBOM line",
+                "Identifying machine assignments for an MBOM line",
+                "Determining inspection requirements for an MBOM line",
+                "Checking if serial numbers are generated for an MBOM line",
+                "Finding the sequence number of an operation in an MBOM line",
+                "Checking if an operation is a final operation",
+                "Identifying subassembly operations",
+                "Finding the status of an MBOM line",
+                "Checking if an MBOM line is inactive and the reason"
+              ],
+              "columns": {
+                "MBOM_ID": "Unique system-generated ID for each MBOM line item",
+                "MBOM_Prefix_ID": "Prefix identifier for the MBOM",
+                "MBOM_Header_ID": "Reference to the MBOM header this line belongs to",
+                "Item_ID": "Reference to the item being included in the MBOM",
+                "Routing_Line_Item_ID": "Reference to the routing line item associated with this MBOM line",
+                "ERP_Operation_ID": "Reference to the ERP operation associated with this MBOM line",
+                "Machine_ID": "Reference to the machine assigned for this MBOM line",
+                "Machine_Group_ID": "Reference to the machine group assigned for this MBOM line",
+                "User_Crew_ID": "Reference to the user crew assigned for this MBOM line",
+                "Kit_No": "Kit number associated with this MBOM line",
+                "Is_SubAssembly_Operation_VSP_ID": "Reference to the subassembly operation VSP ID",
+                "SubAssembly_Item_ID": "Reference to the subassembly item associated with this MBOM line",
+                "Operation_Sequence_Number": "Sequence number of the operation within the MBOM line",
+                "Is_Generate_Serial_Number": "Flag indicating if serial numbers are generated for this MBOM line",
+                "Is_Patrol_Inspection": "Flag indicating if patrol inspection is required for this MBOM line",
+                "Is_Performance_Inspection": "Flag indicating if performance inspection is required for this MBOM line",
+                "Is_FinalOperation": "Flag indicating if this is a final operation in the MBOM line",
+                "Is_SA_Final_Operation": "Flag indicating if this is a subassembly final operation in the MBOM line",
+                "IsData_Changed": "Flag indicating if data has been changed for this MBOM line",
+                "LAMI_Cdate": "Date and time when this MBOM line was created",
+                "LAMI_Cuser": "User who created this MBOM line",
+                "LAMI_Uuser": "User who last updated this MBOM line",
+                "LAMI_Udate": "Date and time when this MBOM line was last updated",
+                "LAMI_Status": "Status of the MBOM line (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity of the MBOM line",
+                "Is_Application_Operation": "Flag indicating if this is an application operation",
+                "Is_Part_Validation": "Flag indicating if part validation is required",
+                "Is_Operation_Characteristics": "Flag indicating if operation characteristics are defined",
+                "LAMI_GW_UDate": "Date and time of the last gateway update for this MBOM line",
+                "LAMI_GW_Uuser": "User who performed the last gateway update for this MBOM line"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate",
+                "LAMI_GW_UDate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_MBOM_LA_OPERATION",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "mbom_operations",
+              "parent_entity": "MFC_L_MBOM",
+              "parent_entity_status": "present",
+              "secondary_references": [
+                "MFC_M_LA_OPERATION"
+              ],
+              "business_purpose": "Links a bill of manufacturing (MBOM) to specific operations, capturing details such as sequence, process category, and associated device or interface device information. This table provides the operational breakdown for each MBOM, enabling detailed tracking of manufacturing steps and resources required.",
+              "row_represents": "A specific operation within an MBOM, including its sequence, associated process category, and related devices or interfaces.",
+              "synonyms": [
+                "MBOM operation",
+                "MBOM step",
+                "operation detail",
+                "process step in MBOM",
+                "MBOM operation line",
+                "operation link in MBOM"
+              ],
+              "use_when": [
+                "Finding the sequence of operations within an MBOM",
+                "Checking which process category an operation belongs to",
+                "Linking operations to devices or interface devices",
+                "Identifying final operations in an MBOM",
+                "Tracking changes to MBOM operations",
+                "Finding operations associated with a specific MBOM"
+              ],
+              "columns": {
+                "MBOM_LA_Operation_ID": "Unique system-generated ID for each MBOM operation link",
+                "MBOM_LA_Operation_Prefix_ID": "Prefix identifier for the operation",
+                "Process_Category_ID": "Reference to the process category classification",
+                "LA_Operation_ID": "Reference to the operation definition",
+                "MBOM_ID": "Reference to the MBOM header",
+                "Sequence_Number": "Position of the operation within the MBOM sequence",
+                "Is_FinalOperation": "Indicates if this is the final operation in the MBOM",
+                "IsData_Changed": "Indicates if the operation data has been modified",
+                "Item_Barcode_ID": "Barcode identifier for the item involved in the operation",
+                "Activity_Type_VSP_ID": "Reference to the activity type or value stream process",
+                "Device_ID": "Reference to the device used in the operation",
+                "Interface_Device_ID": "Reference to the interface device used in the operation",
+                "LAMI_Cdate": "Date and time when the operation link was created",
+                "LAMI_Cuser": "User who created the operation link",
+                "LAMI_Udate": "Date and time when the operation link was last updated",
+                "LAMI_Uuser": "User who last updated the operation link",
+                "LAMI_Status": "Current status of the operation link (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity, if applicable"
+              },
+              "foreign_keys": [
+                "LA_Operation_ID",
+                "Process_Category_ID",
+                "MBOM_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        },
+        "operation_config": {
+          "tables": [
+            {
+              "table_name": "MFC_L_MBOM_OPERATION_INSPECTION_RULE",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "mbom_operations",
+              "parent_entity": "MFC_L_MBOM",
+              "parent_entity_status": "present",
+              "secondary_references": [
+                "MFC_M_ERP_OPERATION"
+              ],
+              "note": "ERP_Operation_ID FK points outside this file (MFC_M_ERP_OPERATION not present).",
+              "business_purpose": "Links MBOM operations to inspection rules, defining the quality inspection rules that must be applied during the execution of a manufacturing operation. This table ensures that quality checks are properly associated with specific operations in the bill of materials, enabling traceability and compliance with quality standards.",
+              "row_represents": "A specific inspection rule assigned to an operation within an MBOM, defining the quality checks required for that operation.",
+              "synonyms": [
+                "MBOM operation inspection rule",
+                "operation inspection rule",
+                "quality inspection rule assignment",
+                "MBOM inspection rule mapping",
+                "operation quality rule",
+                "inspection rule link",
+                "MBOM operation quality check",
+                "operation inspection rule assignment"
+              ],
+              "use_when": [
+                "Linking inspection rules to MBOM operations",
+                "Finding which inspection rules apply to a specific operation",
+                "Checking quality rules associated with an MBOM",
+                "Tracking quality checks per operation",
+                "Managing quality rule assignments for operations",
+                "Finding inspection rules by operation or MBOM"
+              ],
+              "columns": {
+                "Operation_Inspection_Rule_ID": "Unique system-generated ID for this inspection rule assignment",
+                "Operation_Inspection_Rule_Prefix_ID": "Prefix identifier for the inspection rule",
+                "MBOM_ID": "Reference to the MBOM operation this rule applies to",
+                "ERP_Operation_ID": "Reference to the ERP operation this rule applies to",
+                "Automation_Rule_ID": "Reference to the automation rule used for inspection",
+                "LAMI_Cdate": "Date and time when the inspection rule assignment was created",
+                "LAMI_Cuser": "User who created the inspection rule assignment",
+                "LAMI_Uuser": "User who last updated the inspection rule assignment",
+                "LAMI_Udate": "Date and time when the inspection rule assignment was last updated",
+                "LAMI_Status": "Status indicating whether the inspection rule is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for deactivation if the rule is inactive"
+              },
+              "foreign_keys": [
+                "MBOM_ID",
+                "Automation_Rule_ID",
+                "ERP_Operation_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_MBOM_OPERATION_PART",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "mbom_operations",
+              "parent_entity": "MFC_L_MBOM",
+              "parent_entity_status": "present",
+              "secondary_references": [
+                "MFC_L_BOM_LINE_ITEM",
+                "MFC_L_MBOM_LA_OPERATION",
+                "MFC_M_ERP_OPERATION"
+              ],
+              "note": "ERP_Operation_ID FK points outside this file (MFC_M_ERP_OPERATION not present).",
+              "business_purpose": "Links a MBOM (Manufacturing Bill of Materials) to the specific operation parts involved in its execution, capturing details such as ERP operation references, BOM line items, and status information. This table provides the detailed breakdown of parts associated with each operation within a MBOM, enabling accurate tracking and management of manufacturing components.",
+              "row_represents": "A specific operation part linked to a MBOM, including ERP operation references, BOM line items, and status information.",
+              "synonyms": [
+                "MBOM operation part",
+                "MBOM operation detail",
+                "operation part link",
+                "MBOM part operation",
+                "operation part mapping",
+                "MBOM operation part line",
+                "operation part reference"
+              ],
+              "use_when": [
+                "Linking MBOMs to operation parts",
+                "Tracking ERP operation references for MBOM parts",
+                "Finding BOM line items associated with MBOM operations",
+                "Checking the status of MBOM operation parts",
+                "Identifying inactive MBOM operation parts",
+                "Finding operation parts linked to a specific MBOM"
+              ],
+              "columns": {
+                "Operation_Part_ID": "Unique system-generated ID for each operation part link",
+                "Operation_Part_Prefix_ID": "Prefix identifier for the operation part",
+                "MBOM_ID": "Reference to the MBOM this operation part belongs to",
+                "ERP_Operation_ID": "Reference to the ERP operation associated with this part",
+                "BOM_Line_Item_ID": "Reference to the BOM line item associated with this operation part",
+                "MBOM_LA_Operation_ID": "Reference to the MBOM LA operation associated with this part",
+                "Validate_Type_VSP_ID": "Reference to validation type for the operation part",
+                "Is_SAP_Interface": "Indicates if this operation part is linked to SAP",
+                "Operation_part_Ref1": "First reference or identifier for the operation part",
+                "Operation_part_Ref2": "Second reference or identifier for the operation part",
+                "Operation_part_Ref3": "Third reference or identifier for the operation part",
+                "Operation_part_Ref4": "Fourth reference or identifier for the operation part",
+                "LAMI_Cdate": "Date and time when the operation part link was created",
+                "LAMI_Cuser": "User who created the operation part link",
+                "LAMI_Uuser": "User who last updated the operation part link",
+                "LAMI_Udate": "Date and time when the operation part link was last updated",
+                "LAMI_Status": "Current status of the operation part link (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the operation part link is inactive"
+              },
+              "foreign_keys": [
+                "ERP_Operation_ID",
+                "MBOM_ID",
+                "MBOM_LA_Operation_ID"
+              ],
+              "time_columns": [
+                "Validate_Type_VSP_ID",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_OPERATION_DATA_TEMPLATES",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "mbom_operations",
+              "parent_entity": "MFC_L_MBOM",
+              "parent_entity_status": "present",
+              "secondary_references": [
+                "MFC_L_MBOM_LA_OPERATION",
+                "MFC_M_ERP_OPERATION"
+              ],
+              "note": "ERP_Operation_ID FK points outside this file (MFC_M_ERP_OPERATION not present).",
+              "business_purpose": "Links operation data templates to specific operations and items, defining how labels and barcodes are printed during manufacturing processes. This table captures the association between print labels, operations, and items, ensuring accurate tracking and labeling during production.",
+              "row_represents": "A specific print label template associated with an operation and item, including details such as the printer device, status, and inactivity reason.",
+              "synonyms": [
+                "operation print template",
+                "print label operation mapping",
+                "item barcode operation link",
+                "label template operation association",
+                "print template operation detail"
+              ],
+              "use_when": [
+                "Linking print label templates to operations",
+                "Associating item barcodes with operations",
+                "Tracking printer device assignments for label printing",
+                "Checking the status of a print label template",
+                "Finding inactive print label templates",
+                "Mapping operations to their corresponding print templates"
+              ],
+              "columns": {
+                "Data_Print_label_ID": "Unique system-generated identifier for the print label template operation link",
+                "Data_Print_Label_Prefix_ID": "Prefix identifier for the print label template",
+                "MBOM_ID": "Reference to the MBOM master record",
+                "MBOM_LA_Operation_ID": "Reference to the operation within the MBOM",
+                "ERP_Operation_ID": "Reference to the ERP operation",
+                "Item_Barcode_ID": "Reference to the item barcode",
+                "Device_ID": "Reference to the device used for printing",
+                "Printer_Device_ID": "Reference to the printer device used for label printing",
+                "LAMI_Cdate": "Date and time when the record was created",
+                "LAMI_Cuser": "User who created the record",
+                "LAMI_Udate": "Date and time when the record was last updated",
+                "LAMI_Uuser": "User who last updated the record",
+                "LAMI_Status": "Status indicating whether the record is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the record is marked as inactive"
+              },
+              "foreign_keys": [
+                "Item_Barcode_ID",
+                "MBOM_LA_Operation_ID",
+                "MBOM_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_OPERATION_REJECTION_REASON",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "mbom_operations",
+              "parent_entity": "MFC_M_ERP_OPERATION",
+              "parent_entity_status": "missing_from_file",
+              "note": "Business doc calls this domain's reason table EXECUTION_REASON; actual table name here is REJECTION_REASON. Parent MFC_M_ERP_OPERATION is not present in this file.",
+              "business_purpose": "Links operations to specific rejection reasons, capturing the relationship between an operation and the reason for rejection. This table is used to track why a particular operation may result in rejected items, enabling detailed analysis and quality control tracking.",
+              "row_represents": "A specific rejection reason associated with an operation.",
+              "synonyms": [
+                "operation rejection reason",
+                "rejection reason link",
+                "operation rejection mapping",
+                "rejection reason association",
+                "operation rejection detail"
+              ],
+              "use_when": [
+                "Linking operations to rejection reasons",
+                "Tracking the reasons for rejected items in an operation",
+                "Analyzing quality issues related to specific operations",
+                "Finding rejection reasons for a given operation",
+                "Maintaining operation-rejection reason relationships"
+              ],
+              "columns": {
+                "Opr_Rejection_Reason_ID": "Unique system-generated identifier for this operation-rejection reason link",
+                "Opr_Rejection_Reason_Prefix_ID": "Prefix identifier for the rejection reason",
+                "ERP_Operation_ID": "Reference to the ERP operation",
+                "Rejection_Reason_VSP_ID": "Reference to the rejection reason definition",
+                "IsData_Changed": "Indicates if the data has been modified",
+                "LAMI_Cdate": "Date and time when the record was created",
+                "LAMI_Cuser": "User who created the record",
+                "LAMI_Udate": "Date and time when the record was last updated",
+                "LAMI_Uuser": "User who last updated the record",
+                "LAMI_Status": "Status of the record (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the record is inactive",
+                "LGW1": "Flag for additional use case 1",
+                "LGW2": "Flag for additional use case 2",
+                "LGW3": "Flag for additional use case 3",
+                "LGW4": "Flag for additional use case 4",
+                "LGW5": "Flag for additional use case 5"
+              },
+              "foreign_keys": [
+                "Opr_Rejection_Reason_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_OPERATION_TOOL",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "mbom_operations",
+              "parent_entity": "MFC_L_MBOM_LA_OPERATION",
+              "parent_entity_status": "present",
+              "secondary_references": [
+                "MFC_M_ERP_OPERATION"
+              ],
+              "note": "ERP_Operation_ID FK points outside this file (MFC_M_ERP_OPERATION not present).",
+              "business_purpose": "Links operations to the tools used during the execution of those operations, capturing details such as the tool's identity, usage count, status, and change tracking. This table is used to manage the association between operations and the specific tools required for their execution.",
+              "row_represents": "A specific tool used in an operation, including its usage count, status, and change history.",
+              "synonyms": [
+                "operation tool",
+                "tool usage",
+                "operation tool link",
+                "tool assignment",
+                "operation tool detail",
+                "tool operation mapping"
+              ],
+              "use_when": [
+                "Tracking which tools are used in specific operations",
+                "Managing tool assignments to operations",
+                "Monitoring tool usage counts",
+                "Checking the status of a tool in an operation",
+                "Finding alternate tools for an operation",
+                "Reviewing tool usage history",
+                "Identifying tools that are inactive and the reason"
+              ],
+              "columns": {
+                "Operation_Tool_ID": "Unique system-generated ID for this operation/tool link row",
+                "Operation_Tool_Prefix_ID": "Prefix identifier for the tool used in the operation",
+                "ERP_Operation_ID": "Reference to the operation in the ERP system",
+                "MBOM_LA_Operation_ID": "Reference to the operation in the MBOM_LA system",
+                "IME_Item_ID": "Reference to the primary tool item",
+                "Alternate_IME_Item_ID": "Reference to an alternate tool item",
+                "Number_Of_Usage": "Number of times the tool has been used in the operation",
+                "IsData_Changed": "Indicates whether the data has been modified",
+                "LAMI_Cdate": "Date and time when this operation/tool link was created",
+                "LAMI_Cuser": "User who created the operation/tool link",
+                "LAMI_Udate": "Date and time when this operation/tool link was last updated",
+                "LAMI_Uuser": "User who last updated the operation/tool link",
+                "LAMI_Status": "Current status of the operation/tool link (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity, if applicable"
+              },
+              "foreign_keys": [
+                "MBOM_LA_Operation_ID"
+              ],
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "Number_Of_Usage"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        },
+        "ime_traceability": {
+          "tables": [
+            {
+              "table_name": "MFC_T_IME",
+              "table_type": "TRANSACTION/LOG",
+              "business_purpose": "Tracks detailed information about individual instruments, measuring equipment, or tools (IME), including their calibration status, usage, location, and associated parameters. This table is used for managing the lifecycle of IME, ensuring proper calibration, tracking usage, and maintaining compliance with standards.",
+              "row_represents": "A specific instrument, measuring equipment, or tool, including its attributes, calibration history, and status.",
+              "synonyms": [
+                "instrument record",
+                "measuring equipment record",
+                "tool record",
+                "IME master data",
+                "IME master",
+                "instrument master",
+                "calibration record",
+                "IME detail"
+              ],
+              "use_when": [
+                "Tracking the calibration status of an instrument",
+                "Finding the current location or work center of an IME",
+                "Looking up the calibration history of an IME",
+                "Checking the next calibration due date",
+                "Finding the manufacturer or supplier of an IME",
+                "Tracking the usage life of an IME"
+              ],
+              "columns": {
+                "IME_ID": "Unique system-generated identifier for this IME record",
+                "IME_Prefix_ID": "Prefix identifier for the IME",
+                "Plant_ID": "Plant where the IME is located or used",
+                "Item_ID": "Item or product ID associated with the IME",
+                "IME_Serial_Number": "Serial number of the IME",
+                "Unique_No": "Unique number assigned to the IME",
+                "Alternate_IME": "Alternate IME ID if applicable",
+                "IME_Category_VSP_ID": "Category of the IME",
+                "IME_Type_VSP_ID": "Type of the IME",
+                "Lower_Drawing_Limit": "Lower limit of the drawing range",
+                "Upper_Drawing_Limit": "Upper limit of the drawing range",
+                "IME_Status_VSP_ID": "Current status of the IME",
+                "Cell_ID": "Cell or location within the plant where the IME is stored",
+                "Online_Capability": "Indicates if the IME is online-capable",
+                "Least_Count": "Minimum measurable unit or count",
+                "Unit_Of_Measure": "Unit of measure for the IME",
+                "Calibrated_On": "Date when the IME was last calibrated",
+                "Next_Calibration_Date": "Date when the IME is due for the next calibration",
+                "Total_Life": "Total life or usage life of the IME",
+                "Life_Used": "Amount of life used so far",
+                "Calibration_Alert_On": "Calibration alert threshold",
+                "Frequency": "Calibration frequency",
+                "Life_Alert_On": "Life alert threshold",
+                "Calibration_Template_ID": "Template used for calibration",
+                "IME_Ref_Number": "Reference number for the IME",
+                "Manufacturer_ID": "Manufacturer of the IME",
+                "Dept_ID": "Department associated with the IME",
+                "Agency_ID": "Agency or organization associated with the IME",
+                "Traceability_Number": "Traceability number for the IME",
+                "Is_Master": "Indicates if this is a master IME record",
+                "Activation_Date": "Date when the IME was activated",
+                "Receipt_Date": "Date when the IME was received",
+                "Calibrate_Type_VSP_ID": "Type of calibration for the IME",
+                "Supplier_ID": "Supplier of the IME",
+                "Accuracy": "Accuracy of the IME",
+                "PO_Number": "Purchase order number for the IME",
+                "PO_Date": "Date of the purchase order",
+                "IME_Name": "Name of the IME",
+                "IME_Desc": "Description of the IME",
+                "Gauge_Cost": "Cost of the gauge or IME",
+                "Standard_Calibration_Time": "Standard time required for calibration",
+                "Remarks": "Additional remarks or comments about the IME",
+                "SOP_Image": "Image of the standard operating procedure",
+                "History_Files_Image1": "Image of historical file 1",
+                "History_Files_Image2": "Image of historical file 2",
+                "History_Files_Image3": "Image of historical file 3",
+                "History_Files_Image4": "Image of historical file 4",
+                "History_Files_Image5": "Image of historical file 5",
+                "MD_Item_Image": "Image of the item or product",
+                "Calibration_Procedure_No": "Calibration procedure number",
+                "Standard_Referance": "Standard reference for the IME",
+                "Range": "Measurement range of the IME",
+                "Calibration_Current_Status_VSP_ID": "Current calibration status of the IME",
+                "Man_Cost_Per_Hour": "Manufacturer cost per hour",
+                "Is_EmailAlert_On": "Indicates if email alerts are enabled for the IME",
+                "LAMI_Cdate": "Date and time when the IME record was created",
+                "LAMI_Cuser": "User who created the IME record",
+                "LAMI_Udate": "Date and time when the IME record was last updated",
+                "LAMI_Uuser": "User who last updated the IME record",
+                "LAMI_Status": "Status of the IME record",
+                "LAMI_Inactive_Reason": "Reason for inactivity of the IME record",
+                "Least_Count_UOM": "Unit of measure for the least count",
+                "IME_Rejected_Type_VSP_ID": "Type of rejection for the IME",
+                "IME_Reverse_Status_VSP_ID": "Reverse status of the IME"
+              },
+              "foreign_keys": [
+                "IME_ID",
+                "Dept_ID"
+              ],
+              "time_columns": [
+                "Calibrated_On",
+                "Next_Calibration_Date",
+                "Calibration_Alert_On",
+                "Life_Alert_On",
+                "Activation_Date",
+                "Receipt_Date",
+                "PO_Date",
+                "Standard_Calibration_Time",
+                "Is_EmailAlert_On",
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "Least_Count_UOM"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_T_IME_HISTORY",
+              "table_type": "TRANSACTION",
+              "table_role": "transaction_history",
+              "domain": "ime",
+              "parent_entity": "MFC_T_IME",
+              "parent_entity_status": "missing_from_file",
+              "note": "Historical IME record. Current/root table MFC_T_IME is referenced by doc but not present in this file.",
+              "business_purpose": "Tracks historical changes or events related to IME (Instrument, Machine, Equipment) records, capturing details such as name, unique number, status, remarks, and timestamps for audit and tracking purposes.",
+              "row_represents": "A historical record of an IME event or change, including details like the IME ID, plant, name, status, and timestamps of creation and update.",
+              "synonyms": [
+                "IME history",
+                "IME event log",
+                "IME change history",
+                "IME transaction",
+                "IME audit trail",
+                "IME event record",
+                "IME status history"
+              ],
+              "use_when": [
+                "Tracking changes to IME records",
+                "Auditing IME status changes",
+                "Reviewing IME event history",
+                "Finding IME records by plant or status",
+                "Checking when an IME was created or updated",
+                "Reviewing IME remarks or inactive reasons"
+              ],
+              "columns": {
+                "IME_History_ID": "Unique system-generated ID for this IME history record",
+                "IME_ID": "Reference to the IME record this history entry is associated with",
+                "Plant_ID": "Reference to the plant where the IME is located",
+                "IME_Name": "Name of the IME",
+                "Unique_No": "Unique identifier or serial number for the IME",
+                "LAMI_Cdate": "Date and time when this history record was created",
+                "LAMI_Cuser": "User who created this history record",
+                "LAMI_Udate": "Date and time when this history record was last updated",
+                "LAMI_Uuser": "User who last updated this history record",
+                "LAMI_Status": "Status flag indicating whether the IME is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for inactivity if the IME is marked as inactive",
+                "Ime_Remarks": "Additional remarks or comments about the IME",
+                "Range": "Range or scope of the IME's application or usage",
+                "Least_Count": "Minimum count or threshold value for the IME",
+                "IME_Desc": "Description or detailed information about the IME"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_IME_REFERANCE",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "ime",
+              "parent_entity": "MFC_T_IME",
+              "parent_entity_status": "missing_from_file",
+              "note": "References current IME (IME_ID/Master_IME_ID). Root MFC_T_IME not present in this file.",
+              "business_purpose": "Links IME (Item Master Entry) records to their associated reference data, such as prefixes or master IMEs, enabling traceability and cross-referencing of related items. This table supports hierarchical or related item relationships, such as variants, superseded items, or grouped items, and helps maintain consistency across item records.",
+              "row_represents": "A link between an IME and its reference data, including master IMEs, prefixes, or other related IMEs.",
+              "synonyms": [
+                "IME reference",
+                "IME link",
+                "IME relationship",
+                "IME reference data",
+                "IME cross-reference",
+                "IME association"
+              ],
+              "use_when": [
+                "Linking IMEs to their master or related items",
+                "Finding related IMEs or prefixes for a given IME",
+                "Tracking inactive IME references and their reasons",
+                "Maintaining hierarchical or grouped item relationships",
+                "Checking the status of an IME reference",
+                "Finding the creation or update date of an IME reference"
+              ],
+              "columns": {
+                "IME_Referance_ID": "Unique system-generated identifier for this IME reference link",
+                "IME_Referance_Prefix_ID": "Reference to an IME prefix, if applicable",
+                "IME_ID": "Reference to the IME this record is associated with",
+                "Master_IME_ID": "Reference to a master IME, if applicable",
+                "LAMI_Cdate": "Date and time when this IME reference was created",
+                "LAMI_Cuser": "User who created this IME reference",
+                "LAMI_Udate": "Date and time when this IME reference was last updated",
+                "LAMI_Uuser": "User who last updated this IME reference",
+                "LAMI_Status": "Status indicating whether this IME reference is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for inactivity, if applicable"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_L_IME_REFERANCE_History",
+              "table_type": "LINK",
+              "table_role": "link",
+              "domain": "ime",
+              "parent_entity": "MFC_T_IME_HISTORY",
+              "parent_entity_status": "present",
+              "business_purpose": "Tracks the historical relationships between IME (Instrument Measuring Equipment) records, capturing changes in status, calibration dates, and associated master IME references. This table is used to maintain a timeline of how IME devices are linked, calibrated, and updated over time, ensuring traceability and auditability of instrument relationships.",
+              "row_represents": "A historical link between an IME device and its associated master IME, including status changes and calibration events.",
+              "synonyms": [
+                "IME reference history",
+                "IME relationship history",
+                "IME link history",
+                "IME calibration history",
+                "IME status history"
+              ],
+              "use_when": [
+                "Tracking changes in IME relationships",
+                "Viewing the history of IME links",
+                "Checking calibration dates for IME devices",
+                "Finding when an IME was last calibrated",
+                "Looking up the next calibration date for an IME",
+                "Checking the status of an IME link",
+                "Finding historical master IME references"
+              ],
+              "columns": {
+                "Ime_History_Master_Ime_Id": "Unique system-generated identifier for this IME reference history record",
+                "IME_ID": "Reference to the IME device involved in this relationship",
+                "Master_IME_ID": "Reference to the master IME device this IME is linked to",
+                "LAMI_Udate": "Date and time when this IME reference history record was last updated",
+                "LAMI_Uuser": "User who last updated this IME reference history record",
+                "LAMI_Status": "Current status of this IME reference (active or inactive)",
+                "Unique_No": "Unique identifier or serial number associated with this IME reference",
+                "IME_Name": "Name or description of the IME device",
+                "Calibrated_On": "Date when this IME was last calibrated",
+                "Next_Calibration_Date": "Date when this IME is scheduled for its next calibration"
+              },
+              "time_columns": [
+                "LAMI_Udate",
+                "Calibrated_On",
+                "Next_Calibration_Date"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        },
+        "item_receipts": {
+          "tables": [
+            {
+              "table_name": "MFC_TT_ITEM_RECEIPT",
+              "table_type": "TRANSACTION",
+              "business_purpose": "Records the receipt of items into the system, including details such as quantity, status, dates, and associated information like purchase orders, serial numbers, and expiration dates. This table is used to track the actual receipt of goods, including any discrepancies such as missing or rejected quantities, and is essential for inventory management and procurement processes.",
+              "row_represents": "A single item receipt transaction, including details about the item, quantity, status, and associated data.",
+              "synonyms": [
+                "item receipt",
+                "receipt transaction",
+                "item receipt line",
+                "material receipt",
+                "item receipt detail",
+                "purchase receipt",
+                "inventory receipt",
+                "item receipt entry"
+              ],
+              "use_when": [
+                "Tracking the receipt of items into the system",
+                "Recording the quantity of items received, including accepted and rejected quantities",
+                "Tracking the status of item receipts (e.g., pending, completed, rejected)",
+                "Linking item receipts to purchase orders",
+                "Recording serial number ranges for received items",
+                "Tracking expiration and manufacturing dates for received items",
+                "Recording the location and zone where items are received"
+              ],
+              "columns": {
+                "Item_Receipt_ID": "Unique system-generated ID for each item receipt transaction",
+                "Item_Receipt_Prefix_ID": "Prefix used to generate the receipt number",
+                "Plant_ID": "Plant or location where the item is received",
+                "Receipt_Number": "Unique business identifier for the item receipt",
+                "ASN_Number": "Advanced Shipment Notice number associated with the receipt",
+                "No_Of_Copies": "Number of copies of the receipt",
+                "Receipt_Date": "Date when the item receipt was recorded",
+                "Location_ID": "Location where the item is stored",
+                "Zone_Number": "Zone within the location where the item is stored",
+                "Item_Trans_ID": "Reference to the item transaction",
+                "Packing_Slip": "Packing slip number associated with the receipt",
+                "Shipped_Date": "Date when the item was shipped",
+                "Item_Receipt_Line_Number": "Line number within the receipt",
+                "Supplier_ID": "Supplier who provided the item",
+                "Item_ID": "Unique ID of the item received",
+                "Item_Code": "Code used to identify the item",
+                "Item_Revision_Number": "Revision number of the item",
+                "Item_Receipt_Description": "Description of the item receipt",
+                "Serialization_Type_VSP_ID": "Reference to the serialization type",
+                "Quantity": "Total quantity of the item received",
+                "Missing_Quantity": "Quantity of items that were missing upon receipt",
+                "Actual_Quantity": "Quantity of items actually received",
+                "Accepted_Quantity": "Quantity of items accepted upon receipt",
+                "Rejected_Quantity": "Quantity of items rejected upon receipt",
+                "Receipt_Status_VSP_ID": "Reference to the receipt status",
+                "Purchase_Order_Line_ID": "Reference to the purchase order line",
+                "Serial_Number_Start": "Starting serial number of the received items",
+                "Serial_Number_End": "Ending serial number of the received items",
+                "LAMI_Cdate": "Date and time when the item receipt was created",
+                "LAMI_Cuser": "User who created the item receipt",
+                "LAMI_Udate": "Date and time when the item receipt was last updated",
+                "LAMI_Uuser": "User who last updated the item receipt",
+                "LAMI_Status": "Status indicating whether the item receipt is active or inactive",
+                "LAMI_Inactive_Reason": "Reason for deactivating the item receipt",
+                "Item_Status_VSP_ID": "Reference to the item status",
+                "UOM_VSP_ID": "Reference to the unit of measure",
+                "Partial_Fill": "Indicates whether the receipt is partially filled",
+                "Fully_Picked": "Indicates whether the receipt is fully picked",
+                "Assign_Bin": "Indicates whether the bin assignment is required",
+                "Manufacturer_Date": "Date when the item was manufactured",
+                "Expiration_Date": "Date when the item expires",
+                "Item_Description": "Description of the item",
+                "INT_Manufacturer_Date": "International manufacturer date",
+                "INT_Expiration_Date": "International expiration date",
+                "INT_Item_Description": "International description of the item",
+                "INT_Mat_Document_Number": "International material document number",
+                "INT_Document_Posting_Date": "International document posting date",
+                "INT_Batch": "International batch number",
+                "INT_Entry_Name": "International entry name",
+                "INT_Serial_No": "International serial number",
+                "Reference_OBD_Number": "Reference to the OBD number"
+              },
+              "time_columns": [
+                "Receipt_Date",
+                "Shipped_Date",
+                "LAMI_Cdate",
+                "LAMI_Udate",
+                "Manufacturer_Date",
+                "Expiration_Date",
+                "INT_Manufacturer_Date",
+                "INT_Expiration_Date",
+                "INT_Document_Posting_Date"
+              ],
+              "quantity_columns": [
+                "Quantity",
+                "Missing_Quantity",
+                "Actual_Quantity",
+                "Accepted_Quantity",
+                "Rejected_Quantity"
+              ],
+              "status_columns": [
+                "LAMI_Status",
+                "Item_Status_VSP_ID"
+              ]
+            },
+            {
+              "table_name": "MFC_TT_CONTAINER_ITEM_RECEIPT",
+              "table_type": "TRANSACTION",
+              "business_purpose": "Records the receipt and tracking of items within containers, including quantities, bin assignments, and status updates. This table is used to manage the physical location and availability of items within containers during receipt and storage processes.",
+              "row_represents": "A single item receipt within a container, including quantity, bin assignment, and status.",
+              "synonyms": [
+                "container item receipt",
+                "container receipt",
+                "item receipt in container",
+                "container item tracking",
+                "container item log",
+                "item container receipt",
+                "container inventory receipt"
+              ],
+              "use_when": [
+                "Tracking item receipts within containers",
+                "Managing bin assignments for container items",
+                "Checking the status of container item receipts",
+                "Viewing receipt history for container items",
+                "Finding container item receipt details",
+                "Filtering receipts by container",
+                "Checking inactive reasons for container item receipts"
+              ],
+              "columns": {
+                "Container_Item_Receipt_ID": "Unique system-generated ID for this container item receipt record",
+                "Container_ID": "Reference to the container this item receipt belongs to",
+                "Container_Quantity": "Quantity of the item received in the container",
+                "Assigned_Bin": "Flag indicating whether the item has been assigned to a bin",
+                "LAMI_Cdate": "Date and time when the container item receipt was created",
+                "LAMI_Cuser": "User who created the container item receipt",
+                "LAMI_Udate": "Date and time when the container item receipt was last updated",
+                "LAMI_Uuser": "User who last updated the container item receipt",
+                "LAMI_Status": "Status of the container item receipt (active or inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivity, if applicable"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "Container_Quantity"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            },
+            {
+              "table_name": "MFC_TT_CONTAINER_ITEM_RECEIPT_LINE_ITEM",
+              "table_type": "TRANSACTION",
+              "business_purpose": "Records line-level details of item receipt entries within container item receipts, capturing quantities, serial numbers, and transaction timestamps for each item received.",
+              "row_represents": "A single line item within a container item receipt, representing the receipt of a specific item quantity or serial number.",
+              "synonyms": [
+                "container item receipt line",
+                "item receipt line",
+                "container receipt line item",
+                "item receipt detail",
+                "container item receipt entry",
+                "item receipt line item"
+              ],
+              "use_when": [
+                "Tracking item receipt details within a container",
+                "Recording received item quantities and serial numbers",
+                "Linking item receipts to container receipts",
+                "Finding receipt line items by container or item receipt",
+                "Checking receipt status",
+                "Reviewing item receipt history"
+              ],
+              "columns": {
+                "Container_Item_Rept_Line_Item_ID": "Unique system-generated ID for this line item",
+                "Container_Item_Receipt_ID": "Reference to the container item receipt header",
+                "Item_Receipt_ID": "Reference to the item receipt header",
+                "Serial_Recep_ID": "Reference to the serial receipt record",
+                "Item_Quantity": "Quantity of the item received",
+                "Serial_Number": "Serial number of the received item",
+                "Item_ID": "Reference to the item master data",
+                "LAMI_Cdate": "Date and time when the line item was created",
+                "LAMI_Cuser": "User who created the line item",
+                "LAMI_Udate": "Date and time when the line item was last updated",
+                "LAMI_Uuser": "User who last updated the line item",
+                "LAMI_Status": "Status of the line item (active/inactive)",
+                "LAMI_Inactive_Reason": "Reason for inactivation, if applicable"
+              },
+              "time_columns": [
+                "LAMI_Cdate",
+                "LAMI_Udate"
+              ],
+              "quantity_columns": [
+                "Item_Quantity"
+              ],
+              "status_columns": [
+                "LAMI_Status"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

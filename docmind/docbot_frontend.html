@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;font-family:'Plus Jakarta Sans',sans-serif;background:#f4f7f9;height:100vh;overflow:hidden;}
+*,*::before,*::after{box-sizing:border-box;}
+:root{
+  --bg:#f4f7f9; --surface:#ffffff; --surface2:#eaf1f4;
+  --accent:#0d9488; --accent2:#0f766e;
+  --accent-soft:rgba(13,148,136,0.09);
+  --grad:linear-gradient(135deg,#0f766e,#2dd4bf);
+  --border:rgba(0,0,0,0.06); --border2:rgba(0,0,0,0.09);
+  --text:#1c2f2f; --text2:#4a6a6a; --muted:#8aabab;
+}
+
+/* Login Modal */
+.login-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);z-index:2000;align-items:center;justify-content:center;}
+.login-overlay.show{display:flex;}
+.login-box{background:var(--surface);padding:40px;border-radius:20px;width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.2);}
+.login-box h2{font-size:20px;margin:0 0 4px 0;color:var(--text);}
+.login-box .sub{color:var(--muted);font-size:13px;margin-bottom:24px;}
+.login-box input{width:100%;padding:12px 16px;border:1.5px solid var(--border2);border-radius:10px;font-size:14px;margin-bottom:14px;font-family:inherit;}
+.login-box input:focus{outline:none;border-color:var(--accent);}
+.login-box button{width:100%;padding:12px;border:none;border-radius:10px;background:var(--grad);color:#fff;font-weight:700;font-size:15px;cursor:pointer;font-family:inherit;}
+.login-box button:hover{opacity:0.9;}
+.login-box .error{color:#e74c3c;font-size:13px;margin-top:10px;display:none;}
+.login-box .close-btn{position:absolute;top:12px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);}
+.login-box{position:relative;}
+
+/* Main App */
+.topbar{padding:12px 22px;background:var(--surface);display:flex;align-items:center;gap:12px;flex-shrink:0;border-bottom:1px solid var(--border2);}
+.tb-icon{width:32px;height:32px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:15px;color:#fff;}
+.tb-title{font-weight:700;font-size:14px;color:var(--text);}
+.tb-sub{font-size:10px;color:var(--muted);}
+.tb-right{margin-left:auto;display:flex;gap:8px;align-items:center;}
+.role-tag{font-size:10px;font-weight:600;padding:3px 10px;border-radius:20px;background:var(--accent-soft);border:1px solid rgba(13,148,136,0.22);color:var(--accent);display:none;}
+.role-tag.show{display:inline-flex;}
+.reset-btn,.admin-login-btn,.logout-btn{font-family:inherit;font-size:11px;font-weight:600;padding:6px 12px;border-radius:8px;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);cursor:pointer;}
+.reset-btn:hover,.admin-login-btn:hover,.logout-btn:hover{background:var(--accent-soft);color:var(--accent);}
+.admin-login-btn{color:#0d9488;border-color:#0d9488;}
+.admin-login-btn:hover{background:rgba(13,148,136,0.1);}
+.logout-btn{color:#e74c3c;border-color:#e74c3c33;}
+.logout-btn:hover{background:#e74c3c11;color:#e74c3c;}
+
+.messages{flex:1;padding:22px 24px;overflow-y:auto;display:flex;flex-direction:column;gap:14px;max-width:760px;width:100%;margin:0 auto;}
+.messages::-webkit-scrollbar{width:4px;}
+.messages::-webkit-scrollbar-thumb{background:rgba(13,148,136,0.18);border-radius:4px;}
+
+.row{display:flex;gap:10px;align-items:flex-end;animation:fi 0.2s ease;}
+.row.bot{flex-direction:row;} .row.user{flex-direction:row-reverse;}
+@keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.av{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;}
+.av.bot{background:var(--grad);} .av.user{background:#64748b;}
+.bubble{max-width:78%;padding:11px 14px;border-radius:14px;font-size:13px;line-height:1.6;color:var(--text);}
+.row.bot .bubble{background:var(--surface);border:1px solid var(--border2);border-bottom-left-radius:4px;}
+.row.user .bubble{background:var(--grad);color:#fff;border-bottom-right-radius:4px;}
+
+.btn-grid{display:flex;flex-direction:column;gap:6px;margin-top:6px;}
+.opt-btn{font-family:inherit;text-align:left;padding:10px 12px;border-radius:10px;border:1.5px solid var(--border2);background:var(--surface2);color:var(--text);font-size:12.5px;font-weight:600;cursor:pointer;}
+.opt-btn:hover{border-color:var(--accent);background:var(--accent-soft);color:var(--accent2);}
+.opt-btn:disabled{opacity:0.5;cursor:default;}
+.opt-btn .sub{display:block;font-weight:400;color:var(--muted);font-size:11px;margin-top:2px;}
+
+.doc-card{border:1px solid var(--border2);border-radius:10px;padding:10px 12px;margin-top:6px;background:var(--surface2);}
+.doc-card .dc-name{font-weight:700;font-size:12.5px;color:var(--text);}
+.doc-card .dc-ctx{font-size:11.5px;color:var(--text2);margin-top:3px;line-height:1.5;}
+.doc-card .dc-focus{margin-top:6px;font-size:10.5px;font-weight:600;color:var(--accent);background:none;border:none;cursor:pointer;padding:0;}
+
+.upload-box{border:1.5px dashed rgba(13,148,136,0.22);border-radius:12px;padding:16px;margin-top:8px;background:var(--accent-soft);}
+.upload-box input[type=file]{font-size:11.5px;font-family:inherit;}
+.upload-box button{margin-top:10px;font-family:inherit;font-size:12px;font-weight:700;padding:8px 16px;border-radius:8px;border:none;background:var(--grad);color:#fff;cursor:pointer;}
+.upload-box button:disabled{opacity:0.5;cursor:default;}
+.upload-status{font-size:11px;color:var(--text2);margin-top:8px;}
+
+.inputbar{padding:14px 24px 20px;background:var(--bg);flex-shrink:0;max-width:760px;width:100%;margin:0 auto;}
+.inputwrap{display:flex;gap:8px;background:var(--surface);border:1.5px solid var(--border2);border-radius:14px;padding:6px 6px 6px 14px;}
+.inputwrap input{flex:1;border:none;outline:none;font-family:inherit;font-size:13px;background:transparent;color:var(--text);}
+.inputwrap button{font-family:inherit;font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:10px;border:none;background:var(--grad);color:#fff;cursor:pointer;}
+.inputwrap button:disabled{opacity:0.4;cursor:default;}
+
+.thinking{opacity:0.6;font-style:italic;}
+#app{display:flex;flex-direction:column;height:100vh;}
+</style>
+</head>
+<body>
+
+<!-- Login Modal (for Admin login) -->
+<div class="login-overlay" id="login-modal">
+  <div class="login-box">
+    <h2>👑 Admin Access</h2>
+    <div class="sub">Enter your admin credentials to upload documents</div>
+    <form onsubmit="handleAdminLogin(event)">
+      <input type="text" id="admin-username" placeholder="Username" required>
+      <input type="password" id="admin-password" placeholder="Password" required>
+      <button type="submit">Sign In as Admin</button>
+      <div class="error" id="login-error">Invalid credentials</div>
+    </form>
+    <button class="close-btn" onclick="closeAdminLogin()">✕</button>
+  </div>
+</div>
+
+<!-- Main App -->
+<div id="app">
+  <div class="topbar">
+    <div class="tb-icon">📄</div>
+    <div>
+      <div class="tb-title">Document Assistant</div>
+      <div class="tb-sub" id="user-info">Ask questions grounded in uploaded module documents</div>
+    </div>
+    <div class="tb-right">
+      <span class="role-tag" id="role-tag"></span>
+      <button class="admin-login-btn" id="admin-login-btn" onclick="showAdminLogin()">👑 Admin</button>
+      <button class="reset-btn" onclick="resetAll()">Start over</button>
+      <button class="logout-btn" id="logout-btn" onclick="handleLogout()" style="display:none;">Logout</button>
+    </div>
+  </div>
+
+  <div class="messages" id="messages"></div>
+
+  <div class="inputbar" id="inputbar" style="display:none;">
+    <div class="inputwrap">
+      <input id="chat-input" placeholder="Ask a question about the selected module..." disabled onkeydown="if(event.key==='Enter')sendQuestion();">
+      <button id="send-btn" onclick="sendQuestion()" disabled>Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const API_BASE = '';
+let _sessionToken = null;
+let _currentUser = null;
+let _isAdminMode = false;
+
+// ── ADMIN LOGIN MODAL ──────────────────────────────────────────────
+function showAdminLogin() {
+  document.getElementById('login-modal').classList.add('show');
+  document.getElementById('admin-username').value = '';
+  document.getElementById('admin-password').value = '';
+  document.getElementById('login-error').style.display = 'none';
+  document.getElementById('admin-username').focus();
+}
+
+function closeAdminLogin() {
+  document.getElementById('login-modal').classList.remove('show');
+}
+
+async function handleAdminLogin(e) {
+  e.preventDefault();
+  const username = document.getElementById('admin-username').value;
+  const password = document.getElementById('admin-password').value;
+  const errorEl = document.getElementById('login-error');
+  
+  try {
+    const res = await fetch('/auth/login', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({username, password})
+    });
+    
+    const data = await res.json();
+    
+    if (!res.ok) {
+      errorEl.style.display = 'block';
+      errorEl.textContent = data.detail || 'Invalid credentials';
+      return;
+    }
+    
+    // Check if user is admin
+    if (data.role.toUpperCase() !== 'ADMIN') {
+      errorEl.style.display = 'block';
+      errorEl.textContent = 'Access denied. Admin privileges required.';
+      return;
+    }
+    
+    _sessionToken = data.token;
+    _currentUser = data;
+    _isAdminMode = true;
+    
+    closeAdminLogin();
+    
+    // Update UI for admin
+    document.getElementById('user-info').textContent = `👑 ${data.username} (Admin Mode)`;
+    document.getElementById('role-tag').textContent = 'Admin';
+    document.getElementById('role-tag').classList.add('show');
+    document.getElementById('admin-login-btn').style.display = 'none';
+    document.getElementById('logout-btn').style.display = 'inline-block';
+    
+    // Show admin options
+    addRow('bot', `👑 <strong>Admin mode activated.</strong><br><br>You can now upload documents to modules.`);
+    showRoleButtons();
+    
+  } catch(err) {
+    errorEl.style.display = 'block';
+    errorEl.textContent = 'Connection error';
+  }
+}
+
+async function handleLogout() {
+  if (_sessionToken) {
+    await fetch('/auth/logout', {
+      method: 'POST',
+      headers: {'Authorization': `Bearer ${_sessionToken}`}
+    });
+  }
+  _sessionToken = null;
+  _currentUser = null;
+  _isAdminMode = false;
+  
+  // Reset UI
+  document.getElementById('user-info').textContent = 'Ask questions grounded in uploaded module documents';
+  document.getElementById('role-tag').classList.remove('show');
+  document.getElementById('admin-login-btn').style.display = 'inline-block';
+  document.getElementById('logout-btn').style.display = 'none';
+  document.getElementById('inputbar').style.display = 'none';
+  
+  msgsEl().innerHTML = '';
+  S = { role:null, module:null, document_id:null, document_name:null };
+  start();
+}
+
+function _authHeaders(json=true){
+  const h = {};
+  if(json) h['Content-Type']='application/json';
+  if(_sessionToken) h['Authorization']=`Bearer ${_sessionToken}`;
+  return h;
+}
+
+// ── APP ──────────────────────────────────────────────────────────────
+function sanitize(html){
+  if(!html) return '';
+  const doc = new DOMParser().parseFromString(html,'text/html');
+  doc.querySelectorAll('script').forEach(el=>el.remove());
+  return doc.body.innerHTML;
+}
+
+let S = { role:null, module:null, document_id:null, document_name:null };
+
+function msgsEl(){ return document.getElementById('messages'); }
+function scrollBottom(){ const m=msgsEl(); m.scrollTop = m.scrollHeight; }
+
+function addRow(who, html){
+  const row = document.createElement('div');
+  row.className = `row ${who}`;
+  row.innerHTML = `<div class="av ${who}">${who==='bot'?'🤖':'👤'}</div><div class="bubble">${sanitize(html)}</div>`;
+  msgsEl().appendChild(row);
+  scrollBottom();
+  return row;
+}
+function disableAllBtns(){
+  document.querySelectorAll('.opt-btn').forEach(b=>b.disabled=true);
+}
+
+function resetAll(){
+  S = { role:null, module:null, document_id:null, document_name:null };
+  document.getElementById('role-tag').classList.remove('show');
+  document.getElementById('inputbar').style.display='none';
+  const inp=document.getElementById('chat-input'), send=document.getElementById('send-btn');
+  inp.disabled=true; send.disabled=true; inp.value='';
+  msgsEl().innerHTML='';
+  
+  // If admin mode, show admin options, else show end user options
+  if (_isAdminMode) {
+    showRoleButtons();
+  } else {
+    start();
+  }
+}
+
+async function start(){
+  addRow('bot', `👋 <strong>Welcome to the Document Assistant.</strong><br><br>Select a module to ask questions.`);
+  enduserLoadModules();
+}
+
+function showRoleButtons(){
+  // Only show role buttons in admin mode
+  if (!_isAdminMode) {
+    start();
+    return;
+  }
+  
+  const btns = `
+    <button class="opt-btn" onclick="pickRole('supervisor')">👑 <strong>Admin</strong><span class="sub">Upload & tag documents to a module</span></button>
+    <button class="opt-btn" onclick="pickRole('enduser')">👤 <strong>End User</strong><span class="sub">Browse modules and ask questions</span></button>
+  `;
+  addRow('bot', `<div style="font-size:11px;color:var(--muted);margin-bottom:4px">Choose your mode:</div><div class="btn-grid">${btns}</div>`);
+}
+
+function pickRole(role){
+  disableAllBtns();
+  S.role = role;
+  addRow('user', role==='supervisor' ? '👑 Admin Mode' : '👤 End User Mode');
+  const tag = document.getElementById('role-tag');
+  tag.textContent = role==='supervisor' ? 'Admin' : 'End User';
+  tag.classList.add('show');
+  if(role==='supervisor') supervisorPickModule();
+  else enduserLoadModules();
+}
+
+// ── SUPERVISOR (Admin) ──────────────────────────────────────────────
+async function supervisorPickModule(){
+  try {
+    const res = await fetch('/supervisor/modules', {headers:_authHeaders()});
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
+    const modules = await res.json();
+    const btns = modules.map(m =>
+      `<button class="opt-btn" onclick='supervisorModuleChosen(${JSON.stringify(m.id)})'>${m.icon} <strong>${m.label}</strong><span class="sub">${m.description||''}</span></button>`
+    ).join('');
+    addRow('bot', `Which module is this document for?<div class="btn-grid">${btns}</div>`);
+  } catch(err) {
+    addRow('bot', `❌ Error loading modules: ${err.message}`);
+  }
+}
+
+function supervisorModuleChosen(moduleId){
+  disableAllBtns();
+  S.module = moduleId;
+  addRow('user', moduleId);
+  addRow('bot', `
+    <div>Upload the document (PDF, DOCX, or TXT):</div>
+    <div class="upload-box">
+      <input type="file" id="doc-file" accept=".pdf,.docx,.txt">
+      <div><button id="upload-btn" onclick="doUpload()">Upload & Vectorize</button></div>
+      <div class="upload-status" id="upload-status"></div>
+    </div>`);
+}
+
+async function doUpload(){
+  const fileInput = document.getElementById('doc-file');
+  const btn = document.getElementById('upload-btn');
+  const status = document.getElementById('upload-status');
+  if(!fileInput.files.length){ status.textContent='Choose a file first.'; return; }
+  btn.disabled = true;
+  status.textContent = 'Extracting text, chunking, embedding, and storing in Qdrant...';
+  const form = new FormData();
+  form.append('module', S.module);
+  form.append('file', fileInput.files[0]);
+  try{
+    const res = await fetch('/supervisor/upload', {
+      method:'POST', headers:_authHeaders(false), body: form
+    });
+    if(!res.ok){ const e = await res.json().catch(()=>({detail:'Upload failed'})); throw new Error(e.detail || 'Upload failed'); }
+    const data = await res.json();
+    status.textContent = '';
+    btn.disabled = true; btn.textContent = 'Uploaded';
+    addRow('bot', `✅ <strong>${data.document_name}</strong> stored under <strong>${data.module}</strong> (${data.chunks} chunks).<br><br><em>${data.short_context}</em>`);
+    setTimeout(()=>{
+      addRow('bot', `Upload another document?<div class="btn-grid">
+        <button class="opt-btn" onclick="supervisorPickModule()">🔄 Upload another</button>
+        <button class="opt-btn" onclick="resetAll()">🏠 Start over</button>
+      </div>`);
+    }, 300);
+  }catch(err){
+    status.textContent = 'Error: ' + err.message;
+    btn.disabled = false;
+  }
+}
+
+// ── END USER ────────────────────────────────────────────────────────
+async function enduserLoadModules(){
+  addRow('bot', 'Loading available modules...');
+  try{
+    const res = await fetch('/enduser/modules', {headers:_authHeaders()});
+    if(!res.ok){ throw new Error(`Server returned ${res.status}`); }
+    const modules = await res.json();
+    if(!modules.length){
+      addRow('bot', 'No documents have been uploaded to any module yet. Please check back later.');
+      return;
+    }
+    const btns = modules.map(m =>
+      `<button class="opt-btn" onclick='enduserModuleChosen(${JSON.stringify(m.id)}, ${JSON.stringify(m.label)})'>${m.icon} <strong>${m.label}</strong><span class="sub">${m.document_count} document${m.document_count===1?'':'s'}</span></button>`
+    ).join('');
+    addRow('bot', `<div style="font-size:11px;color:var(--muted);margin-bottom:4px">Select a module:</div><div class="btn-grid">${btns}</div>`);
+  }catch(err){
+    addRow('bot', `❌ Couldn't load modules: ${err.message}`);
+  }
+}
+
+async function enduserModuleChosen(moduleId, moduleLabel){
+  disableAllBtns();
+  S.module = moduleId; S.document_id = null; S.document_name = null;
+  addRow('user', moduleLabel);
+  try{
+    const res = await fetch(`/enduser/modules/${encodeURIComponent(moduleId)}/documents`, {headers:_authHeaders()});
+    if(!res.ok){ throw new Error(`Server returned ${res.status}`); }
+    const docs = await res.json();
+    const cards = docs.map(d => `
+      <div class="doc-card">
+        <div class="dc-name">📄 ${d.document_name}</div>
+        <div class="dc-ctx">${d.short_context || ''}</div>
+        <button class="dc-focus" onclick='focusDocument(${JSON.stringify(d.document_id)}, ${JSON.stringify(d.document_name)})'>Ask about this document only →</button>
+      </div>`).join('');
+    addRow('bot', `<strong>${moduleLabel}</strong> has ${docs.length} document${docs.length===1?'':'s'}:${cards}<br><div style="font-size:11px;color:var(--muted);margin-top:6px;">You can ask questions across all of them, or focus on one above.</div>`);
+  }catch(err){
+    addRow('bot', `❌ Couldn't load documents: ${err.message}`);
+  }finally{
+    enableInput();
+  }
+}
+
+function focusDocument(docId, docName){
+  S.document_id = docId; S.document_name = docName;
+  addRow('bot', `🔍 Focused on <strong>${docName}</strong>. <button class="dc-focus" onclick="unfocusDocument()">Search whole module instead →</button>`);
+}
+function unfocusDocument(){
+  S.document_id = null; S.document_name = null;
+  addRow('bot', `Now searching across all documents in the module.`);
+}
+
+function enableInput(){
+  document.getElementById('inputbar').style.display='block';
+  const inp=document.getElementById('chat-input'), send=document.getElementById('send-btn');
+  inp.disabled=false; send.disabled=false; inp.focus();
+}
+
+async function sendQuestion(){
+  const inp = document.getElementById('chat-input');
+  const q = inp.value.trim();
+  if(!q) return;
+  inp.value='';
+  addRow('user', q);
+  const botRow = addRow('bot', '<span class="thinking">⏳ Thinking...</span>');
+  const bubble = botRow.querySelector('.bubble');
+  bubble.innerHTML = '';
+
+  try{
+    const res = await fetch('/enduser/chat', {
+      method:'POST', headers:_authHeaders(),
+      body: JSON.stringify({ module: S.module, document_id: S.document_id, question: q })
+    });
+    
+    if (!res.ok) {
+      const errorText = await res.text();
+      bubble.innerHTML = `❌ Server error: ${res.status}`;
+      return;
+    }
+    
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '', full = '';
+    let hasReceivedData = false;
+    
+    while(true){
+      const {done, value} = await reader.read();
+      if(done) break;
+      
+      const chunk = decoder.decode(value, {stream: true});
+      buf += chunk;
+      
+      const events = buf.split(/\r?\n\r?\n/);
+      buf = events.pop();
+      
+      for (const event of events) {
+        const match = event.match(/^data:\s*(.*)$/m);
+        if (!match) continue;
+        
+        try {
+          const obj = JSON.parse(match[1]);
+          
+          if (obj.type === "token") {
+            hasReceivedData = true;
+            full += obj.content;
+            bubble.innerHTML = sanitize(full.replace(/\n/g, "<br>"));
+            scrollBottom();
+          } else if (obj.type === "done") {
+            hasReceivedData = true;
+            if (obj.sources && obj.sources.length) {
+              const uniq = [...new Set(obj.sources.map(s => s.document_name))];
+              bubble.innerHTML += `<div style="margin-top:8px;font-size:10px;color:gray">📚 Sources: ${uniq.join(", ")}</div>`;
+            }
+          } else if (obj.type === "error") {
+            hasReceivedData = true;
+            bubble.innerHTML = '❌ ' + obj.content;
+          }
+        } catch(e) {
+          console.error('Parse error:', e);
+        }
+      }
+    }
+    
+    if (!hasReceivedData) {
+      bubble.innerHTML = '⚠️ No response received. Please try again.';
+    }
+  }catch(err){
+    bubble.innerHTML = '❌ Connection error: ' + err.message;
+  }
+}
+
+// ── INIT ──
+start();
+</script>
+</body>
+</html>
